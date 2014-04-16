@@ -40,8 +40,9 @@
 		
 		
 		<form name='printprofile' action='profile.php' method='post'>
-		Serial No: <input type="text" class='form-control' name='sno'>
-		<input type="submit" class="btn btn-primary">
+			Serial No: <input type="text" class='form-control' name='sno'>
+	
+			<input type="submit" class="btn btn-primary">
 		</form>
 		
 
