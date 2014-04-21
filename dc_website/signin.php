@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
   <?php startblock('page_title'); ?>
-  Signin | IIPS 
+  Signin | DC
   <?php endblock(); ?>
   <?php startblock('style'); ?>
 
@@ -104,16 +104,19 @@
             <?php if (isset($authUrl)): ?>
               <a class='login btn' href='<?php echo $authUrl; ?>'>Sign in with Google</a>
             <?php else: ?>
-              <a class='logout' href='?logout'>Logout</a>
+              <a class='logout' href='?logout'>Logout</a><br><br>
+               <a href="dailylog.php">Daily Log</a><br><br>
             <?php endif ?>
           </div>
 
           <?php if (isset($token_data)): ?>
             <div class="data">
               <?php 
-              require_once 'connect.inc.php';
-              $email=$token_data['payload']['email'];
+              //session_start();
+             // require_once 'connect.inc.php';
+              $_SESSION['email']=$token_data['payload']['email'];
               echo ($email);
+              echo $_SESSION['email'];
               $sql='SELECT email FROM DC_MEMBER_REGULAR';
                  
               // $rs=$conn->query($sql);
@@ -123,7 +126,9 @@
               // } 
               if($email != $sql){
                 echo "<br>";
-                echo "You are a autharised user";
+                echo "";
+
+
 
               }
               else{
@@ -134,40 +139,19 @@
                   // // $newstr = var_dump($token_data); 
                   // // // var_dump($token_data);
 
-                  echo "Development Center heart of the International Institute of Professional Studies.", $newstr;
+                  
                 }  
               ?>
             </div>
           <?php endif ?>
+         
         </div>
-        <div class="container">
-
-          <hr>
-
-          <footer>
-            <br><br><br><br><br><br><br><br><br><br>
-            <div class="row" style="text-align:center;">
-              <div class="col-lg-3 col-md-3" >
-                  <p>Contact Us</p>
-                         
-              </div>
-               <div class="col-lg-3 col-md-3">
-                   <p>Site Developers</p>
-               </div>
-               <div class="col-lg-3 col-md-3">
-                    <p>Help</p>
-               </div>
-               <div class="col-lg-3 col-md-3">
-                     <p>Copyright &copy; Company 2013</p>
-               </div>
-          </footer>
-        </div>
-
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
       
   
   <?php endblock(); ?>
   <?php startblock('script'); ?>
-  <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/modern-business.js"></script>
   <?php endblock(); ?>

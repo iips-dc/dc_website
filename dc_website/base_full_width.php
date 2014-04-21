@@ -50,11 +50,9 @@
 		<!-- Style block End -->
 </head>
 <body>
-	<!-- Header block Start -->
+	 	<?php include('header.php');?>
 	<?php startblock('header') ?>
 		<?php
-			// inlclude header here
-			include 'header.php';
 			
 			include('readTextFilesScript.php');
 		?>

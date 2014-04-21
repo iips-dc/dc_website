@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Two Column Portfolio - Modern Business - Start Bootstrap Template</title>
+    <title>Current Projects</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -24,6 +24,22 @@
    ?>
 
     <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Projects
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="current_projects.php">Current Projects</a>
+                    </li>
+                    <li><a href="past_projects.php">Past Projects</a>
+                    </li>
+                    
+                </ol>
+            </div>
+
+        </div>
 
         <div class="row">
 

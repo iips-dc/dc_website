@@ -17,7 +17,7 @@ function pageHeader($title)
     </head>
     <body>\n";
     if ($_SERVER['PHP_SELF'] != "/index.php") {
-      $ret .= "<p><a href='index.html'>Back</a></p>";
+      $ret .= "<p><a href='index.php'>Back</a></p>";
     }
     $ret .= "<header><h1>" . $title . "</h1></header>";
   }

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Present members</title>
+    <title>Current Contributers</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -15,32 +15,24 @@
     <!-- Add custom CSS here -->
     <link href="css/modern-business.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 
 <body>
-
-    
-    
+   
    <?php 
         include ('header.php');
-   ?>
+   ?> 
+
+ 
+   
+
 
     <div class="container">
 
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">DC MEMBERS
-                    
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    
-                </ol>
-            </div>
- 
-        </div>
+        <?php
+        include('taskbar.php');
+    ?>
 
         
 
