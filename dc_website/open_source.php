@@ -34,11 +34,13 @@
 
 <body>
 
-   
-    
-   <?php 
-        include ('header.php');
-   ?>
+    <div class="navbar-wrapper topspace downShadow" style="width:100% ; margin-top:0px;">
+             <!-- <div class="container topspace">-->
+        <?php include('header.php'); ?>
+            
+        </div>
+        <!--/navbar-wrapper-ends-->
+
 
     <!-- Page Content -->
 
@@ -68,7 +70,7 @@
             <div class="col-xs-12 col-sm-6 col-md-8">
                 <h2 class="page-header">What is this..?</h2>
                 <p>Generally, open source refers to a computer program in which the source code is available to the general public for use and/or modification from its original design. Open-source code is typically created as a collaborative effort in which programmers improve upon the code and share the changes within the community. Open source sprouted in the technological community as a response to proprietary software owned by corporations.</p>
-                <p>Our aim is to Provide low cost IT solutions to various government and social organizations,  with the help of team of students of IIPS to help society, mankind and for betterment of education system by automation.</p>
+                <p></p>
                 <p>The concept of Free Software(Open Source), wherein knowledge is created by the community for the community, without being driven by commercial interests, must be extended to research to solve problems in health care, agriculture, energy and safe drinking water. -  A.P.J. Abdul Kalam</p>
             </div>
             <!-- <div class="col-xs-6 col-md-4">
@@ -186,7 +188,7 @@
     </div>
     <!-- /.container -->
     </div><br><br>
-     <div class="section-colored text-center">
+    <!--  <div class="section-colored text-center">
 
         <div class="container">
 
@@ -204,8 +206,6 @@
                      <li id='panel-3'>
                         <img src="images/opensource_legends/pranav_mistry.jpeg" class='img1'>
                         <p><b>Pranav Mistry</b> is the Head of Think Tank Team and Director of Research of Samsung Research America. Before that he was a Research Assistant and PhD candidate at the MIT Media Lab. In past, he worked with Microsoft, Google, CMU, NASA, UNESCO, Japan Science & Technology to name a few. He received my Master in Media Arts and Sciences from MIT and Master of Design from IIT Bombay. He received my bachelors degree in Computer Science and Engineering. He also dropped out of Architecture School prior to that. Palanpur, a small town situated in northern Gujarat in India, is my hometown.
-
-                     Exposure to fields like Design to Technology and from Art to Psychology gave me a quite nice/interesting viewpoint to the world. He love to see technology from design perspective and vice versa. This vision reflects in almost all of my projects and research work as well. in short, he do what he love and he love what he do. He is a 'Desigineer'.
                       </p>
                      </li>
                      <li id='panel-4'>
@@ -222,7 +222,7 @@
         </div>
         <!-- /.container -->
 
-    </div>
+    </div> -->
 
 
     <div class="container">

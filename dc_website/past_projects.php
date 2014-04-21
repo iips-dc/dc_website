@@ -19,86 +19,92 @@
 
 <body>
 
-    <?php 
+<?php 
         include ('header.php');
    ?>
 
-
     <div class="container">
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Projects
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="current_projects.php">Current Projects</a>
+                    </li>
+                    <li><a href="past_projects.php">Past Projects</a>
+                    </li>
+                    
+                </ol>
+            </div>
+
+        </div>
 
         <div class="row">
 
             <div class="col-lg-12">
-                <h1 class="page-header">Past DC Projects
-                
+                <h1 class="page-header">Past Projects
+                  
                 </h1>
-               
-            </div>
+                </div>
 
         </div>
 
         <div class="row">
 
-            <div class="col-md-7">
+            <div class="col-md-6 portfolio-item">
                 
-           
+                <h3><a href="portfolio-item.html">PCI </a>
+                </h3>
+                <p>loyed at 21 police stations of Indore city and nearby Districts.</p>
+            </div>
 
-            
-                <h3>PCI </h3>
+            <div class="col-md-6 portfolio-item">
               
-                <p>Deployed at 21 police stations of Indore city and nearby Districts. </p>
+                <h3><a href="portfolio-item.html">IMC</a>
+                </h3>
+                <p>Deployed at Indore Municipal Corporation. </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-6 portfolio-item">
                 
+                <h3><a href="portfolio-item.html">MYH </a>
+                </h3>
+                <p>Developed and Ready to be deployed at Maharaja Yashwant Rao Hospital, Indore .</p>
+            </div>
+
+            <div class="col-md-6 portfolio-item">
+               
+                <h3><a href="portfolio-item.html">Visa Facilitate Center </a>
+                </h3>
+                <p>Completed and ready to be Deployed at Visa Center, Jaisalmer House, Ministry of Home Affairs (Foreigners Division), Govt. of India, New Delhi
+            
+
+                </p>
             </div>
 
         </div>
 
-        <hr>
-
         <div class="row">
 
-            <div class="col-md-7">
-             
-                <h3>IMC</h3>
+            <div class="col-md-6 portfolio-item">
                 
-                <p>Deployed at Indore Municipal Corporation</p>
-                        </div>
-
-        </div>
-
-        <hr>
-
-        <div class="row">
-
-            <div class="col-md-7">
-           
-                <h3>MYH </h3>
-                <p>Developed and Ready to be deployed at Maharaja Yashwant Rao Hospital, Indore </p>
+                <h3><a href="portfolio-item.html">Grievances Redressal</a>
+                </h3>
+                <p>This project aims at the students/staff/faculties Complaint registration system . The current system is using the google docs forms . In future , the module will be linked with the webmail holders of IIPS.</p>
             </div>
 
-        </div>
-
-        <hr>
-
-        <div class="row">
-
-            <div class="col-md-7">
-                <h3>Visa Facilitate Center </h3>
+            <div class="col-md-6 portfolio-item">
                 
-                <p>Completed and ready to be Deployed at Visa Center, Jaisalmer House, Ministry of Home Affairs (Foreigners Division), Govt. of India, New Delhi </p>
+                <h3><a href="portfolio-item.html">Data Entry System</a>
+                </h3>
+                <p>The Mass Data Entry system of the users of IIPS, specially the students of the IIPS , for every year's new batch . The aim is to make this task more easy and user friendly .</p>
             </div>
-
-        </div>
-
-        <hr>
-
-        <div class="row">
-
-            <div class="col-md-7">
-            </div>
-
-
-
-
 
         </div>
 

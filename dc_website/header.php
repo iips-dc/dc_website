@@ -1,3 +1,7 @@
+ 	<?php session_start();
+ 		//if(isset($_SESSION['email']))
+  		//unset($_SESSION['email']);
+ 	?>
  	<div class="navbar-wrapper topspace downShadow" style="width:100% ; margin-top:0px;">
 			 <!-- <div class="container topspace">-->
 		 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -20,25 +24,20 @@
 							</li>
 							<li><a href="open_source.php">Open Source</a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">DC-Members <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="current_dcmembers.php">Current DC-members</a>
-									</li>
-									<li><a href="past_dcmembers.php">Past DC-members</a>
-									</li>
-								</ul>
+							<li><a href="what_we_are.php">Our Community</a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Projects <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li><a href="current_projects.php">Current Projects</a>
-									</li>
-									<li><a href="past_projects.php">Past Projects</a>
-									</li>
-								</ul>
+							<li><a href="current_projects.php">Projects</a>
 							</li>
-							<li><a href="signin.php"><i class="fa fa-google-plus"></i> Signin</a>
+							
+							<li><a href="signin.php"><i class="fa fa-google-plus"></i>
+								<?php 
+									if($_SESSION['email']){ 
+										echo $_SESSION['email'];
+									}
+									else{
+										echo $_SESSION['email'];
+									}
+							  ?></a>
 							</li>
 						</ul>
 					</div>

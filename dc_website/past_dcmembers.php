@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Past DC members</title>
+    <title>Past Contributers</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -29,20 +29,9 @@
 
     <div class="container">
 
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">PAST DC MEMBERS
-                    
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    
-                </ol>
-            </div>
-
-        </div>
+        <?php
+		include('taskbar.php');
+	?>
 
         
 

@@ -39,10 +39,10 @@
 
         <div class="row">
 
-            <div class="col-md-6">
-                <img class="img-responsive" src="images/dc-pos.jpeg">
+            <div class="col-md-3">
+                <img class="img-responsive" src="images/dc_main_logo.png">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-9">
                 <br><h2>History</h2><br>
                 <p>Envisioned in December 2000 immediate mission (in 2000) -Rendering low cost IT solutions to various government and social organizations, e-Governance and Social Computing Initiative Lead by the innovative instincts of its pro-active Director, nurtured with the acumen and resourcefulness of its pragmatic project managers of that time. IIPS-DC is driven passionate student teams working 24 X 7 with enthusiastic, committed and experts from Industries and Academia of its industrious team and Alumni. </p>
             </div>
