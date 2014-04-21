@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
-<head><title>Join Community</title>
+<head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <link rel="stylesheet" href="FormValidation.css">
-<script type="text/javascript" src="MyFormValidation.js" ></script>
+<!--<script type="text/javascript" src="MyFormValidation.js" ></script>-->
 <script>
 
 function onlyChars(event)
@@ -22,7 +22,7 @@ function onlyChars(event)
 
 </head>
 <body>
-<body style="background-color:white;">
+<body style="background-color:grey;">
 	<div class="container">
 		<div class="row"><!DOCTYPE html>
 <html>
@@ -47,32 +47,24 @@ function onlyChars(event)
 </script>
 </head>
 <body>
-	<?php
-		include('header.php');
-	?>
-	<?php
-		include('date_picker.php');
-	?>
-<body style="background-color:white;">
+<body style="background-color:grey;">
 	<div class="container">
-		<br>
-		<?php include('taskbar.php'); ?>
-		<h1></h1>
 		<div class="row">
+
+	<form role="form" method="post" id="theForm" action="r.php"> 
+	 		<div class="form-group">
 			
 			
-<div class="col-md-12" style="border:1px solid black;background-color:#EEEEEE;">
+<div class="col-md-12" style="border:1px solid black;background-color:grey;">
 	<label>
-		<br>
-		<h2>Entrance form to join the Community:</h2>
+		<h2>Student Entrance</h2>
 	</label><br/>
 	<label>Date of joining</label>
-		<form role="form" method="post"action="#"> 
-	 		<div class="form-group">
+		
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY"  id="datepicker"  name="doj" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY" name="doj" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -100,33 +92,12 @@ function onlyChars(event)
 	
 	<label>BirthDay</label>
 	<div class="row">
-	<div class="col-md-2">
-	<select class="form-control" name="month">
-  	<option>January</option>
-  	<option>February</option>
-  	<option>March</option>
-  	<option>April</option>
-  	<option>May</option>
-	<option>June</option>
-  	<option>July</option>
-  	<option>August</option>
-  	<option>September</option>
-  	<option>October</option>
-	<option>November</option>
-	<option>December</option>
-	</select>
+ 	 <div class="col-md-4">
+   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY" name="birthday" id="name"> <span id="nameError" class="green"></span>
+  	</div>
+  	
 	</div>
-	<div class="col-md-1">
-	<select class="form-control" name="date">
-	<script>var i;for(i=1;i<=31;i++){document.write("<option>"+i+"</option>");}</script>
-	</select>
-	</div>
-	<div class="col-md-2">
-	<select class="form-control" name="year">
-	<script>var i;for(i=1950; i<=2014; i++) {document.write("<option>"+i + "</option>");}</script>
-	</select>
-	</div>
-	</div>
+	
 
 	<label>Gender</label>
 	<div class="row">
@@ -218,25 +189,25 @@ function onlyChars(event)
 	<div class="row">
 	<div class="col-md-6">
 		<label>Father's name</label>
-	<input type="text" class="form-control" placeholder="Country Code" name="fathername">
+	<input type="text" class="form-control" name="fathername">
 	</div>
 	<div class="col-md-6">
 		<label>Contact no</label>
-	<input type="text" class="form-control" placeholder="STD Code" name="fathermobile">
+	<input type="text" class="form-control" name="fathermobile">
 	</div>
 	
 	</div>
 	<label>Father's Email ID</label>
- 	<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="fatheremail"> 	
+ 	<input type="email" class="form-control" id="inputEmail3" name="fatheremail"> 	
 	
  	<div class="row">
 	<div class="col-md-6">
 		<label>Guardian's Name</label>
-	<input type="text" class="form-control" placeholder="Country Code" name="guardianname">
+	<input type="text" class="form-control"  name="guardianname">
 	</div>
 	<div class="col-md-6">
 		<label>Contact no</label>
-	<input type="text" class="form-control" placeholder="STD Code" name="guardianmobile">
+	<input type="text" class="form-control" name="guardianmobile">
 	</div>
 	</div>
 
@@ -357,86 +328,6 @@ function onlyChars(event)
 				
 		</div>
 	</div>
-<?php
-
-
-$server = "localhost";
-$username = "root";
-$password="pulkit5-1";
-$database="dc_database";
-
-$con=mysqli_connect($server,$username,$password,$database);
-
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  
-  }
-  
-  
-  $doj=$_POST['doj'];
-  $firstname=$_POST['firstname'];
-  $midname=$_POST['midname'];
-  $lastname=$_POST['lastname'];
-  $month=$_POST['month'];
-  $date=$_POST['date'];
-  $year=$_POST['year'];
-  $gender=$_POST['gender'];
-  $bloodgroup=$_POST['bloodgroup'];
-  $interest=$_POST['interest'];
-  $skills=$_POST['skills'];
-  $currentaddress=$_POST['currentaddress'];
-  $permanentaddress=$_POST['permanentaddress'];
-  $countrycode=$_POST['countrycode'];
-  $stdcode=$_POST['stdcode'];
-  $studmobile=$_POST['studmobile'];
-  $studemail=$_POST['studemail'];
-  $github=$_POST['github'];
-  $fathername=$_POST['fathername'];
-  $fathermobile=$_POST['fathermobile'];
-  $fatheremail=$_POST['fatheremail'];
-  $guardianname=$_POST['guardianname'];
-  $guardianmobile=$_POST['guardianmobile'];
-  $schoolname=$_POST['schoolname'];
-  $tenthper=$_POST['tenthper'];
-  $twealthper=$_POST['twealthper'];
-  $course=$_POST['course'];
-  $semester=$_POST['semester'];
-  $cgpa=$_POST['cgpa'];
-  $onlinecourses=$_POST['onlinecourses'];
-  $projectname=$_POST['projectname'];
-  $projecttype=$_POST['projecttype'];
-  $projectduration=$_POST['projectduration'];
-  $projectdescr=$_POST['projectdescr'];
-  $knowdc=$_POST['knowdc'];
-  $referencename=$_POST['referencename'];
-  $whychoose=$_POST['whychoose'];
-  
-  
-/*
-    echo $firstname . " " . $doj . " " . $firstname . " " . $midname . " " . $lastname . " " . $month . " " . " " . $year . " " . $gender . " " . $bloodgroup . " " . $interest . " " . " " . $currentaddress . " " . $permanentaddress . " " . 
- $countrycode . " " . $stdcode . " " . $studmobile . " " . $studemail . " " . $github . " " . $fathername . " " . $fathermobile . " " . $fatheremail . " " .  $guardianname . " " . $guardianmobile . " " .  $schoolname . " " . 
- $tenthper . " " . $twealthper . " " . $course . " " . $semester . " " . $cgpa . " " . $onlinecourses . " " . $projectname . " " . $projectduration . " " . $projectdescr . " " . $knowdc . " " . $referencename . " " . $whychoose ;
-*/
-
- $sql="INSERT INTO entrance ('s_no','doj', 'firstname', 'midname', 'lastname', 'month', 'date', 'year', 'gender', 'bloodgroup', 'interest', 'skills', 'currentaddress', 'permanentaddress', 
- 'countrycode', 'stdcode', 'studmobile', 'studemail', 'github', 'fathername', 'fathermobile', 'fatheremail', 'guardianname', 'guardianmobile', 'schoolname', 
-'tenthper', 'twealthper', 'course', 'semester', 'cgpa', 'onlinecourses', 'projectname', 'projectduration', 'projectdescr', 'knowdc', 'referencename', 'whychoose' ) VALUES('','$doj', '$firstname', '$midname', '$lastname', '$month', '$date', '$year', '$gender', '$bloodgroup', '$interest', '$skills', '$currentaddress', '$permanentaddress', 
- '$countrycode', '$stdcode', '$studmobile', '$studemail', '$github', '$fathername', '$fathermobile', '$fatheremail', '$guardianname', '$guardianmobile', '$schoolname', 
-'$tenthper', '$twealthper', '$course', '$semester', '$cgpa', '$onlinecourses', '$projectname', '$projectduration', '$projectdescr', '$knowdc', '$referencename', '$whychoose' ) ";
-  $var=mysqli_query($con,$sql)
-
-  
-
-
-?>
-	 <script src="js/jquery-1.10.2.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/modern-business.js"></script>
-    <br><br>
-    <?php include('footer.php'); ?>
-
 
 </body>
 </html>
