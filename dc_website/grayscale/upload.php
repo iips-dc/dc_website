@@ -1,6 +1,6 @@
 <?php
 session_start();
-$rollno=$_SESSION['rollno'];
+$id=$_SESSION['id'];
 $allowedExts = array("gif", "jpeg", "jpg", "png");
 $temp = explode(".", $_FILES["file"]["name"]);
 $extension = end($temp);
@@ -30,7 +30,7 @@ if ((($_FILES["file"]["type"] == "image/gif")
       }
     else
       {
-	  $_FILES["file"]["name"]= $rollno . '.jpg';
+	  $_FILES["file"]["name"]= $id . '.jpg';
       move_uploaded_file($_FILES["file"]["tmp_name"],
       "images/" . $_FILES["file"]["name"]);
       echo "Stored in: " . "images/" . $_FILES["file"]["tmp_name"];
