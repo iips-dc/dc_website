@@ -39,8 +39,8 @@
 		<br>
 		
 		
-		<form name='printprofile' action='profile.php' method='post'>
-			Serial No: <input type="text" class='form-control' name='sno'>
+		<form name='printprofile' action='Front.php' method='post'>
+			ID: <input type="text" class='form-control' name='id'>
 	
 			<input type="submit" class="btn btn-primary">
 		</form>
