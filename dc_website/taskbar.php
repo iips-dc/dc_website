@@ -5,7 +5,7 @@
                     
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="what_we_are.php">What we are?</a>
+                    <li><a href="what_we_are.php">Who we are?</a>
                     </li>
                     <li><a href="current_dcmembers.php">Current Contributers</a>
                     </li>

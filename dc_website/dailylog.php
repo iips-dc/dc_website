@@ -27,44 +27,31 @@
 
    <?php 
         include ('header.php');
+        include ('taskbar_signin.php')
    ?>
-    <div class="row">
-
-            <div class="col-lg-12">
-                <h1 class="page-header">Our Community
-                    
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#">Insert Log</a>
-                    </li>
-                    <li><a href="signin.php">Back</a>
-                    </li>                    
-                </ol>
-            </div>
-
-        </div>
+   
 
 
           
             </div>
    <form role="form" method="post" action="#">
-		   <div class="row">
-			  <div class="col-xs-2">
-			    <input type="text" class="form-control" placeholder="Date" name="date" id="datepicker" >
-			  </div>
+       <div class="row">
+        <div class="col-xs-2">
+          <input type="text" class="form-control" placeholder="Date" name="date" id="datepicker" >
+        </div>
         <div class="col-xs-2">
           <input type="text" class="form-control" placeholder="member_id" name="member_id">
         </div>
-			  <div class="col-xs-4">
-			    <input type="text" class="form-control" placeholder="Daily Log" name="log">
-			  </div>
-			  <div class="col-xs-3">
-			    <input type="text" class="form-control" placeholder="Link(if any)" name="link">
-			  </div>
-			</div>
+        <div class="col-xs-4">
+          <input type="text" class="form-control" placeholder="Daily Log" name="log">
+        </div>
+        <div class="col-xs-3">
+          <input type="text" class="form-control" placeholder="Link(if any)" name="link">
+        </div>
+      </div>
       <br>
-			<input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
-	</form>
+      <input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
+  </form>
 
   <?php
 
