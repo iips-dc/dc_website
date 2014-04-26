@@ -35,7 +35,7 @@
             include('taskbar.php');
        ?>
         <div class="container well" >
-    <h2><center>What we are..?</center></h2>
+    <h2><center>Who we are..?</center></h2>
 </div>
 <div id="footer">
     <div class="container">

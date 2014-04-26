@@ -1,12 +1,15 @@
 <?php
 include ('header.php');
+echo "<br><br><br>";
+include ('taskbar_signin.php');
+echo "<br><br>";
 $connect=mysqli_connect('localhost','root','pulkit5-1','dc_database');
   if($connect)
     echo "Connected";
   else
     echo "Not connected";
 
-    $retrival=mysqli_query($connect,"SELECT * FROM `dc_member_master` WHERE email = ''");
+    $retrival=mysqli_query($connect,"SELECT * FROM `dc_member_master` WHERE email ='$email'");
 
     if(!$retrival)
 {
@@ -54,7 +57,7 @@ $database="dc_database";
 $id = $_SESSION['id'];
 
 $con=mysqli_connect($server,$username,$password,$database);
-echo'<script>alert("Member ID' . $_SESSION['id'] . '");</script>';
+//echo'<script>alert("Member ID' . $_SESSION['id'] . '");</script>';
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -119,8 +122,8 @@ if(isset($_POST['editsubmit']))
 	  $lastname=$_POST['lastname'];
 	  $birthday=$_POST['birthday'];
 	  $gender=$_POST['gender'];
-	  $bloodgroup=$_POST['bloodgroup'];
-	  $localaddress=$_POST['localaddress'];
+	  $bloodgroup=$_POST['bloodgroup']
+;	  $localaddress=$_POST['localaddress'];
 	  $parmanentaddress=$_POST['parmanentaddress'];
 	  $fathername=$_POST['fathername'];
 	  $mothername=$_POST['mothername'];
@@ -139,11 +142,11 @@ if(isset($_POST['editsubmit']))
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<title>International Institute of Professional Studies</title>
+	<title>Development Center</title>
 
 	<script>
 	 function slow(e)
- 	{
+ 	
   	e.scrollAmount=0;
 	}
   	function fast(e)
@@ -154,7 +157,7 @@ if(isset($_POST['editsubmit']))
 	</head>
 	<body>
 		<div class="container" style="border:2px solid;">
-			<nav class="navbar navbar-default navbar-static-top text-center" style="background-color:grey;border-radius:5px"> <label style="color:white"><h2>International Institute of Professional Studies</h2></label></nav>
+			<nav class="navbar navbar-default navbar-static-top text-center" style="background-color:#EEEEEE;border-radius:5px"> <label style="color:grey"><h2>Development Center</h2></label></nav>
          <!--		 <nav class="navbar navbar-default navbar-static-top text-center" style="background-color:grey;border-radius:1px"> <label style="color:white"><h3>Profile</h3></label></nav> -->
 			<!-- img tag is started-->
 			   <h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbspStudent Profile</h3>
@@ -200,60 +203,60 @@ if(isset($_POST['editsubmit']))
 				<div>Name';
 				space(24);
 				
-echo '-  <input type="text" class="editme" name="firstname" size="10" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' .$firstname .'  "><input type="text" class="editme" size="10" name="midname" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' . $midname . '"> <input type="text" class="editme" name="lastname" size="10" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' . $lastname  . '"> </div>
+echo '  <input type="text" class="editme" name="firstname" size="10" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' .$firstname .'  "><input type="text" class="editme" size="10" name="midname" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' . $midname . '"> <input type="text" class="editme" name="lastname" size="10" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" disabled value="' . $lastname  . '"> </div>
 		
 				<div>Member ID ';
 				space(9);
-				echo '-  <input type="text" name="id" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $id .'  "> </div>
+				echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="id" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $id .'  "> </div>
 
 				<div>Father name ';
 				space(9);
-				echo '-  <input type="text" name="fathername" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $fathername .'  "> </div>
+				echo '&nbsp;&nbsp;&nbsp;  <input type="text" name="fathername" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $fathername .'  "> </div>
 				
 				<div>Guardian name ';
-				space(9);
-				echo '-  <input type="text" name="guardianname" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $guardianrname .'  "> </div>
+				space(8);
+				echo '  <input type="text" name="guardianname" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $guardianrname .'  "> </div>
 
 				<div>Mother name ';
 				space(9);
-				echo '-  <input type="text" name="mothername" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $mothername .'  "> </div>
+				echo '&nbsp;&nbsp;  <input type="text" name="mothername" class="editme" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="'  . $mothername .'  "> </div>
 				
 				<div>Date of birth';
 				space(14);
-				echo '-  <input type="text" class="editme" name="birthday"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" size="10" disabled  value=" ' . $birthday . '"></div>
+				echo '  <input type="text" class="editme" name="birthday"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white" size="10" disabled  value=" ' . $birthday . '"></div>
 				
 				<div>Gender ';
 				space(20);
-				echo '-  <input type="text" size="5" class="editme" name="gender"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="' . $gender . '"> </div>
+				echo '&nbsp;  <input type="text" size="5" class="editme" name="gender"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="' . $gender . '"> </div>
 				
 				<div>Course ';
-				space(20);
-				echo '-  <input type="text" class="editme" name="course"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $course.' "> </div>
+				space(21);
+				echo '  <input type="text" class="editme" name="course"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $course.' "> </div>
 				
 				<div>Parmanent Address';
-				space(19);
-				echo '-  <input type="text" class="editme" name="parmanentaddress" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $parmanentaddress . ' "> </div>
+				space(2);
+				echo '  <input type="text" class="editme" name="parmanentaddress" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $parmanentaddress . ' "> </div>
 				
 				<div>Local Address';
-				space(19);
-				echo '-  <input type="text" class="editme" name="localaddress" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $localaddress . ' "> </div>
+				space(11);
+				echo '  <input type="text" class="editme" name="localaddress" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $localaddress . ' "> </div>
 
 				<div>Linkedin ';
-				space(24);
-				echo '-  <input type="text" class="editme" name="linkedin"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $linkedin .  ' "> </div>
+				space(18);
+				echo '&nbsp;  <input type="text" class="editme" name="linkedin"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $linkedin .  ' "> </div>
 				
 				<div>Github ';
-				space(24);
-				echo '-  <input type="text" class="editme" name="github"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $github .  ' "> </div>
+				space(21);
+				echo '&nbsp;  <input type="text" class="editme" name="github"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $github .  ' "> </div>
 
 
 				<div>Blood Group ';
-				space(20);
-				echo '-  <input type="text" class="editme" name="bloodgroup"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $bloodgroup . '"> </div>
+				space(13);
+				echo '  <input type="text" class="editme" name="bloodgroup"  style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value=" ' . $bloodgroup . '"> </div>
 				
 				<div> Sem of joining';
-				space(12);
-				echo '-  <input type="text" class="editme" name="soj" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="  ' . $soj . '"> </div>
+				space(11);
+				echo '  <input type="text" class="editme" name="soj" style="color:blue;border-color:white;border-top:white;border-left:white;background-color:white"  disabled  value="  ' . $soj . '"> </div>
 				
 			    '
 				?>
@@ -267,6 +270,13 @@ echo '-  <input type="text" class="editme" name="firstname" size="10" style="col
 				</form>
 				</div>
 				<div class="col-md-3">
+				<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/vaishnavpulkit"  data-widget-id="459712514687647744">Tweets by @vaishnavpulkit</a>
+    			<script>
+    				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    			</script>
+				</div>
+
+				<!--<div class="col-md-3">
 					<div class="panel panel-default" style="border:1px solid grey;">
 						<div class="panel-heading text-center" style="background-color:grey;border-bottom:1px solid grey;color:white;height:40px">
 						<label>Updates</label>
@@ -281,15 +291,16 @@ echo '-  <input type="text" class="editme" name="firstname" size="10" style="col
 							</marquee>						
 						</div>
 					</div>	
-				</div>	
+				</div>-->
 				
 			</div>
                
 
-			<footer class="text-center">
-				Developer : Sachin Tanwar & pulkit vaishnav
-			</footer>
-		</div>	
+			
+		</div>
+		<br><br>
+		<br>
+		
 		
 	<script>
 	function editme()
@@ -326,6 +337,7 @@ echo '-  <input type="text" class="editme" name="firstname" size="10" style="col
 	
 	
 	</script>
+	<?php include('footer.php') ?>
 		
 	</body>
 </html>
