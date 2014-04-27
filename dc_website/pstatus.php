@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Development Center</title>
+    <title>projects</title>
 
     <!-- Bootstrap core CSS -->
       <?php
@@ -28,32 +28,18 @@
    <?php 
         include ('header.php');
    ?>
-    <div class="row">
+    <br><br>
 
-            <div class="col-lg-12">
-                <h1 class="page-header">Our Community
-                    
-                </h1>
-                <ol class="breadcrumb">
-                    <li><a href="#">Insert Log</a>
-                    </li>
-                    <li><a href="signin.php">Back</a>
-                    </li>                    
-                </ol>
-            </div>
-
-        </div>
-
-
+    <div class="container">
           
-            </div>
-   <form role="form" method="post" action="#">
+          
+   <!-- <form role="form" method="post" action="#">
 		   <div class="row">
 			  <div class="col-xs-2">
 			    <input type="text" class="form-control" placeholder="Date" name="date" id="datepicker" >
 			  </div>
         <div class="col-xs-2">
-          <input type="text" class="form-control" placeholder="member_id" name="member_id">
+          <input type="text" class="form-control" placeholder="project_id" name="project_id">
         </div>
 			  <div class="col-xs-4">
 			    <input type="text" class="form-control" placeholder="Daily Log" name="log">
@@ -64,13 +50,13 @@
 			</div>
       <br>
 			<input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
-	</form>
+	</form> -->
 
   <?php
 
 $DBServer = 'localhost';
 $DBUser   = 'root';
-$DBPass   = 'pulkit5-1';
+$DBPass   = 'root';
 $DBName   = 'dc_database';
 $conn = mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
  
@@ -81,35 +67,39 @@ if (mysqli_connect_errno()) {
 
 
 
-if(isset($_POST['submit'])){
-$date=$_POST['date'];
-$log=$_POST['log'];
-$link=$_POST['link'];
-$member_id=$_POST['member_id'];
-$sql= "INSERT INTO `dc_database`.`daily_log` (`date`,`log`,`link`,`s_no`,`member_id`) VALUES ('$date', '$log','$link',' ','$member_id');";
- mysqli_query($conn, $sql);
-}
-$sql='SELECT * FROM daily_log';
+// if(isset($_POST['submit']))
+// {
+//   $date=$_POST['date'];
+//   $log=$_POST['log'];
+//   $link=$_POST['link'];
+//   $member_id=$_POST['member_id'];
+//   $sql= "INSERT INTO `dc_database`.`daily_log` (`date`,`log`,`link`,`s_no`,`member_id`) VALUES ('$date', '$log','$link',' ','$member_id');";
+//    mysqli_query($conn, $sql);
+// }
+$sql='SELECT * FROM projects';
  
 ?>
 <?php
-$con=mysqli_connect("localhost","root","pulkit5-1","dc_database");
+$con=mysqli_connect("localhost","root","root","dc_database");
 // Check connection
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$result = mysqli_query($con,"SELECT * FROM daily_log ORDER BY date DESC");
+$result = mysqli_query($con,"SELECT * FROM projects ");
 
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
+
+  echo "<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'PROJECT TYPE'."<td>". 'PROJECT LEADER'."<td>". 'TEAM_MEMBERS'."<td>". 'PROJECT STATUS'."<td>". 'TEAM ID'."<td>". 'DC PAGE LINK'."<td>". 'GITHUB PAGE LINK';
+ 
 
 while($row = mysqli_fetch_array($result))
   {
     
   echo "<tr>";
-  echo "<td>".$row['member_id']."<td>". $row['date'] . "<td>" . $row['log']."<td>". $row['link'];
+  echo "<td>".$row['project_id']."<td>". $row['project_name'] . "<td>" . $row['project_type']."<td>". $row['project_leader']."<td>". $row['team_members']."<td>". $row['project_status']."<td>". $row['team_id']."<td>". $row['dc_page_link']."<td>". $row['github_page_link'];
   echo "</tr>";
  
   }
@@ -119,9 +109,12 @@ while($row = mysqli_fetch_array($result))
 mysqli_close($con);
 ?>
 
+  </div>
 
   
-
+<?php 
+        include ('footer.php');
+   ?>
 </body>
 
 </html>
