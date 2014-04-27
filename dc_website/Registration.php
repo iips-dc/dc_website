@@ -46,10 +46,11 @@ function onlyChars(event)
 
 </script>
 </head>
-<body>
-	<?php
+<?php
 		include('header.php');
 	?>
+<body>
+	
 	<?php
 		include('date_picker.php');
 	?>
