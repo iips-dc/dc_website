@@ -35,7 +35,8 @@
                     </li>
                     <li><a href="past_projects.php">Past Projects</a>
                     </li>
-                    
+                    <li><a href="pstatus.php">Projects Report</a>
+                    </li>
                 </ol>
             </div>
 

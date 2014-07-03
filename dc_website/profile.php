@@ -122,8 +122,8 @@ if(isset($_POST['editsubmit']))
 	  $lastname=$_POST['lastname'];
 	  $birthday=$_POST['birthday'];
 	  $gender=$_POST['gender'];
-	  $bloodgroup=$_POST['bloodgroup'];
-	  $localaddress=$_POST['localaddress'];
+	  $bloodgroup=$_POST['bloodgroup']
+;	  $localaddress=$_POST['localaddress'];
 	  $parmanentaddress=$_POST['parmanentaddress'];
 	  $fathername=$_POST['fathername'];
 	  $mothername=$_POST['mothername'];
@@ -271,8 +271,10 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
 				</div>
 				<div class="col-md-3">
 				<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/vaishnavpulkit"  data-widget-id="459712514687647744">Tweets by @vaishnavpulkit</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
+    			<script>
+    				!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+    			</script>
+				</div>
 
 				<!--<div class="col-md-3">
 					<div class="panel panel-default" style="border:1px solid grey;">
@@ -298,7 +300,7 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
 		</div>
 		<br><br>
 		<br>
-		<?php include('footer.php') ?>
+		
 		
 	<script>
 	function editme()
@@ -335,6 +337,7 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
 	
 	
 	</script>
+	<?php include('footer.php') ?>
 		
 	</body>
 </html>

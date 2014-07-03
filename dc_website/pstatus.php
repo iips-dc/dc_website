@@ -29,6 +29,19 @@
         include ('header.php');
    ?>
     <br><br>
+    <div class="col-lg-12">
+                <h1 class="page-header">Projects
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="current_projects.php">Current Projects</a>
+                    </li>
+                    <li><a href="past_projects.php">Past Projects</a>
+                    </li>
+                    <li><a href="pstatus.php">Projects Report</a>
+                    </li>
+                </ol>
+            </div>
 
     <div class="container">
           
@@ -56,7 +69,7 @@
 
 $DBServer = 'localhost';
 $DBUser   = 'root';
-$DBPass   = 'root';
+$DBPass   = 'pulkit5-1';
 $DBName   = 'dc_database';
 $conn = mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
  
@@ -80,7 +93,7 @@ $sql='SELECT * FROM projects';
  
 ?>
 <?php
-$con=mysqli_connect("localhost","root","root","dc_database");
+$con=mysqli_connect("localhost","root","pulkit5-1","dc_database");
 // Check connection
 if (mysqli_connect_errno())
   {
@@ -92,7 +105,7 @@ $result = mysqli_query($con,"SELECT * FROM projects ");
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
 
-  echo "<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'PROJECT TYPE'."<td>". 'PROJECT LEADER'."<td>". 'TEAM_MEMBERS'."<td>". 'PROJECT STATUS'."<td>". 'TEAM ID'."<td>". 'DC PAGE LINK'."<td>". 'GITHUB PAGE LINK';
+  echo "<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'PROJECT TYPE'."<td>". 'PROJECT LEADER'."<td>". 'TEAM_MEMBERS'."<td>". 'TEAM ID'."<td>". 'DC PAGE LINK'."<td>". 'GITHUB PAGE LINK';
  
 
 while($row = mysqli_fetch_array($result))
