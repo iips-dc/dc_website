@@ -23,7 +23,8 @@
   <link href="css/modern-business.css" rel="stylesheet">
   <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <?php endblock(); ?>
-    <?php startblock('content');
+    <?php startblock('content'); ?>
+      <?php
 
         include_once "base_signin.php";
 
@@ -89,7 +90,7 @@
           $token_data = $client->verifyIdToken()->getAttributes();
         }
 
-        #echo pageHeader("");
+        echo pageHeader("");
        
          if (
             $client_id == '560967921691-2jo97te2doofvla3ggrgh222q1i42vdg.apps.googleusercontent.com'
@@ -160,10 +161,10 @@
           <?php endif ?>
          
         </div>
-        <br><br><br><br><br><br><br><br><br><br><br><br><br>  
-  <?php endblock(); ?>
-
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+      
   
+  <?php endblock(); ?>
   <?php startblock('script'); ?>
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>

@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Development Center</title>
+    <title>Admin</title>
 
     <!-- Bootstrap core CSS -->
       <?php
@@ -23,26 +23,26 @@
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body>
-
+  <div class= "container">
 
    <?php 
         include ('header.php');
-        include ('taskbar_signin.php')
+        include ('admin_taskbar.php')
    ?>
    
 
 
           
-            </div>
-   <form role="form" method="post" action="#">
+    <div class= "container">
+   <!-- <form role="form" method="post" action="#">
        <div class="row">
         <div class="col-xs-5">
          
              
-              <select class="form-control" placeholder="DC member" name="pro">
-              <option value="it-2k11-25">Pulkit Vaishnav</option>
-              <option value="it-2k11-32">Sachin Tanwar</option>
-              <option value="it-2k11-10">Devendra Malviya</option>
+              <select class="form-control" placeholder="Projects" name="pro">
+              <option value="p01">IIPS Website</option>
+              <option value="p02">DC website</option>
+              <option value="DAVV Tube">DAVV Tube</option>
               <option value="all">All</option>
               </select>
               
@@ -50,7 +50,7 @@
       </div>
       <br>
       <input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
-  </form>
+  </form> -->
 
 
 
@@ -63,11 +63,11 @@ if (mysqli_connect_errno())
   }
   if(isset($_POST['submit'])){
           if($_POST['pro']=='all'){
-            $result = mysqli_query($con,"SELECT * FROM daily_log  ");
+            $result = mysqli_query($con,"SELECT * FROM projects  ");
 
           }
           else{
-            $result = mysqli_query($con,"SELECT * FROM daily_log WHERE member_id= '".$_POST['pro']." ' ");
+            $result = mysqli_query($con,"SELECT * FROM projects WHERE project_id= '".$_POST['pro']." ' ");
           }
 
           
@@ -79,7 +79,7 @@ while($row = mysqli_fetch_array($result))
   {
     
   echo "<tr>";
-  echo "<td>".$row['member_id']."<td>". $row['date'] . "<td>" . $row['log']."<td>". $row['link'];
+  echo "<td>".$row['project_name']."<td>". $row['project_type'] . "<td>" . $row['Project Description']."<td>". $row['project_leader'];
   echo "</tr>";
  
   }
@@ -92,7 +92,7 @@ mysqli_close($con);
 
 
 ?>
-
+</div>
 
   
 
