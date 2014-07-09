@@ -15,7 +15,7 @@
                     <p>Help</p>
             </div>
                 <div class="col-lg-3 col-md-3">
-                    <p>Copyright &copy;<?php echo date('Y');?></p>
+                    <p>Copyright &copy; Company 2013</p>
             </div>
         </footer>
     </div>

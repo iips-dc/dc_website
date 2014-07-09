@@ -90,7 +90,7 @@
           $token_data = $client->verifyIdToken()->getAttributes();
         }
 
-        echo pageHeader("");
+        echo pageHeader("Welcome to the Development Center");
        
          if (
             $client_id == '560967921691-2jo97te2doofvla3ggrgh222q1i42vdg.apps.googleusercontent.com'
@@ -99,27 +99,12 @@
           // echo missingClientSecretsWarning();
         }
         ?>
-        <?php
-        if($_SESSION['email']==""){
-
-      }else{
-         include('taskbar_signin.php'); 
-      }?>
-         <div class="row">
-
-            <div class="col-lg-12">
-               
-
-            </div>
-
-        </div>
-
         <div class="box">
           <div class="request">
             <?php if (isset($authUrl)): ?>
               <a class='login btn' href='<?php echo $authUrl; ?>'>Sign in with Google</a>
             <?php else: ?>
-              <br><br>
+              <a class='logout' href='?logout'>Logout</a><br><br>
                <a href="dailylog.php">Daily Log</a><br><br>
             <?php endif ?>
           </div>
@@ -130,7 +115,7 @@
               //session_start();
              // require_once 'connect.inc.php';
               $_SESSION['email']=$token_data['payload']['email'];
-              
+              echo ($email);
               echo $_SESSION['email'];
               $sql='SELECT email FROM DC_MEMBER_REGULAR';
                  
