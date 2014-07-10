@@ -18,14 +18,7 @@
 	</head>
 
 	<?php
-		require 'date_picker.php';
-		$dbserver = "localhost";
-		$dbname = "dc_database";
-		$username = "root";
-		$password = "root";
-		$error = "Can't connect";
-
-		$dbconnect = mysqli_connect($dbserver, $username, $password, $dbname) or die('Connection error');
+		require ('database_connect.php');
 	?>
 
 	<body style="background-color:#EEEEEE;">
@@ -148,7 +141,6 @@
 				$submission_time = $_POST['submission_time'];
 				$detail = $_POST['detail'];
 
-				//	INSERT INTO `dc_database`.`issued_books_to` (`book_id`, `book_title`, `issue_by`, `issue_to`, `date`, `time`, `submission_date`, `submission_time`, `details`) VALUES ('1', 'Data Science', 'vedi', 'Prashant', '2014-07-01', '12:00:00', '2014-07-04', '12:00:00', 'open');
 				$query = "INSERT INTO `issued_books_to` (`book_id`, `book_title`, `issue_by`, `issue_to`, `date`, `time`, `submission_date`, `submission_time`, `details`) VALUES('$book_id', '$book_title','$issued_by', '$issued_to', '$issued_date', '$issued_time', '$submission_date', '$submission_time', '$detail')";
 				$query_run = mysqli_query($dbconnect, $query);
 			}
