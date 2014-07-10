@@ -30,11 +30,11 @@ else
 if(isset($_POST['submit']))
 {
 	echo 'button clicked';
-$date=$_POST['date'];
-$log=$_POST['log'];
-$link=$_POST['link'];
-$sql= "INSERT INTO `DAILY_LOG` VALUES('$date', '$log','$link','')";
-mysql_query($sql) or die("error in inserting");
+	$date=$_POST['date'];
+	$log=$_POST['log'];
+	$link=$_POST['link'];
+	$sql= "INSERT INTO `DAILY_LOG` VALUES('$date', '$log','$link','')";
+	mysql_query($sql) or die("error in inserting");
 }
 else
 echo "not submitted";
