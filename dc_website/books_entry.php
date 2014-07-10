@@ -34,7 +34,7 @@
 
         	</div>
 
-        	<form role="form" action="resource_entry.php" method="POST">
+        	<form role="form" action="books_entry.php" method="POST">
         		<div class="form-group">
 					<div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
 						<label>
