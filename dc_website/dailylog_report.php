@@ -27,7 +27,7 @@
 
    <?php 
         include ('header.php');
-        include ('admin_taskbar.php');
+        include ('taskbar_signin.php')
    ?>
    
 
@@ -55,7 +55,7 @@
 
 
 <?php
-$con=mysqli_connect("localhost","root","pulkit5-1","dc_database");
+$con=mysqli_connect("localhost","root","root","dc_database");
 // Check connection
 if (mysqli_connect_errno())
   {

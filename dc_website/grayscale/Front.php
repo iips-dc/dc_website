@@ -1,40 +1,4 @@
 <?php
-include ('header.php');
-$connect=mysqli_connect('localhost','root','pulkit5-1','dc_database');
-  if($connect)
-    echo "Connected";
-  else
-    echo "Not connected";
-
-    $retrival=mysqli_query($connect,"SELECT * FROM `dc_member_master` WHERE email = ''");
-
-    if(!$retrival)
-{
-}
-
-while($row = mysqli_fetch_array($retrival, MYSQL_ASSOC))
-{
-    $id = $row['member_id'];
-    $firstname = $row['first_name'];
-    $lastname = $row['last_name'];
-    $midname=$row['mid_name'];
-    $github= $row['github_id'];
-	$birthday=$row['date_of_birth'];
-	$gender=$row['gender'];
-	$bloodgroup=$row['blood_group'];
-	$localaddress=$row['local_address'];
-	$parmanentaddress=$row['parmanent_address'];
-	$fathername=$row['father_name'];
-	$mothername=$row['mother_name'];
-	$guardianname=$row['guardian_name'];
-	$course=$row['course_name'];
-	$linkedin=$row['linkedin_id'];
-	$soj=$row['sem_of_joining'];
-  
-
-}
-?>
-<?php
 session_start();
 
 
@@ -46,7 +10,7 @@ function space($no)
 
 $server = "localhost";
 $username = "root";
-$password="pulkit5-1";
+$password="root";
 $database="dc_database";
 
 
@@ -103,7 +67,7 @@ if(isset($_POST['editsubmit']))
  
 	
   
-/*
+
   
   $sql="select * from dc_member_master where member_id='$id'";
   
@@ -130,7 +94,7 @@ if(isset($_POST['editsubmit']))
 	  $linkedin=$_POST['linkedin'];
 	  $soj=$_POST['soj'];
   
-  */
+  
 ?>
 
 <!DOCTYPE html>
@@ -191,7 +155,6 @@ if(isset($_POST['editsubmit']))
 				
 				
 				<form action='' method='post'>
-					
 				
 				<?php 
 

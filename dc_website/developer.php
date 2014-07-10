@@ -76,9 +76,9 @@
                  <ul class="list-unstyled list-inline list-social-icons">
                     <li class="tooltip-social facebook-link"><a href="https://www.facebook.com/sachin.tanwar.395" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
                     </li>
-                    <li class="tooltip-social linkedin-link"><a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    <li class="tooltip-social linkedin-link"><a href="http://www.linkedin.com/profile/view?id=304350494&trk=nav_responsive_tab_profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
                     </li>
-                    <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    <li class="tooltip-social twitter-link"><a href="https://twitter.com/sachintanwar69" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
                     </li>
                     <li class="tooltip-social google-plus-link"><a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a>
                     </li></p>

@@ -31,8 +31,7 @@
 							
 							<li><a href="signin.php"><i class="fa fa-google-plus"></i>
 								<?php 
-									$email=$_SESSION['email'];
-									if($email){ 
+									if($_SESSION['email']){ 
 										echo $_SESSION['email'];
 									}
 									else{

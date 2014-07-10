@@ -35,6 +35,12 @@
                     </li>
                     <li><a href="past_projects.php">Past Projects</a>
                     </li>
+                    <li><a href="review.php">Project Reviews</a>
+                    </li>
+                    <li><a href="documentation.php">Documentation</a>
+                    </li>
+                    <li><a href="add_project.php">Add Project</a>
+                    </li>
                     
                 </ol>
             </div>
@@ -158,6 +164,9 @@
         </footer>
 
     </div>
+<?php
+        include('footer.php');
+    ?>
     <!-- /.container -->
 
     <!-- JavaScript -->
