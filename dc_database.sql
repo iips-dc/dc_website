@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.0.4
+-- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 16, 2014 at 03:28 PM
--- Server version: 5.6.12-log
--- PHP Version: 5.4.12
+-- Generation Time: Jul 12, 2014 at 01:29 PM
+-- Server version: 5.5.37-0ubuntu0.14.04.1
+-- PHP Version: 5.5.9-1ubuntu4.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -28,6 +28,7 @@ USE `dc_database`;
 -- Table structure for table `achievements`
 --
 
+DROP TABLE IF EXISTS `achievements`;
 CREATE TABLE IF NOT EXISTS `achievements` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `member_id` varchar(15) NOT NULL,
@@ -42,6 +43,7 @@ CREATE TABLE IF NOT EXISTS `achievements` (
 -- Table structure for table `alumni`
 --
 
+DROP TABLE IF EXISTS `alumni`;
 CREATE TABLE IF NOT EXISTS `alumni` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) NOT NULL,
@@ -57,6 +59,7 @@ CREATE TABLE IF NOT EXISTS `alumni` (
 -- Table structure for table `alumni_status`
 --
 
+DROP TABLE IF EXISTS `alumni_status`;
 CREATE TABLE IF NOT EXISTS `alumni_status` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `status` varchar(40) NOT NULL,
@@ -69,6 +72,7 @@ CREATE TABLE IF NOT EXISTS `alumni_status` (
 -- Table structure for table `assignment`
 --
 
+DROP TABLE IF EXISTS `assignment`;
 CREATE TABLE IF NOT EXISTS `assignment` (
   `assignment_id` varchar(15) NOT NULL,
   `assigned_by` varchar(30) NOT NULL,
@@ -84,6 +88,7 @@ CREATE TABLE IF NOT EXISTS `assignment` (
 -- Table structure for table `attendence`
 --
 
+DROP TABLE IF EXISTS `attendence`;
 CREATE TABLE IF NOT EXISTS `attendence` (
   `s_no` int(2) NOT NULL AUTO_INCREMENT,
   `organizer_id` varchar(15) NOT NULL,
@@ -95,9 +100,36 @@ CREATE TABLE IF NOT EXISTS `attendence` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `books`
+--
+
+DROP TABLE IF EXISTS `books`;
+CREATE TABLE IF NOT EXISTS `books` (
+  `book_id` int(3) NOT NULL,
+  `book_title` varchar(30) NOT NULL,
+  `author` varchar(30) NOT NULL,
+  `edition` varchar(10) NOT NULL,
+  `publication` varchar(30) NOT NULL,
+  `isbn_no` int(15) NOT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`book_id`, `book_title`, `author`, `edition`, `publication`, `isbn_no`) VALUES
+(1, 'Data Science', '', '', '', 0),
+(2, 'Discrete Mathematics', '', '', '', 0),
+(3, 'Let Us C', 'Yashwant Kanitkar', '5th', 'Noorjahan', 8736452);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_member_master`
 --
 
+DROP TABLE IF EXISTS `dc_member_master`;
 CREATE TABLE IF NOT EXISTS `dc_member_master` (
   `member_id` varchar(15) NOT NULL,
   `first_name` varchar(20) NOT NULL,
@@ -123,6 +155,7 @@ CREATE TABLE IF NOT EXISTS `dc_member_master` (
 -- Table structure for table `dc_member_regular`
 --
 
+DROP TABLE IF EXISTS `dc_member_regular`;
 CREATE TABLE IF NOT EXISTS `dc_member_regular` (
   `member_id` varchar(15) NOT NULL,
   `semester` int(2) NOT NULL,
@@ -142,6 +175,7 @@ CREATE TABLE IF NOT EXISTS `dc_member_regular` (
 -- Table structure for table `documentation`
 --
 
+DROP TABLE IF EXISTS `documentation`;
 CREATE TABLE IF NOT EXISTS `documentation` (
   `project_id` varchar(10) NOT NULL,
   `spmp_link` varchar(30) NOT NULL,
@@ -161,6 +195,7 @@ CREATE TABLE IF NOT EXISTS `documentation` (
 -- Table structure for table `entrance`
 --
 
+DROP TABLE IF EXISTS `entrance`;
 CREATE TABLE IF NOT EXISTS `entrance` (
   `serialno` int(5) NOT NULL AUTO_INCREMENT,
   `date_of_joining` date NOT NULL,
@@ -214,6 +249,7 @@ INSERT INTO `entrance` (`serialno`, `date_of_joining`, `first_name`, `middle_nam
 -- Table structure for table `events`
 --
 
+DROP TABLE IF EXISTS `events`;
 CREATE TABLE IF NOT EXISTS `events` (
   `event_id` varchar(10) NOT NULL,
   `type_of_event` varchar(20) NOT NULL,
@@ -237,6 +273,7 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- Table structure for table `hosting_domain`
 --
 
+DROP TABLE IF EXISTS `hosting_domain`;
 CREATE TABLE IF NOT EXISTS `hosting_domain` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `hosting` varchar(30) NOT NULL,
@@ -250,20 +287,58 @@ CREATE TABLE IF NOT EXISTS `hosting_domain` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `issued_resource_to`
+-- Table structure for table `issued_books_to`
 --
 
-CREATE TABLE IF NOT EXISTS `issued_resource_to` (
-  `resource_id` varchar(15) NOT NULL,
+DROP TABLE IF EXISTS `issued_books_to`;
+CREATE TABLE IF NOT EXISTS `issued_books_to` (
+  `book_id` int(3) NOT NULL,
+  `book_title` varchar(30) NOT NULL,
   `issue_by` varchar(30) NOT NULL,
   `issue_to` varchar(30) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
   `submission_date` date NOT NULL,
-  `submission_time` date NOT NULL,
+  `submission_time` time NOT NULL,
+  `details` varchar(50) NOT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `issued_books_to`
+--
+
+INSERT INTO `issued_books_to` (`book_id`, `book_title`, `issue_by`, `issue_to`, `date`, `time`, `submission_date`, `submission_time`, `details`) VALUES
+(1, 'Data Science', 'vedi', 'Prashant', '2014-07-01', '12:00:00', '2014-07-04', '12:00:00', 'open'),
+(2, 'Discrete Mathematics', 'vedi', 'Prashant', '2014-07-02', '12:00:00', '2014-07-06', '12:00:00', 'posterbody');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `issued_resource_to`
+--
+
+DROP TABLE IF EXISTS `issued_resource_to`;
+CREATE TABLE IF NOT EXISTS `issued_resource_to` (
+  `resource_id` varchar(15) NOT NULL,
+  `resource_name` varchar(30) NOT NULL,
+  `issue_by` varchar(30) NOT NULL,
+  `issue_to` varchar(30) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `submission_date` date NOT NULL,
+  `submission_time` time NOT NULL,
   `detail` varchar(50) NOT NULL,
   PRIMARY KEY (`resource_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `issued_resource_to`
+--
+
+INSERT INTO `issued_resource_to` (`resource_id`, `resource_name`, `issue_by`, `issue_to`, `date`, `time`, `submission_date`, `submission_time`, `detail`) VALUES
+('1', 'keyboard', 'anyone', 'anyoneelse', '2014-07-02', '12:00:00', '2014-07-04', '12:00:00', 'ojkamlds'),
+('2', 'KEYBOARD', 'KJL;OPJKL', 'JKIFOASDJKL', '2014-07-03', '12:00:00', '2014-07-03', '14:00:00', 'AEETHS');
 
 -- --------------------------------------------------------
 
@@ -271,6 +346,7 @@ CREATE TABLE IF NOT EXISTS `issued_resource_to` (
 -- Table structure for table `leave`
 --
 
+DROP TABLE IF EXISTS `leave`;
 CREATE TABLE IF NOT EXISTS `leave` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `member_id` varchar(15) NOT NULL,
@@ -288,6 +364,7 @@ CREATE TABLE IF NOT EXISTS `leave` (
 -- Table structure for table `moocs`
 --
 
+DROP TABLE IF EXISTS `moocs`;
 CREATE TABLE IF NOT EXISTS `moocs` (
   `course_id` varchar(15) NOT NULL,
   `provider_name` varchar(30) NOT NULL,
@@ -295,12 +372,20 @@ CREATE TABLE IF NOT EXISTS `moocs` (
   PRIMARY KEY (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `moocs`
+--
+
+INSERT INTO `moocs` (`course_id`, `provider_name`, `link`) VALUES
+('1', 'qwe', 'qsdq');
+
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `organizer`
 --
 
+DROP TABLE IF EXISTS `organizer`;
 CREATE TABLE IF NOT EXISTS `organizer` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `organizer_id` varchar(15) NOT NULL,
@@ -315,6 +400,7 @@ CREATE TABLE IF NOT EXISTS `organizer` (
 -- Table structure for table `problem_solved_by`
 --
 
+DROP TABLE IF EXISTS `problem_solved_by`;
 CREATE TABLE IF NOT EXISTS `problem_solved_by` (
   `problem_id` varchar(15) NOT NULL,
   `problem_solved_by` varchar(30) NOT NULL,
@@ -327,6 +413,7 @@ CREATE TABLE IF NOT EXISTS `problem_solved_by` (
 -- Table structure for table `projects`
 --
 
+DROP TABLE IF EXISTS `projects`;
 CREATE TABLE IF NOT EXISTS `projects` (
   `project_id` varchar(10) NOT NULL,
   `project_name` varchar(20) NOT NULL,
@@ -344,6 +431,7 @@ CREATE TABLE IF NOT EXISTS `projects` (
 -- Table structure for table `project_review`
 --
 
+DROP TABLE IF EXISTS `project_review`;
 CREATE TABLE IF NOT EXISTS `project_review` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `project_id` varchar(15) NOT NULL,
@@ -360,6 +448,7 @@ CREATE TABLE IF NOT EXISTS `project_review` (
 -- Table structure for table `project_status`
 --
 
+DROP TABLE IF EXISTS `project_status`;
 CREATE TABLE IF NOT EXISTS `project_status` (
   `status_id` varchar(15) NOT NULL,
   `project_id` varchar(15) NOT NULL,
@@ -374,11 +463,23 @@ CREATE TABLE IF NOT EXISTS `project_status` (
 -- Table structure for table `resource`
 --
 
+DROP TABLE IF EXISTS `resource`;
 CREATE TABLE IF NOT EXISTS `resource` (
   `resource_id` varchar(15) NOT NULL,
   `resource_name` varchar(30) NOT NULL,
   PRIMARY KEY (`resource_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `resource`
+--
+
+INSERT INTO `resource` (`resource_id`, `resource_name`) VALUES
+('', ''),
+('1', 'mouse'),
+('2', 'KEYBOARD'),
+('3', 'monitor'),
+('4', 'chair');
 
 -- --------------------------------------------------------
 
@@ -386,6 +487,7 @@ CREATE TABLE IF NOT EXISTS `resource` (
 -- Table structure for table `responsibility_duration`
 --
 
+DROP TABLE IF EXISTS `responsibility_duration`;
 CREATE TABLE IF NOT EXISTS `responsibility_duration` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `member_id` varchar(15) NOT NULL,
@@ -401,6 +503,7 @@ CREATE TABLE IF NOT EXISTS `responsibility_duration` (
 -- Table structure for table `result`
 --
 
+DROP TABLE IF EXISTS `result`;
 CREATE TABLE IF NOT EXISTS `result` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `member_id` varchar(15) NOT NULL,
@@ -416,6 +519,7 @@ CREATE TABLE IF NOT EXISTS `result` (
 -- Table structure for table `roles_and_responsibility`
 --
 
+DROP TABLE IF EXISTS `roles_and_responsibility`;
 CREATE TABLE IF NOT EXISTS `roles_and_responsibility` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `member_id` varchar(15) NOT NULL,
@@ -431,6 +535,7 @@ CREATE TABLE IF NOT EXISTS `roles_and_responsibility` (
 -- Table structure for table `system_information`
 --
 
+DROP TABLE IF EXISTS `system_information`;
 CREATE TABLE IF NOT EXISTS `system_information` (
   `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `system_name` varchar(20) NOT NULL,
@@ -451,6 +556,7 @@ CREATE TABLE IF NOT EXISTS `system_information` (
 -- Table structure for table `team_members`
 --
 
+DROP TABLE IF EXISTS `team_members`;
 CREATE TABLE IF NOT EXISTS `team_members` (
   `s_no` int(2) NOT NULL AUTO_INCREMENT,
   `team_id` varchar(15) NOT NULL,
@@ -466,6 +572,7 @@ CREATE TABLE IF NOT EXISTS `team_members` (
 -- Table structure for table `technical_and_motivational`
 --
 
+DROP TABLE IF EXISTS `technical_and_motivational`;
 CREATE TABLE IF NOT EXISTS `technical_and_motivational` (
   `s_no` int(11) NOT NULL AUTO_INCREMENT,
   `title` int(11) NOT NULL,
@@ -481,6 +588,7 @@ CREATE TABLE IF NOT EXISTS `technical_and_motivational` (
 -- Table structure for table `technical_assistance`
 --
 
+DROP TABLE IF EXISTS `technical_assistance`;
 CREATE TABLE IF NOT EXISTS `technical_assistance` (
   `problem_id` varchar(15) NOT NULL,
   `problem_by` varchar(30) NOT NULL,
