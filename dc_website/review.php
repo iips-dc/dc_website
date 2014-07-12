@@ -31,6 +31,8 @@
                     
                 </h1>
                 <ol class="breadcrumb">
+                  <li><a href="project_mgm.php">Home</a>
+                    </li>
                     <li><a href="current_projects.php">Current Projects</a>
                     </li>
                     <li><a href="past_projects.php">Past Projects</a>
@@ -76,7 +78,7 @@ if (mysqli_connect_errno()) {
 //   $sql= "INSERT INTO `dc_database`.`daily_log` (`date`,`log`,`link`,`s_no`,`member_id`) VALUES ('$date', '$log','$link',' ','$member_id');";
 //    mysqli_query($conn, $sql);
 // }
-$sql='SELECT * FROM projects';
+$sql='SELECT * FROM project_review';
  
 ?>
 <?php
@@ -87,19 +89,19 @@ if (mysqli_connect_errno())
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
 
-$result = mysqli_query($con,"SELECT * FROM projects ");
+$result = mysqli_query($con,"SELECT * FROM project_review ");
 
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
 
-  echo "<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'PROJECT TYPE'."<td>". 'PROJECT LEADER'."<td>". 'TEAM_MEMBERS'."<td>". 'PROJECT STATUS'."<td>". 'TEAM ID'."<td>". 'DC PAGE LINK'."<td>". 'GITHUB PAGE LINK';
+  echo "<td>".'DATE'."<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'LINK'."<td>". 'PROJECT STATUS'."<td>". 'REVIEW_BY'."<td>". 'REVIEW';
  
 
 while($row = mysqli_fetch_array($result))
   {
     
   echo "<tr>";
-  echo "<td>".$row['project_id']."<td>". $row['project_name'] . "<td>" . $row['project_type']."<td>". $row['project_leader']."<td>". $row['team_members']."<td>". $row['project_status']."<td>". $row['team_id']."<td>". $row['dc_page_link']."<td>". $row['github_page_link'];
+  echo "<td>".$row['review_date'] . "<td>" . $row['project_id'] . "<td>" . $row['project_name'] ."<td>". $row['link_of_review'] ."<td>". $row['project_status'] ."<td>". $row['review_by'] ."<td>". $row['review'];
   echo "</tr>";
  
   }

@@ -68,15 +68,7 @@ if (mysqli_connect_errno()) {
 
 
 
-// if(isset($_POST['submit']))
-// {
-//   $date=$_POST['date'];
-//   $log=$_POST['log'];
-//   $link=$_POST['link'];
-//   $member_id=$_POST['member_id'];
-//   $sql= "INSERT INTO `dc_database`.`daily_log` (`date`,`log`,`link`,`s_no`,`member_id`) VALUES ('$date', '$log','$link',' ','$member_id');";
-//    mysqli_query($conn, $sql);
-// }
+
 $sql='SELECT * FROM projects';
  
 ?>

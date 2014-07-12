@@ -29,25 +29,17 @@ function onlyChars(event)
 	else 
 		return false;
 }
-/*Function used to copy the current address to permanent address*/
-function Copy(add)
-{
-	if(add.checkme.checked==true)
-	{
-		add.permanentaddress.value=add.currentaddress.value;
-	}
-}
 
-function digitsonly(e)
+function digitsonly(event)
 {
-	var data=document.getElementById('cnumber').value;
-	if(data.Length!=10)
+  var data=document.getElementById('date').value;
+  if(data.Length!=6)
        {
-       alert("Please enter 10 digits");
+       alert("Please enter valid date in format YYMMDD ");
        return false;
        }
     else
-    	return true;   
+      return true;   
 }
 
 
@@ -59,7 +51,7 @@ function digitsonly(e)
 
 	<?php 
         include ('header.php');
-   ?> <br><br><br><br>
+   ?> <br><br>
 	<div class="container">
     <div class="row">
 
@@ -102,7 +94,7 @@ function digitsonly(e)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY" name="dor" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" name="dor" id="date"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -117,11 +109,11 @@ function digitsonly(e)
     </div>
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" name="projectname" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project Status</label>
-   		 <input type="text" class="form-control" name="projectstatus">
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectstatus">
   	</div>
   	
 	</div>
@@ -132,7 +124,7 @@ function digitsonly(e)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Review By</label>
-   		 <input type="text" class="form-control" name="reviewby"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="reviewby"> <span id="nameError" class="green"></span>
   	</div>
 
   	
@@ -147,7 +139,7 @@ function digitsonly(e)
 
  	
  	<label>Review</label>
- 	<textarea class="form-control" rows="3" id="add" name="review" ></textarea>
+ 	<textarea class="form-control" onkeypress="return onlyChars(event)" rows="3" id="add" name="review" ></textarea>
 
  	<br><br>
 
@@ -197,14 +189,7 @@ if (mysqli_connect_errno())
   $reviewlink=$_POST['reviewlink'];
   $review=$_POST['review'];
   
-  
-/*
-    echo $firstname . " " . $doj . " " . $firstname . " " . $midname . " " . $lastname . " " . $birthday . " " . $gender . " " . $bloodgroup . " " . $interest . " " . " " . $currentaddress . " " . $permanentaddress . " " . 
- $countrycode . " " . $stdcode . " " . $studmobile . " " . $studemail . " " . $github . " " . $fathername . " " . $fathermobile . " " . $fatheremail . " " .  $guardianname . " " . $guardianmobile . " " .  $schoolname . " " . 
- $tenthper . " " . $twealthper . " " . $course . " " . $semester . " " . $cgpa . " " . $onlinecourses . " " . $projectname . " " . $projectduration . " " . $projectdescr . " " . $knowdc . " " . $
- encename . " " . $whychoose ;
 
-*/
 
  $sql="INSERT INTO project_review VALUES('$projectid','$projectname','$dor','$reviewlink','$projectstatus', '$reviewby', '$review') ";
   

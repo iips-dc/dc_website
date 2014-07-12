@@ -29,21 +29,13 @@ function onlyChars(event)
 	else 
 		return false;
 }
-/*Function used to copy the current address to permanent address*/
-function Copy(add)
-{
-	if(add.checkme.checked==true)
-	{
-		add.permanentaddress.value=add.currentaddress.value;
-	}
-}
 
-function digitsonly(e)
+function digitsonly(event)
 {
-	var data=document.getElementById('cnumber').value;
-	if(data.Length!=10)
+	var data=document.getElementById('date').value;
+	if(data.Length!=6)
        {
-       alert("Please enter 10 digits");
+       alert("Please enter valid date in format YYMMDD ");
        return false;
        }
     else
@@ -59,9 +51,32 @@ function digitsonly(e)
 
 	<?php 
         include ('header.php');
-   ?> <br><br><br><br>
+   ?> <br><br>
 	<div class="container">
 		<div class="row">
+      <div class="col-lg-12">
+                <h1 class="page-header">Projects
+                    
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="project_mgm.php">Home</a>
+                    </li>
+                    <li><a href="current_projects.php">Current Projects</a>
+                    </li>
+                    <li><a href="past_projects.php">Past Projects</a>
+                    </li>
+                    <li><a href="review.php">Project Reviews</a>
+                    </li>
+                    <li><a href="documentation.php">Documentation</a>
+                    </li>
+                    <li><a href="add_project.php">Add Project</a>
+                    </li>
+                    
+                    
+                    
+                </ol>
+            </div>
+
 
 	<form role="form" method="post" id="theForm" action="#"> 
 	 		<div class="form-group">
@@ -76,7 +91,7 @@ function digitsonly(e)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY" name="dos" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" name="dos" id="date"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -87,7 +102,7 @@ function digitsonly(e)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" name="projectname" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project ID</label>
@@ -95,7 +110,7 @@ function digitsonly(e)
   	</div>
   	<div class="col-md-4">
   		<label>Project Type</label>
-    		<input type="text" class="form-control" name="projecttype" id="lname"> <span id="lnameError" class="red"></span>
+    		<input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projecttype" id="lname"> <span id="lnameError" class="red"></span>
 		
 	  </div>
 	</div>
@@ -106,7 +121,7 @@ function digitsonly(e)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Team Leader</label>
-   		 <input type="text" class="form-control" name="teamleader" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="teamleader" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   	<div class="col-md-4">
@@ -116,14 +131,14 @@ function digitsonly(e)
 
   	<div class="col-md-4">
  	 	<label>Project Status</label>
-   		 <input type="text" class="form-control" name="projectstatus" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectstatus" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	
   	</div>
 	
     <br>
     <label>Team Members</label>
- 	<input type="text" class="form-control" placeholder="jeff , jenny, jack" id="inputEmail3" name="members"> 
+ 	<input type="text" class="form-control"  placeholder="jeff , jenny, jack" id="inputEmail3" name="members"> 
 
  	<br>
 
@@ -192,13 +207,7 @@ if (mysqli_connect_errno())
   $projectdesc=$_POST['projectdesc'];
   
   
-/*
-    echo $firstname . " " . $doj . " " . $firstname . " " . $midname . " " . $lastname . " " . $birthday . " " . $gender . " " . $bloodgroup . " " . $interest . " " . " " . $currentaddress . " " . $permanentaddress . " " . 
- $countrycode . " " . $stdcode . " " . $studmobile . " " . $studemail . " " . $github . " " . $fathername . " " . $fathermobile . " " . $fatheremail . " " .  $guardianname . " " . $guardianmobile . " " .  $schoolname . " " . 
- $tenthper . " " . $twealthper . " " . $course . " " . $semester . " " . $cgpa . " " . $onlinecourses . " " . $projectname . " " . $projectduration . " " . $projectdescr . " " . $knowdc . " " . $
- encename . " " . $whychoose ;
 
-*/
 
  $sql="INSERT INTO projects VALUES('$dos','$projectid', '$projectname', '$projecttype', '$teamleader', '$members', '$projectstatus', '$teamid', '$link', '$gitlink','$projectdesc') ";
   

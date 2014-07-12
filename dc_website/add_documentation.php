@@ -29,27 +29,19 @@ function onlyChars(event)
 	else 
 		return false;
 }
-/*Function used to copy the current address to permanent address*/
-function Copy(add)
-{
-	if(add.checkme.checked==true)
-	{
-		add.permanentaddress.value=add.currentaddress.value;
-	}
-}
 
-function digitsonly(e)
+
+function digitsonly(event)
 {
-	var data=document.getElementById('cnumber').value;
-	if(data.Length!=10)
+  var data=document.getElementById('date').value;
+  if(data.Length!=6)
        {
-       alert("Please enter 10 digits");
+       alert("Please enter valid date in format YYMMDD ");
        return false;
        }
     else
-    	return true;   
+      return true;   
 }
-
 
 	
 </script>
@@ -59,7 +51,7 @@ function digitsonly(e)
 
 	<?php 
         include ('header.php');
-   ?> <br><br><br><br>
+   ?> <br><br>
 	<div class="container">
     <div class="row">
 
@@ -102,7 +94,7 @@ function digitsonly(e)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" placeholder="DD/MM/YYYY" name="dod" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" name="dod" id="date"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -113,7 +105,7 @@ function digitsonly(e)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" name="projectname" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project ID</label>
@@ -133,7 +125,7 @@ function digitsonly(e)
 
   	<div class="col-md-6">
  	 	<label>SPMP Status</label>
-   		 <input type="text" class="form-control" name="spmpstatus" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="spmpstatus" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   </div>
@@ -148,7 +140,7 @@ function digitsonly(e)
 
     <div class="col-md-6">
     <label>SRS Status</label>
-       <input type="text" class="form-control" name="srsstatus" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="srsstatus" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
@@ -163,7 +155,7 @@ function digitsonly(e)
 
     <div class="col-md-6">
     <label>SDD Status</label>
-       <input type="text" class="form-control" name="sddstatus" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="sddstatus" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
@@ -178,7 +170,7 @@ function digitsonly(e)
 
     <div class="col-md-6">
     <label>STD Status</label>
-       <input type="text" class="form-control" name="stdlink" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="stdlink" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
