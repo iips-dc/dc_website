@@ -5420,6 +5420,7 @@ button.close {
 }
 .carousel {
   position: relative;
+  
 }
 .carousel-inner {
   position: relative;
@@ -5436,7 +5437,7 @@ button.close {
 .carousel-inner > .item > a > img {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: 100%;
   line-height: 1;
 }
 .carousel-inner > .active,
@@ -5731,7 +5732,7 @@ th.visible-md,
 td.visible-md {
   display: none !important;
 }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 99px) {
   .visible-md {
     display: block !important;
   }
