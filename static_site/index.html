@@ -69,11 +69,43 @@
     </nav>
 
 
-    <div id="myCarousel" class="carousel slide">
-   
-        <div class="carousel-inner" id="vid">
-          <video poster="images/dc.png" autoplay src="video/DC-IIPS-Signature Video.mp4" style="position: absolute; z-index: -1; top: 0px; left: 0px; min-width: 100%; min-height: 100%;"></video>
+ <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img  src="images/dc-pos.jpeg" height="500" width="1300" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
         </div>
+         <div class="item">
+          <img  src="images/d.jpg" height="500" width="1300"  alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+             </div>
+          </div>
+        </div>
+        <div class="item">
+          <img  src="images/dc.png" height="500" width="1300"  alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
 
        
    
