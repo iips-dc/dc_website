@@ -163,8 +163,49 @@ if(isset($_POST['editsubmit']))
 			   <h3> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp Admin Profile</h3>
 				<div class="col-md-3">
 				
-				
-				<?php 
+				<table width="600px" align="center" border="5px">
+		<center> <h1>Not Approved</h1></center>
+		<tr>
+			<th>Id</th>
+			<th>Name</th>
+			<th>From </th>
+			<th>To</th>
+			<th>Reason</th>
+			<th>Message</th>
+			<th>Approve</th>
+			<th>Reject</th>
+		</tr>	
+		<?php
+			$con = mysqli_connect('localhost','root','','dc_database');
+			$selectQuery=mysqli_query($con,"SELECT * FROM `leave` WHERE approve=0") or die(mysqli_error($con));
+			$i=1;
+			while($row=mysqli_fetch_array($selectQuery)){
+				$id=$row['id'];
+				$name=$row['name'];
+				$leaving_date=$row['leaving_date'];
+				$coming_date=$row['coming_date'];
+				$reason=$row['reason'];
+				$message=$row['message'];
+		?>	
+			<tr align="center">
+			<td><?php echo $i; ?></td>	
+			<td><?php echo $name; ?></td>
+			<td><?php echo $leaving_date; ?></td>
+			<td><?php echo $coming_date; ?></td>
+			<td><?php echo $reason; ?></td>
+			<td><?php echo $message; ?></td>
+			<td><a href='Approve.php?app=<?php echo $id; ?>'>Approve</a></td> 
+			<td><a href='reject.php?app=<?php echo $id; ?>'>Reject</a></td> 
+			</tr>
+		<?php
+		$i=$i+1;
+			}		
+		?>
+	</table>
+
+
+
+		<!-- <?php 
 				
 				if(file_exists("images/" . $sno . ".jpg"))
 				{
@@ -197,6 +238,7 @@ if(isset($_POST['editsubmit']))
 					
 				
 				<?php 
+				
 
 				echo'
 				<div class="col-md-6">
@@ -274,7 +316,7 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
 
-				<!--<div class="col-md-3">
+				<div class="col-md-3">
 					<div class="panel panel-default" style="border:1px solid grey;">
 						<div class="panel-heading text-center" style="background-color:grey;border-bottom:1px solid grey;color:white;height:40px">
 						<label>Updates</label>
@@ -291,14 +333,14 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
 					</div>	
 				</div>-->
 				
-			</div>
+			<!--</div>
                
 
 			
 		</div>
 		<br><br>
 		<br>
-		<?php include('footer.php') ?>
+		<?php include('footer.php') ?>  ->
 		
 	<script>
 	function editme()
@@ -335,6 +377,13 @@ echo '  <input type="text" class="editme" name="firstname" size="10" style="colo
 	
 	
 	</script>
+
+
+
+
+
+
+
 		
 	</body>
 </html>
