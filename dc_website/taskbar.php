@@ -11,7 +11,7 @@
                     </li>
                     <li><a href="past_dcmembers.php">Past Contributers</a>
                     </li>
-                    <li><a href="Registration.php">Join Community</a>
+                    <li><a href="entrance.php">Join Community</a>
                     </li>
                     
                     
