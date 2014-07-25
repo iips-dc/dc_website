@@ -65,14 +65,14 @@ $result = mysqli_query($con,"SELECT * FROM hosting_domain ");
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
 
-  echo "<td>".'S. NO'."<td>". 'HOSTING' . "<td>" . 'DOMAIN'."<td>". 'URL'."<td>". 'DATE OF EX'."<td>". 'DATE OF REGISTRATION';
+  echo "<td>".'ID'."<td>". 'HOSTING' . "<td>" . 'DOMAIN'."<td>". 'URL'."<td>". 'DATE OF EX'."<td>". 'DATE OF REGISTRATION';
  
 
 while($row = mysqli_fetch_array($result))
   {
     
   echo "<tr>";
-  echo "<td>".$row['s_no']."<td>". $row['hosting'] . "<td>" . $row['domain']."<td>". $row['url']."<td>". $row['doe']."<td>". $row['dor'];
+  echo "<td>".$row['id']."<td>". $row['hosting'] . "<td>" . $row['domain']."<td>". $row['url']."<td>". $row['doe']."<td>". $row['dor'];
   echo "</tr>";
  
   }

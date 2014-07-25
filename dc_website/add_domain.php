@@ -87,6 +87,10 @@ function onlyChars(event)
 
 
 	 <div class="row">
+    <div class="col-md-4">
+      <label>ID</label>
+       <input type="date" class="form-control" name="id"  > <span id="nameError" class="green"></span>
+      </div>
  	 <div class="col-md-4">
       <label>Date of Ending</label>
    		 <input type="date" class="form-control" placeholder="YYMMDD" name="doe" id="date" onkeypress="return onlyNumbers(event)" maxlength="6"> <span id="nameError" class="green"></span>
@@ -182,7 +186,7 @@ if (mysqli_connect_errno())
 	echo "successfully submitted";
 }
   
-  
+  $id=$_POST['id'];
   $doe=$_POST['doe'];
   $dor=$_POST['dor'];
   $hosting=$_POST['hosting'];
@@ -193,7 +197,7 @@ if (mysqli_connect_errno())
   
 
 
- $sql="INSERT INTO hosting_domain VALUES('','$hosting','$domain', '$url', '$doe', '$dor') ";
+ $sql="INSERT INTO hosting_domain VALUES('$id','$hosting','$domain', '$url', '$doe', '$dor') ";
   
   mysqli_query($con,$sql);
   
