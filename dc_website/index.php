@@ -27,11 +27,56 @@
         include ('header.php');
    ?>
 
-    <div id="myCarousel" class="carousel slide">
-   
-        <div class="carousel-inner" id="vid">
-          <video poster="images/dc.png" autoplay src="video/DC-IIPS-Signature Video.mp4" style="position: absolute; z-index: -1; top: 0px; left: 0px; min-width: 100%; min-height: 100%;"></video>
+    <!-- Carousel
+================================================== -->
+<div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="images/gg.jpg" width="1500" height="1500" >
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+          <pthis is="" an="" example="" layout="" with="" carousel="" that="" uses="" the="" bootstrap="" 3="" styles.<="" small=""><p></p>
+          
+        </p></pthis></div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/k11.jpg" width="1500" height="1500">
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+          <p></p>
+          
         </div>
+      </div>
+    </div>
+    <div class="item">
+      <img src="images/d.jpg" width="1500" height="1500" >
+      <div class="container">
+        <div class="carousel-caption">
+          <h1></h1>
+          <p></p>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+<!-- /.carousel -->
 
        
    
