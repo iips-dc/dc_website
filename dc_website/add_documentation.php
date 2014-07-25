@@ -8,6 +8,8 @@
 <!--<script type="text/javascript" src="MyFormValidation.js" ></script>-->
 <script>
 
+ 
+
 function onlyNumbers(event)				
 {
     	var e =event; 
@@ -22,32 +24,35 @@ function onlyNumbers(event)
 
 function onlyChars(event)
 {
-	var e =event;
-	var charCode = e.which || e.keyCode;
-	if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 8 || charCode == 9)
-		return true;
-	else 
-		return false;
+  var e =event;
+  var charCode = e.which || e.keyCode;
+  if ((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode == 8 || charCode == 9 || charCode == 32)
+    return true;
+  else 
+    return false;
 }
 
 
-function digitsonly(event)
-{
-  var data=document.getElementById('date').value;
-  if(data.Length!=6)
-       {
-       alert("Please enter valid date in format YYMMDD ");
-       return false;
-       }
-    else
-      return true;   
-}
+
+// function digitsonly(event)
+// {
+//   var data=document.getElementById('date').value;
+//   if(data.Length!=6)
+//        {
+//        alert("Please enter valid date in format YYMMDD ");
+//        return false;
+//        }
+//     else
+//       return true;   
+// }
 
 	
 </script>
+
+<title>Documentation</title>
 </head>
 <body>
-<body style="background-color:grey;">
+<body style="background-color:white;">
 
 	<?php 
         include ('header.php');
@@ -85,7 +90,7 @@ function digitsonly(event)
 	 		<div class="form-group">
 			
 			
-<div class="col-md-12" style="border:1px solid black;background-color:grey;">
+<div class="col-md-12" style="border:1px solid black;background-color:white;">
 	<label>
 		<h2>Add Project Documentation</h2>
 	</label><br/>
@@ -94,8 +99,9 @@ function digitsonly(event)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" name="dod" id="date"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="dod" id="date"> <span id="nameError" class="green"></span>
   	</div>
+    
   	
 	</div>
 

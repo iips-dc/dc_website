@@ -141,7 +141,7 @@ function Copy(add)
 	</div>
 
 	<br/>
-	<label>Area of Intrest</label>
+	<label>Area of Interest</label>
  	<textarea class="form-control" rows="3" id="add" name="interest" ></textarea>
 
  	<br/>
