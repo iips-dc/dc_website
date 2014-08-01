@@ -1,3 +1,6 @@
+<?php
+	ob_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +99,9 @@
 				</div>
 			</form>
 
+			
 			<?php
+			
 				if (isset($_POST['Submit'])) {
 					# code...
 					$name = $_POST['name'];
@@ -107,11 +112,19 @@
 					$twitter_username = $_POST['twitter_username'];
 
 					$query = "INSERT INTO `alumni` (`name`, `year_of_passing`, `occupation`, `github_id`, `linkedin_id`, `twitter_username`) VALUES('$name', '$year_of_passing', '$occupation', '$github_id', '$linkedin_id', '$twitter_username')";
-					$query_run = mysqli_query($dbconnect, $query);
+					$query_run = mysqli_query($dbconnect, $query) or die("Error".mysqli_error($dbconnect));
+					header('location: alumni_data.php'); 
 				}
+			else{
+				echo "error";
+			}
+
 			
+
+        	
 				include ('footer.php');
 			?>
+
 		</div>
 	</body>
 </html>

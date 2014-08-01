@@ -140,25 +140,43 @@ footer {
   }
 }
 
-
-
+element {
+    display: inline;
+}
+.go-top {
+    position: fixed;
+    bottom: 2em;
+    right: 2em;
+    text-decoration: none;
+    color: #FFF;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 12px;
+    padding: 1em;
+    display: none;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+}
 /*==================================================
  * Image Designs 1
  * ===============================================*/
 
 .img-responsive{
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-	   -moz-box-shadow: 0 10px 6px -6px #777;
-	        box-shadow: 0 10px 6px -6px #777;
+  -webkit-box-shadow: 0 10px 6px -6px #777;
+     -moz-box-shadow: 0 10px 6px -6px #777;
+          box-shadow: 0 10px 6px -6px #777;
 }
 .img-responsive:hover{
-	-webkit-box-shadow: 0px ;
-	   -moz-box-shadow: 0px ;
-	        box-shadow: 0px ;
+  -webkit-box-shadow: 0px ;
+     -moz-box-shadow: 0px ;
+          box-shadow: 0px ;
 }
-	
-	#vid{
-			margin-top:-80px;
-		height:500px;
-	}
+  
+  #vid{
+      margin-top:-80px;
+    height:500px;
+  }
+
+
+
 

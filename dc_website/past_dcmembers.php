@@ -21,17 +21,20 @@
    
    <?php 
         include ('header.php');
+        
    ?> 
 
- 
-   
+   <a class="go-top" href="#" style="display: inline;">
+
+    <img height="40px" src="images/gototop.png" alt="Go to Top"></img>
+
+   </a>
+
 
 
     <div class="container">
 
-        <?php
-		include('taskbar.php');
-	?>
+       
 
         
 
@@ -443,34 +446,22 @@
 
     </div>
     <!-- /.container -->
-<div class="container">
 
-        <hr>
+    <a class="go-top" href="#" style="display: inline;">
 
-    <footer>
-            <div class="row" style="text-align:center;">
-                <div class="col-lg-3 col-md-3" >
-                    <p>Contact Us</p>
-                   
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Site Developers</p>
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Help</p>
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Copyright &copy; Company 2013</p>
-            </div>
-        </footer>
-    </div>
+    <img height="40px" src="images/gototop.png" alt="Go to Top"></img>
+
+</a>
+<?php 
+    include('footer.php');
+?>
     <!-- /.container -->
 
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/modern-business.js"></script>
-
+    <script src="js/gototop.js"></script>
 </body>
 
 </html>

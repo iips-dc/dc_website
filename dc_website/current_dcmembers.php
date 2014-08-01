@@ -24,15 +24,16 @@
         include ('header.php');
    ?> 
 
+   <a class="go-top" href="#" style="display: inline;">
+
+    <img height="40px" src="images/gototop.png" alt="Go to Top"></img>
+
+</a>
  
    
 
 
     <div class="container">
-
-        <?php
-        include('taskbar.php');
-    ?>
 
         
 
@@ -188,14 +189,6 @@
                 
             </div>
 
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="dev.JPG">
-                </a>
-                <h3><a href="#project-link">Devendra Malviya</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
 
              <div class="col-md-3 portfolio-item">
                 
@@ -279,14 +272,7 @@
                     </li></p>
             </div>
 
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="nitin.jpg">
-                </a>
-                <h3><a href="#project-link">Nitin Sharma</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
+           
 
             <div class="col-md-3 portfolio-item">
                 
@@ -332,27 +318,7 @@
 
            
 
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Prashant Yadav</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-            
-
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="rahulsinha.jpg">
-                </a>
-                <h3><a href="#project-link">Rahul Sinha</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-
+           
 
         </div>
 
@@ -459,34 +425,7 @@
                     </li></p>
             </div>
 
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Ritika Barethia</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Rupam Wadia</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Sunny Raikwar</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-
+            
 
         </div>
 
@@ -502,34 +441,15 @@
     <!-- /.container -->
 
   
-    <div class="container">
-
-        <hr>
-
-    <footer>
-            <div class="row" style="text-align:center;">
-                <div class="col-lg-3 col-md-3" >
-                    <p>Contact Us</p>
-                   
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Site Developers</p>
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Help</p>
-            </div>
-                <div class="col-lg-3 col-md-3">
-                    <p>Copyright &copy; Company 2013</p>
-            </div>
-        </footer>
-    </div>
-    <!-- /.container -->
+    <?php 
+    include('footer.php');
+?>
 
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/modern-business.js"></script>
-
+    <script src="js/gototop.js"></script>
 </body>
 
 </html>

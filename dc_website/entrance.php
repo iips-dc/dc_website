@@ -5,7 +5,9 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <link rel="stylesheet" href="FormValidation.css">
-<!--<script type="text/javascript" src="MyFormValidation.js" ></script>-->
+  <link href="css/modern-business.css" rel="stylesheet">
+<script type="text/javascript" src="MyFormValidation.js" ></script>
+<script src="js/gototop.js"></script>
 
 <title>Entrance</title>
 <script>
@@ -60,15 +62,17 @@ function Copy(add)
 <body>
 <body style="background-color:white;">
 
+	<a class="go-top" href="#" style="display: inline;">
+
+    <img height="40px" src="images/gototop.png" alt="Go to Top"></img>
+
+</a>
+
 	<?php 
         include ('header.php');
    ?> <br><br><br><br>
 	<div class="container">
 		<div class="row">
-
-		<?php
-        include('taskbar.php');
-    ?>
 
 	<form role="form" method="post" id="theForm" action="#"> 
 	 		<div class="form-group">
@@ -88,7 +92,7 @@ function Copy(add)
   	</div>
   	<div class="col-md-4">
   		<label>Roll No</label>
-   		 <input type="date" class="form-control" placeholder="IT-2K11-32" name="roll_no" maxlength="10"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" placeholder="IT-2K11-21" name="roll_no" maxlength="10"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -442,6 +446,8 @@ if (mysqli_connect_errno())
 <?php 
     include('footer.php');
 ?>
+
+
 </body>
 </html>
 

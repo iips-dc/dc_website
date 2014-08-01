@@ -24,7 +24,7 @@
 							</li>
 							<li><a href="open_source.php">Open Source</a>
 							</li>
-							<li><a href="what_we_are.php">Our Community</a>
+							<li><a href="community.php">Our Community</a>
 							</li>
 							<li><a href="current_projects.php">Projects</a>
 							</li>
