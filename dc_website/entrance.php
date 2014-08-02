@@ -55,6 +55,11 @@ function Copy(add)
 		add.permanentaddress.value=add.currentaddress.value;
 	}
 }
+function validateDate($date, $format = 'Y-m-d H:i:s')
+{
+    $d = DateTime::createFromFormat($format, $date);
+    return $d && $d->format($format) == $date;
+}
 
 	
 </script>
@@ -66,8 +71,8 @@ function Copy(add)
 
     <img height="40px" src="images/gototop.png" alt="Go to Top"></img>
 
-</a>
-
+</a><br>
+<h3 align="center">Read the <a href="Annexure/Annexure1.docx">Annexure1</a> <a href="Annexure/Annexure2.docx">Annexure2</a> <a href="Annexure/Annexure3.docx">Annexure3</a> <a href="Annexure/Annexure4.docx">Annexure4</a> before filling this form</h3>
 	<?php 
         include ('header.php');
    ?> <br><br><br><br>
@@ -80,7 +85,7 @@ function Copy(add)
 			
 <div class="col-md-12" style="border:1px solid black;background-color:white;">
 	<label>
-		<h2>Student Entrance</h2>
+		<h2>Student Entrance </h2>
 	</label><br/>
 	
 		
