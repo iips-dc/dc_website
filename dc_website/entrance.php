@@ -55,16 +55,13 @@ function Copy(add)
 		add.permanentaddress.value=add.currentaddress.value;
 	}
 }
-function validateDate($date, $format = 'Y-m-d H:i:s')
-{
-    $d = DateTime::createFromFormat($format, $date);
-    return $d && $d->format($format) == $date;
-}
+
 
 	
 </script>
 </head>
 <body>
+	<?php  include('date_picker.php');?>
 <body style="background-color:white;">
 
 	<a class="go-top" href="#" style="display: inline;">
@@ -93,14 +90,18 @@ function validateDate($date, $format = 'Y-m-d H:i:s')
 	 <div class="row">
  	 <div class="col-md-4">
  	 	<label>Date of joining</label>
-   		 <input type="date" class="form-control" placeholder="YYMMDD" name="doj" id="name" onkeypress="return onlyNumbers(event)" maxlength="6"> <span id="nameError" class="green"></span>
+   		 <input type="date" name="doj" id="name" required="required"  class="datepicker"> <span id="nameError" class="green"></span>
   	</div>
+  	</div>
+  	<br>
+  	<div class="row">
   	<div class="col-md-4">
   		<label>Roll No</label>
    		 <input type="date" class="form-control" placeholder="IT-2K11-21" name="roll_no" maxlength="10"> <span id="nameError" class="green"></span>
   	</div>
+  	</div>
   	
-	</div>
+	
 
 <br/>
     <label>Personal Information</label>
@@ -126,7 +127,7 @@ function validateDate($date, $format = 'Y-m-d H:i:s')
 	<label>BirthDay</label>
 	<div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" placeholder="YYMMDD" name="birthday" onkeypress="return onlyNumbers(event)" maxlength="6"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="datepicker" name="birthday" > <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -145,7 +146,20 @@ function validateDate($date, $format = 'Y-m-d H:i:s')
 	<label>Blood Group</label>
 	<div class="row">
 	<div class="col-md-4">
-	<input type="text" class="form-control"  name="bloodgroup" id="number">
+	
+	
+	<select class="form-control" name="bloodgroup">
+  	<option>A+</option>
+  	<option>B+</option>
+  	<option>AB+</option>
+  	<option>O+</option>
+  	<option>A-</option>
+	<option>B-</option>
+  	<option>AB-</option>
+  	<option>O-</option>
+  	
+  	
+	</select>
 	</div>
 	</div>
 
@@ -179,11 +193,11 @@ function validateDate($date, $format = 'Y-m-d H:i:s')
 	<div class="row">
 	<div class="col-md-4">
 		<label>Country Code</label>
-	<input type="text" class="form-control" placeholder="Country Code" name="countrycode" onkeypress="return onlyNumbers(event)">
+	<input type="text" class="form-control" placeholder="Country Code" name="countrycode" onkeypress="return onlyNumbers(event)" maxlegth="4">
 	</div>
 	<div class="col-md-4">
 		<label>STD Code</label>
-	<input type="text" class="form-control" placeholder="STD Code" name="stdcode" onkeypress="return onlyNumbers(event)">
+	<input type="text" class="form-control" placeholder="STD Code" name="stdcode" onkeypress="return onlyNumbers(event)" maxlength="6">
 	</div>
 	<div class="col-md-4">
 		<label>Mobile number</label>
@@ -191,12 +205,18 @@ function validateDate($date, $format = 'Y-m-d H:i:s')
 	</div>
 	</div>
 
+	<br>
+	<div  class="row">
+	<div class="col-md-6">
 	<label>Email</label>
  	<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="studemail"> 	
+    </div>
 
+    <div class="col-md-6">
  	<label>Github ID/user name</label>
  	<input type="email" class="form-control" id="inputEmail3" placeholder="Email" name="github"> 
-
+	</div>
+    </div>
  	<br/>
 
  	<label>Parental/Guardian Information</label>
