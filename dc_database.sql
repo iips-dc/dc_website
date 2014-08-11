@@ -3,15 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-<<<<<<< HEAD
--- Generation Time: Jul 19, 2014 at 02:46 PM
--- Server version: 5.5.37-0ubuntu0.14.04.1
--- PHP Version: 5.5.9-1ubuntu4.3
-=======
--- Generation Time: Jul 15, 2014 at 11:29 PM
+-- Generation Time: Jul 06, 2014 at 11:38 PM
 -- Server version: 5.5.37
--- PHP Version: 5.3.10-1ubuntu3.12
->>>>>>> 2083cb0ff24ece0fe1e849febb6b327854fcfa1f
+-- PHP Version: 5.3.10-1ubuntu3.11
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -51,23 +45,9 @@ CREATE TABLE IF NOT EXISTS `alumni` (
   `name` varchar(30) NOT NULL,
   `year_of_passing` year(4) NOT NULL,
   `occupation` varchar(30) NOT NULL,
-  `github_id` varchar(50) NOT NULL,
-  `linkedin_id` varchar(50) NOT NULL,
-  `twitter_username` varchar(20) NOT NULL,
   PRIMARY KEY (`s_no`),
   KEY `s_no` (`s_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `alumni`
---
-
-INSERT INTO `alumni` (`s_no`, `name`, `year_of_passing`, `occupation`, `github_id`, `linkedin_id`, `twitter_username`) VALUES
-(2, 'Gaurav Shukla', 2013, 'web developer', 'gaurav-shukla', 'gaurav-shukla', 'gaurav_shukla'),
-(3, 'Rajat Garg', 2014, 'nothing', 'Rajat-Garg', 'rajat-garg', 'rajatgarg'),
-(4, 'Rajat Garg', 2014, 'nothing', 'Rajat-Garg', 'rajat-garg', 'rajatgarg'),
-(5, 'open', 2013, 'nothing', 'open', 'open', 'open'),
-(6, 'dev', 2013, 'nothing', 'devmalviya', 'devm', 'devm');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -116,26 +96,6 @@ CREATE TABLE IF NOT EXISTS `attendence` (
 -- Table structure for table `daily_log`
 --
 
-<<<<<<< HEAD
-CREATE TABLE IF NOT EXISTS `books` (
-  `book_id` int(3) NOT NULL,
-  `book_title` varchar(30) NOT NULL,
-  `author` varchar(30) NOT NULL,
-  `edition` varchar(10) NOT NULL,
-  `publication` varchar(30) NOT NULL,
-  `isbn_no` int(15) NOT NULL,
-  PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `books`
---
-
-INSERT INTO `books` (`book_id`, `book_title`, `author`, `edition`, `publication`, `isbn_no`) VALUES
-(1, 'Data Science', '', '', '', 0),
-(2, 'Discrete Mathematics', '', '', '', 0),
-(3, 'Let Us C', 'Yashwant Kanitkar', '5th', 'Noorjahan', 8736452);
-=======
 CREATE TABLE IF NOT EXISTS `daily_log` (
   `date` date NOT NULL,
   `log` varchar(255) DEFAULT NULL,
@@ -182,7 +142,6 @@ INSERT INTO `daily_log` (`date`, `log`, `link`, `s_no`, `member_id`) VALUES
 ('0000-00-00', 'k', '', 46, 'it-2k11-25'),
 ('2014-04-05', 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', '', 50, 'it-2k11-25'),
 ('0000-00-00', 'aaaaaaaaaaaaaaaaaaaa', '', 51, 'it-2k11-25');
->>>>>>> 2083cb0ff24ece0fe1e849febb6b327854fcfa1f
 
 -- --------------------------------------------------------
 
@@ -360,36 +319,6 @@ CREATE TABLE IF NOT EXISTS `hosting_domain` (
 -- --------------------------------------------------------
 
 --
-<<<<<<< HEAD
--- Table structure for table `issued_books_to`
---
-
-CREATE TABLE IF NOT EXISTS `issued_books_to` (
-  `book_id` int(3) NOT NULL,
-  `book_title` varchar(30) NOT NULL,
-  `issue_by` varchar(30) NOT NULL,
-  `issue_to` varchar(30) NOT NULL,
-  `date` date NOT NULL,
-  `time` time NOT NULL,
-  `submission_date` date NOT NULL,
-  `submission_time` time NOT NULL,
-  `details` varchar(50) NOT NULL,
-  PRIMARY KEY (`book_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `issued_books_to`
---
-
-INSERT INTO `issued_books_to` (`book_id`, `book_title`, `issue_by`, `issue_to`, `date`, `time`, `submission_date`, `submission_time`, `details`) VALUES
-(1, 'Data Science', 'vedi', 'Prashant', '2014-07-01', '12:00:00', '2014-07-04', '12:00:00', 'open'),
-(2, 'Discrete Mathematics', 'vedi', 'Prashant', '2014-07-02', '12:00:00', '2014-07-06', '12:00:00', 'posterbody');
-
--- --------------------------------------------------------
-
---
-=======
->>>>>>> 2083cb0ff24ece0fe1e849febb6b327854fcfa1f
 -- Table structure for table `issued_resource_to`
 --
 
@@ -416,86 +345,53 @@ CREATE TABLE IF NOT EXISTS `knowledge_center` (
   `title` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `link` varchar(150) NOT NULL,
-  `description` text CHARACTER SET utf8 NOT NULL,
+  `description` text NOT NULL,
   PRIMARY KEY (`s_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=50 ;
 
 --
 -- Dumping data for table `knowledge_center`
 --
 
 INSERT INTO `knowledge_center` (`s_no`, `title`, `date`, `link`, `description`) VALUES
-(1, 'a', '2014-07-01', 'c', 'efef'),
-(2, 'b', '2014-07-02', 'cee', 'eecfef'),
-(3, 'Ajax', '2014-07-10', 'b', 'efewfewf'),
-(4, 'Ajax2', '2014-07-10', 'efwefwe', 'dsvscs'),
-(5, 'Jquery', '2014-07-10', 'e.fnewk.nk;', 'jsdf;eljf'),
-(6, 'Jquery', '2014-07-10', 'e.fnewk.nk;', 'jsdf;eljf'),
-(7, 'Ajax3', '2014-07-10', 'dkfj', 'f;lweflwe;j'),
-(8, 'Ajax', '2014-07-10', 'dwqdw', 'wqwqfqwf'),
-(9, 'wwqdqw', '2014-07-10', 'efeqfeq', 'eqfeqfeq'),
-(10, 'wdkwql', '2014-07-10', 'eql;qewjf', ';efl;qej'),
-(11, 'Ajax5', '2014-07-10', ',dkqnwa,', 'lkjefk;jqe`'),
-(12, 'wqdqwq', '2014-07-10', 'qwefqwf', 'wqefqef'),
-(13, 'java ', '2014-07-10', 'kwdk;j', 'kekfek'),
-(14, 'ajax', '2014-07-10', 'wdwd', 'wdqwd'),
-(15, 'bootstrap', '2014-07-10', 'wefwekj', 'jer;keqj'),
-(16, '"goog"le', '2014-07-10', 'qadqwdqw', 'dqwdwqdwq'),
-(17, 'gooo', '2014-07-10', 'ejk;qej', 'jq;jq;'),
-(18, 'zzzzzzzz', '2014-07-10', 'ewfn', 'fwfekjfewjwe'),
-(19, 'awllw', '2014-07-10', 'kw;lwjj', ';jwqljqd'),
-(20, 'OOOOO', '2014-07-10', 'WKDWDK', 'K;WDL;DK'),
-(21, '"a"', '2014-07-10', 'dwdwd', 'wdwdw'),
-(22, 'Ajax', '2014-07-10', 'g', 'jef;lje'),
-(23, 'eeeee', '2014-07-10', 'aalaa', 'elef;kta'),
-(24, 'Ajax', '2014-07-10', 'pe;fje;lj', 'poj;lgjrgm'),
-(25, 'Ajax', '2014-07-10', 'dwqdw', 'wqdwq'),
-(26, 'java', '2014-07-10', ';jgsg;lj', 'jf;wejfwe;lm'),
-(27, 'java', '2014-07-10', ';jgsg;lj', 'jf;wejfwe;lm'),
-(28, 'Jquery', '2014-07-10', 'qejfqef', 'ndlkndnwknew'),
-(29, 'java', '2014-07-10', 'hfelhfe', 'heflhfelhf'),
-(30, 'Ajax', '2014-07-10', 'lfekafeqkf', 'hlhfhf'),
-(31, 'Ajax', '2014-07-10', 'lmfefm', ';jef;j'),
-(32, 'javascript', '2014-07-10', 'kejfekjf', 'lfel;h'),
-(33, 'Jquery', '2014-07-10', 'lkjkjf', 'jkfdkjf;kjm'),
-(34, 'huge', '2014-07-10', 'lkjdkj', ''),
-(35, 'Ajax', '2014-07-10', 'wqdwl;', 'kjw;djw'),
-(36, 'aajjjaaxx', '2014-07-10', 'wkdjw;kj', 'kjwd;qwj'),
-(37, '"a"', '2014-07-10', ';eklfelk', 'kfekfe;wk'),
-(38, 'Ajax', '2014-07-10', 'b', 'as'),
-(39, 'a ', '2014-07-10', 'b', 'c'),
-(40, 'asus', '2014-07-10', 'jdkjk', 'jdljdwj'),
-(41, '"a"', '2014-07-10', 'wdj;wjdj', 'kjwdjdklj'),
-(42, 'Angular Js', '2014-07-10', 'xyz', 'q'),
-(43, 'bootstrap', '2014-07-10', 'dwqwdww', 'wwdwd'),
-(44, 'bootstrap', '2014-07-10', 'dwqwdww', 'wwdwd'),
-(45, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(46, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(47, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(48, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(49, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(50, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(51, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(52, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
-(53, 'aaaaaaaaaaaaaa', '2014-07-15', 'bb', 'cccccc'),
-(54, '', '0000-00-00', '', ''),
-(55, 'dgdsdh''gwtw''''gerre', '0000-00-00', '', ''),
-(56, 'dgdsdh''gwtw''gh''''''''fgj''j''jj''jfj''jfj''jgj''fj''''''gerre', '0000-00-00', '', ''),
-(57, 'dgdsdh''gwt''''''''ghgf''''''''''''''''''''''''''''''''''''w''gh''''''''fgj''j''jj''jfj''jfj''jgj''fj''''''gerre', '0000-00-00', '', ''),
-(58, '""eegedede" ''efefefdef''', '2014-07-02', '''sxgrsgr'' "gdgdeg"', '''gsgxdgxr'' "esgsdgsx"'),
-(59, 'pulkit', '2014-07-15', 'vaishnav', 'software developer at development center iips davv indore'),
-(60, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
-(61, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
-(62, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
-(63, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
-(64, 'wqkdjkwj', '2014-07-15', 'kjlkejfkl', 'kdjlkqj'),
-(65, 'wqkdjkwj', '2014-07-15', 'kjlkejfkl', 'kdjlkqj'),
-(66, 'pulkit', '2014-07-15', 'vaishnav', 'from ujjain'),
-(67, 'pulkit', '2014-07-15', 'vaishnav', 'from ujjain'),
-(68, 'Angular Js', '2014-07-15', 'wqqw;ke;``', ';kwjd;wdj'),
-(69, 'Angular Js', '2014-07-15', 'wqqw;ke;``', ';kwjd;wdj'),
-(70, 'pulkit', '2014-07-15', 'kishandas', 'vaishnav'),
-(71, 'pulkit', '2014-07-15', 'kishandas', 'vaishnav');
+(44, 'Angular Js', '2014-07-05', 'xyz', '#google #yahoo'),
+(45, 'bootstrap', '2014-07-05', 'abc', '#html_library'),
+(46, 'Ruby', '2014-07-05', 'pqr', '#Ruby is a #programming_language'),
+(47, 'Ajax', '2014-07-06', 'http://www.w3schools.com/ajax/default.ASP', 'Asynchronous javascript and XML'),
+(48, 'Ajax', '2014-07-06', 'http://www.w3schools.com/ajax/default.ASP', 'Asynchronous javascript and XML'),
+(49, 'Ajax', '2014-07-06', 'http://www.w3schools.com/ajax/default.ASP', 'Asynchronous javascript and XML');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `knowledge_center_tags`
+--
+
+CREATE TABLE IF NOT EXISTS `knowledge_center_tags` (
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `tags` varchar(50) NOT NULL,
+  PRIMARY KEY (`tag_id`,`title`),
+  KEY `s_no` (`title`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=71 ;
+
+--
+-- Dumping data for table `knowledge_center_tags`
+--
+
+INSERT INTO `knowledge_center_tags` (`tag_id`, `title`, `tags`) VALUES
+(59, 'Angular Js', '#google'),
+(60, 'Angular Js', '#yahoo'),
+(61, 'bootstrap', '#html_library'),
+(62, 'bootstrap', ''),
+(63, 'Ruby', '#Ruby'),
+(64, 'Ruby', '#programming_language'),
+(65, 'Ajax', ''),
+(66, 'Ajax', ''),
+(67, 'Ajax', ''),
+(68, 'Ajax', ''),
+(69, 'Ajax', ''),
+(70, 'Ajax', '');
 
 -- --------------------------------------------------------
 
@@ -690,43 +586,6 @@ CREATE TABLE IF NOT EXISTS `system_information` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tags`
---
-
-CREATE TABLE IF NOT EXISTS `tags` (
-  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
-  `s_id` int(11) NOT NULL,
-  `tags` varchar(30) NOT NULL,
-  PRIMARY KEY (`tag_id`),
-  KEY `s_id` (`s_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
-
---
--- Dumping data for table `tags`
---
-
-INSERT INTO `tags` (`tag_id`, `s_id`, `tags`) VALUES
-(1, 4, 'a'),
-(2, 4, 'b'),
-(4, 10, 'as'),
-(5, 10, 'asus'),
-(6, 3, 'p'),
-(7, 3, 'q'),
-(12, 40, 'tag1'),
-(13, 40, 'tag2'),
-(14, 40, 'tag3'),
-(15, 68, ';qjfq;lj'),
-(16, 68, 'e;fe;l'),
-(17, 68, ''),
-(18, 70, 'runija'),
-(19, 70, 'ujjain'),
-(20, 70, ''),
-(21, 70, 'runija'),
-(22, 70, 'ujjain');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `team_members`
 --
 
@@ -779,12 +638,6 @@ CREATE TABLE IF NOT EXISTS `technical_assistance` (
 --
 ALTER TABLE `daily_log`
   ADD CONSTRAINT `daily_log_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `tags`
---
-ALTER TABLE `tags`
-  ADD CONSTRAINT `tags_ibfk_1` FOREIGN KEY (`s_id`) REFERENCES `knowledge_center` (`s_no`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

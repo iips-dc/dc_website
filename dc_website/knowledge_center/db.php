@@ -1,7 +1,7 @@
 <?php
 			$DBServer = 'localhost';
 			$DBUser   = 'root';
-			$DBPass   = 'pulkit5-1';
+			$DBPass   = '';
 			$DBName   = 'dc_database';
 			$conn = mysqli_connect($DBServer, $DBUser, $DBPass, $DBName);
 			 
