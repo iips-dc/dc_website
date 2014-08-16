@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.10.1
+-- version 3.4.10.1deb1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 21, 2014 at 11:05 PM
--- Server version: 5.5.20
--- PHP Version: 5.3.10
+-- Generation Time: Jul 25, 2014 at 06:24 PM
+-- Server version: 5.5.37
+-- PHP Version: 5.3.10-1ubuntu3.11
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -99,6 +99,7 @@ CREATE TABLE IF NOT EXISTS `attendence` (
 CREATE TABLE IF NOT EXISTS `dc_member_master` (
   `member_id` varchar(15) NOT NULL,
   `first_name` varchar(20) NOT NULL,
+  `mid_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `date_of_birth` date NOT NULL,
   `gender` varchar(2) NOT NULL,
@@ -119,9 +120,13 @@ CREATE TABLE IF NOT EXISTS `dc_member_master` (
 -- Dumping data for table `dc_member_master`
 --
 
-INSERT INTO `dc_member_master` (`member_id`, `first_name`, `last_name`, `date_of_birth`, `gender`, `blood_group`, `local_address`, `parmanent_address`, `father_name`, `mother_name`, `guardian_name`, `course_name`, `github_id`, `linkedin_id`, `sem_of_joining`) VALUES
-('ic-2k11-25', 'a', 'b', '2014-07-01', 'MA', 'c', 'd', 'e', 'e', 'w', 'e', 'f', 'f', 'f', 'g'),
-('it-2k11-25', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '');
+INSERT INTO `dc_member_master` (`member_id`, `first_name`, `mid_name`, `last_name`, `date_of_birth`, `gender`, `blood_group`, `local_address`, `parmanent_address`, `father_name`, `mother_name`, `guardian_name`, `course_name`, `github_id`, `linkedin_id`, `sem_of_joining`) VALUES
+('it2k1132', 'sachin', '', 'tanwar', '0000-00-00', 'Fe', '', 'lkjhkjlhkljhlkhhkj', ',mhklhklhklm', 'r tanwar', '', 'nil', '', 'sa@gmail.com', 'linkedin', ''),
+('it2k1133', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', '', 'lkjhkjlhkljhlkhhkj', ',mhklhklhklm', 'ls tanwar', 'r tanwar', 'nil', '', 'sa@gmail.com', 'linkedin', ''),
+('it2k1134', 'jeff', '', '', '0000-00-00', 'Ma', '', 'fghjfhgfghfghf', 'fdsfgfgfdmom', 'ls tanwar', 'mom', 'fgdgfdgf', '', '', 'linkedin', '6'),
+('it2k1135', 'jeff', '', '', '0000-00-00', 'Ma', '', 'fghjfhgfghfghf', 'fdsfgfgfdmom', 'ls tanwar', 'mom', 'fgdgfdgf', '', '', 'sa@gmail.com', '6'),
+('it2k1136', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', 'b', 'vnbvnvv', 'bjhjhjgjhgk', 'ls tanwar', 'r tanwar', 'fgdgfdgf', '', 'sa@gmail.com', 'sa@gmail.com', '6'),
+('it2k1137', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', 'b', 'vnbvnvv', 'bjhjhjgjhgk', 'ls tanwar', 'r tanwar', 'fgdgfdgf', '', 'sa@gmail.com', 'sa@gmail.com', '6');
 
 -- --------------------------------------------------------
 
@@ -149,6 +154,8 @@ CREATE TABLE IF NOT EXISTS `dc_member_regular` (
 --
 
 CREATE TABLE IF NOT EXISTS `documentation` (
+  `date_of_documentation` date NOT NULL,
+  `project_name` varchar(30) NOT NULL,
   `project_id` varchar(10) NOT NULL,
   `spmp_link` varchar(30) NOT NULL,
   `spmp_status` varchar(20) NOT NULL,
@@ -161,6 +168,28 @@ CREATE TABLE IF NOT EXISTS `documentation` (
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `documentation`
+--
+
+INSERT INTO `documentation` (`date_of_documentation`, `project_name`, `project_id`, `spmp_link`, `spmp_status`, `srs_link`, `srs_status`, `sdd_link`, `sdd_status`, `std_link`, `std_status`) VALUES
+('0000-00-00', '', '', '', '', '', '', '', '', '', ''),
+('2010-01-02', 'aaaa', 'a4', '', '', '', '', '', '', '', ''),
+('0000-00-00', 'asasasasas', 'aaa11', '', '', '', '', '', '', '', ''),
+('2014-12-13', 'aahhihihihihhi', 'ahah1', '', '', '', '', '', '', '', ''),
+('1212-12-12', 'asdf', 'as', '', '', '', '', '', '', '', ''),
+('0000-00-00', 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'),
+('0000-00-00', 'dcsite', 'd1', 'nnsndkjfnfd', 'kjnkj', 'nkjnkj', 'nkjnkj', 'nknk', 'knkj', 'nkj', 'knnkj'),
+('2014-07-11', 'disco', 'd11', 'spmp', 'spmp', 'srs', 'srs', 'sdd', 'sdd', 'std', 'std'),
+('0000-00-00', 'dhen', 'dd1', '', '', '', '', '', '', '', ''),
+('2011-11-11', 'gogoagone', 'ggg', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
+('0000-00-00', 'giveme', 'gm', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'aa'),
+('2012-12-12', 'havefun', 'hh1', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa'),
+('2010-11-12', 'pppp', 'p', '', '', '', '', '', '', '', ''),
+('0000-00-00', 'qaz', 'q', '', '', '', '', '', '', '', ''),
+('2012-12-12', 'qwerty', 'qw', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q'),
+('0000-00-00', 'xyz', 'x1', 'f', 'b', 'c', 'd', 'e', 'f', 'h', 'g');
+
 -- --------------------------------------------------------
 
 --
@@ -168,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `documentation` (
 --
 
 CREATE TABLE IF NOT EXISTS `entrance` (
-  `serialno` int(5) NOT NULL AUTO_INCREMENT,
+  `roll_no` varchar(12) NOT NULL,
   `date_of_joining` date NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `middle_name` varchar(20) NOT NULL,
@@ -204,15 +233,17 @@ CREATE TABLE IF NOT EXISTS `entrance` (
   `reference_catg` varchar(30) NOT NULL,
   `reference` varchar(30) NOT NULL,
   `why_choose` varchar(50) NOT NULL,
-  PRIMARY KEY (`serialno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+  PRIMARY KEY (`roll_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `entrance`
 --
 
-INSERT INTO `entrance` (`serialno`, `date_of_joining`, `first_name`, `middle_name`, `last_name`, `birthday`, `gender`, `bloodgroup`, `area_of_interest`, `basic_skills`, `current_address`, `permanent_address`, `country_code`, `std_code`, `mobile_no`, `student_email`, `github_id`, `fathers_name`, `fathers_contact`, `fathers_email`, `guardian_name`, `guardian_contact`, `school_name`, `percentage_10th`, `percentage_12th`, `course`, `semester`, `cgpa`, `online_courses`, `project_name`, `project_type`, `project_duration`, `project_desc`, `reference_catg`, `reference`, `why_choose`) VALUES
-(1, '2014-04-01', 'Sachin', '', 'Tanwar', '2013-09-06', 'Male', 'b+ve', 'cricket, football', 'html, css, c++', 'indore', 'dhar', '91', '0731', '8959323439', 'sachintanwar69@gmail.com', 'sachintanwar69@gmail.com', 'Lakhan Tanwar', '9977776976', 'lkh@gmail.com', '', '', 'JNV Dhar', '86', '78', 'M.tech', '6', '8.9', 'nil', 'DC site', 'Web Designing', '0000-00-00 00:00:00', 'it is development center site', 'Faculty', 'Shaligram sir', 'i am a desend boy');
+INSERT INTO `entrance` (`roll_no`, `date_of_joining`, `first_name`, `middle_name`, `last_name`, `birthday`, `gender`, `bloodgroup`, `area_of_interest`, `basic_skills`, `current_address`, `permanent_address`, `country_code`, `std_code`, `mobile_no`, `student_email`, `github_id`, `fathers_name`, `fathers_contact`, `fathers_email`, `guardian_name`, `guardian_contact`, `school_name`, `percentage_10th`, `percentage_12th`, `course`, `semester`, `cgpa`, `online_courses`, `project_name`, `project_type`, `project_duration`, `project_desc`, `reference_catg`, `reference`, `why_choose`) VALUES
+('', '2011-11-11', '', 'kumar', 'tanwar', '0000-00-00', 'Male', 'b+', 'football', 'dancing', 'indore', 'dhar', '091', '07292', '8959323439', 'sa@gmail.com', 'tet@gmail.com', 'Lakhan', '9977756988', 'ft@gmail.com', 'guard', '7471198675', 'jnv', '86', '78', 'mtech', '7', '8.7', 'programming foundations with python, machine learning', 'dc site', 'inhouse', '0000-00-00 00:00:00', 'dc website', 'Friend', 'tinku', 'i am a nice guy'),
+('it-2k11-31', '2012-12-12', 'sacin', 'kk', 'menan', '1992-09-06', 'Male', 'b+', 'nil', 'nil', 'dhar', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'M.tech', '1', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', ''),
+('IT-2K11-32', '2011-11-11', '', '', '', '0000-00-00', 'Male', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'M.tech', '1', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', '');
 
 -- --------------------------------------------------------
 
@@ -244,14 +275,21 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 CREATE TABLE IF NOT EXISTS `hosting_domain` (
-  `s_no` int(3) NOT NULL AUTO_INCREMENT,
+  `id` varchar(10) NOT NULL,
   `hosting` varchar(30) NOT NULL,
   `domain` varchar(30) NOT NULL,
   `url` varchar(40) NOT NULL,
   `doe` varchar(30) NOT NULL,
   `dor` varchar(30) NOT NULL,
-  PRIMARY KEY (`s_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `hosting_domain`
+--
+
+INSERT INTO `hosting_domain` (`id`, `hosting`, `domain`, `url`, `doe`, `dor`) VALUES
+('1', 'jeff', 'jack', 'www.google.com', '111111', '111111');
 
 -- --------------------------------------------------------
 
@@ -278,36 +316,15 @@ CREATE TABLE IF NOT EXISTS `issued_resource_to` (
 --
 
 CREATE TABLE IF NOT EXISTS `leave` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) NOT NULL,
-  `leaving_date` date NOT NULL,
-  `coming_date` date NOT NULL,
-  `reason` varchar(50) NOT NULL DEFAULT '-None-',
-  `message` varchar(50) NOT NULL DEFAULT '-None-',
-  `approve` int(2) NOT NULL COMMENT '0 for not approved ,1 for approved, -1 for rejected ',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=74 ;
-
---
--- Dumping data for table `leave`
---
-
-INSERT INTO `leave` (`id`, `name`, `leaving_date`, `coming_date`, `reason`, `message`, `approve`) VALUES
-(73, '222', '2014-07-07', '2014-07-14', '222', '222', 0),
-(72, '111', '2014-07-01', '2014-07-22', 'zxsas', 'asas', 0),
-(53, 'tyu', '0000-00-00', '0000-00-00', '', '', 0),
-(54, 'dfg', '0000-00-00', '0000-00-00', '', '', 0),
-(55, 'dgdfg', '0000-00-00', '0000-00-00', 'dfgdg', 'dfg', 0),
-(56, 'gfhfdg', '0000-00-00', '0000-00-00', 'fgfg', 'fgfg', 0),
-(50, 'sdfgdfg', '2014-07-09', '2014-07-10', 'dfd', 'dgdgg', -1),
-(51, 'dfdg', '2014-07-10', '2014-07-17', 'dgdfg', 'dfgtdfg', -1),
-(52, 'etfrg', '2014-07-10', '2014-07-18', 'trytrytry', 'gfjghjghj', -1),
-(49, 'rahul', '2014-07-09', '2014-07-09', '', '', 0),
-(68, 'rrrr', '2014-07-23', '2014-07-16', 'dfsdf', 'sdfsf', 1),
-(69, 'rahul', '2014-07-16', '2014-07-16', 'sdffsdf', 'sdfsfd', 1),
-(48, 'sinha', '2014-07-09', '2014-07-18', 'Ill', 'ggg', 0),
-(46, 'ad', '0000-00-00', '0000-00-00', 'qwr', '', 1),
-(47, 'ad', '0000-00-00', '0000-00-00', 'qwr', '', 1);
+  `s_no` int(3) NOT NULL AUTO_INCREMENT,
+  `member_id` varchar(15) NOT NULL,
+  `leave_from` date NOT NULL,
+  `leave_to` date NOT NULL,
+  `reason` varchar(20) NOT NULL,
+  `approved_by` varchar(30) NOT NULL,
+  PRIMARY KEY (`s_no`),
+  KEY `member_id` (`member_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -317,54 +334,10 @@ INSERT INTO `leave` (`id`, `name`, `leaving_date`, `coming_date`, `reason`, `mes
 
 CREATE TABLE IF NOT EXISTS `moocs` (
   `course_id` varchar(15) NOT NULL,
-  `course_name` varchar(255) NOT NULL,
-  `starting_date` date NOT NULL,
   `provider_name` varchar(30) NOT NULL,
   `link` varchar(40) NOT NULL,
-  PRIMARY KEY (`course_id`),
-  UNIQUE KEY `course_id` (`course_id`)
+  PRIMARY KEY (`course_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `moocs`
---
-
-INSERT INTO `moocs` (`course_id`, `course_name`, `starting_date`, `provider_name`, `link`) VALUES
-('', '', '0000-00-00', '', ''),
-('1', '', '0000-00-00', '', ''),
-('101', 'dhewkh', '0000-00-00', 'qlwejdqkdj', 'oewijdjldj23lkdj`'),
-('1111', 'dfdf', '0000-00-00', 'saas', 'asas'),
-('a ', ' ', '0000-00-00', 'c', 'd'),
-('as', 'as', '0000-00-00', 'adsad', 'as'),
-('asdSasAS', '', '0000-00-00', 'AsASas', 'aSAs'),
-('atuyatay', '  ', '0000-00-00', 'fhg', 'fgvfbc'),
-('c', '', '0000-00-00', '', ''),
-('dfdsf', 'sfdsd', '0000-00-00', 'sdsdsdsd', 'sdsd'),
-('dfsdf', '', '0000-00-00', 'dfsf', 'sdfsdf'),
-('dfsdfsdf435345', 'dsfsdff dfs ', '0000-00-00', 'sdfsdf ', ''),
-('dgfg', '', '0000-00-00', 'fdgdg', 'fdgdg'),
-('ertyfyurf', 'fuf', '0000-00-00', 'fyuf', 'yf'),
-('fdgdg', '', '0000-00-00', 'dfgdfg', 'sdfsf'),
-('ffhgf', 'fhfjh', '0000-00-00', 'fjhf', 'jhfh'),
-('fgd', '', '0000-00-00', 'fgdgd', 'fdgdg'),
-('fgfg', '', '0000-00-00', 'fgfg', 'fgf'),
-('Garg', 'garg', '0000-00-00', 'fgg', 'fgf'),
-('gfdg', '', '0000-00-00', 'gdfgdd', 'dfgdfg'),
-('ghfgh', '', '0000-00-00', 'gfhfh', 'fghgfh'),
-('ghjg', '', '0000-00-00', 'ghjgj', 'ghjgj'),
-('hghgh', 'ghgh', '0000-00-00', 'dfsf', 'dfcgdfg'),
-('hjghjg', '', '0000-00-00', 'ghjgj', 'ghjgj'),
-('lkj;kfwjek1', 'wekjlfelkj', '0000-00-00', 'wejkfekfj', 'jkfsljfgklj'),
-('pulkit', 'k', '0000-00-00', '', ''),
-('qwerty', 'ghghjg', '0000-00-00', 'ghjgj', 'gjhg'),
-('qwqw', 'qwqw', '0000-00-00', 'qwqw', 'qwqw'),
-('rafg', 'fghf', '0000-00-00', 'ffghfh', 'fghf'),
-('rahul', 'rahul', '0000-00-00', 'aijsa', 'sdas'),
-('rahyff', 'fghf', '0000-00-00', 'fgfh', 'ghfgh'),
-('ref', '', '0000-00-00', 'fdfsf', 'sdfsdf'),
-('satal', 'hg', '0000-00-00', 'ghg', 'ghg'),
-('ttttt', 'mghbvn  ', '0000-00-00', 'ttt', 'ttt'),
-('wqeqe', '', '0000-00-00', 'eqweqwe', 'qeqeeqwe');
 
 -- --------------------------------------------------------
 
@@ -399,15 +372,34 @@ CREATE TABLE IF NOT EXISTS `problem_solved_by` (
 --
 
 CREATE TABLE IF NOT EXISTS `projects` (
+  `date_of_start` date NOT NULL,
   `project_id` varchar(10) NOT NULL,
   `project_name` varchar(20) NOT NULL,
   `project_type` varchar(20) NOT NULL,
   `project_leader` varchar(30) NOT NULL,
+  `team_members` varchar(100) NOT NULL,
+  `project_status` varchar(30) NOT NULL,
   `team_id` varchar(10) NOT NULL,
   `dc_page_link` varchar(30) NOT NULL,
   `github_page_link` varchar(30) NOT NULL,
+  `project_desc` varchar(100) NOT NULL,
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`date_of_start`, `project_id`, `project_name`, `project_type`, `project_leader`, `team_members`, `project_status`, `team_id`, `dc_page_link`, `github_page_link`, `project_desc`) VALUES
+('0000-00-00', '', 'dc site', '', '', '', '', '', '', '', ''),
+('0000-00-00', '1', 'abc', 'web', 'jeff', 'sachin, pulkit', 'completed', 'a', '', '', ''),
+('0000-00-00', '2', 'xyz', 'app', 'jenny', 'jeff, jenny', 'anaylysis', 'b', '', '', ''),
+('0000-00-00', '4', 'bbb', 'web', 'dev', 'dev, abhi', 'coding stage', 'd', '', '', ''),
+('2014-07-11', 'd12', 'disco', 'inhouse', 'jeff', 'bakka, meda, jeff', 'complete', 'jj1', 'dofoddj.com', 'ffsdhfshfsdfh.com', 'good'),
+('0000-00-00', 'ddddd', 'jjjjj', 'noooo', 'me', '', '', '', '', '', ''),
+('0000-00-00', 'dsd', 'fddf', 'ffwer', 'fdsff', 'wfwefdsffwewew', 'wwdad', 'fdsfds', 'wwew', 'efdsfdsfds', 'wewqewe'),
+('0000-00-00', 'p1', 'jeffsite', 'inhouse', '', '', 'designing', 't1', 'dcsite.com', 'www.github.com', ''),
+('0000-00-00', 'p2', 'love and war', 'inhouse', 'me', 'a,b,c', 'complete', 't2', 'love.com', 'love.github', '');
 
 -- --------------------------------------------------------
 
@@ -416,14 +408,35 @@ CREATE TABLE IF NOT EXISTS `projects` (
 --
 
 CREATE TABLE IF NOT EXISTS `project_review` (
-  `s_no` int(3) NOT NULL AUTO_INCREMENT,
-  `project_id` varchar(15) NOT NULL,
+  `project_id` varchar(20) NOT NULL,
+  `project_name` varchar(25) NOT NULL,
   `review_date` date NOT NULL,
-  `team_id` varchar(15) NOT NULL,
   `link_of_review` varchar(50) NOT NULL,
-  PRIMARY KEY (`s_no`),
-  KEY `project_id` (`project_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  `project_status` varchar(30) NOT NULL,
+  `review_by` varchar(30) NOT NULL,
+  `review` varchar(100) NOT NULL,
+  PRIMARY KEY (`project_id`),
+  KEY `project_id` (`project_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `project_review`
+--
+
+INSERT INTO `project_review` (`project_id`, `project_name`, `review_date`, `link_of_review`, `project_status`, `review_by`, `review`) VALUES
+('', '', '0000-00-00', '', '', '', ''),
+('a2', 'dd', '0000-00-00', '', '', '', ''),
+('aa', 'jennifer', '0000-00-00', '', 'complete', '', 'good'),
+('az', 'kkkkk', '0000-00-00', '', 'llll', '', 'llll'),
+('d1', 'dream', '0000-00-00', '', 'complete', '', 'good'),
+('d111', 'disco', '2014-07-11', 'link', 'complete', 'me', 'goodjob'),
+('dx1', 'dcsite', '0000-00-00', 'www.google.com', 'designing', '', 'very good'),
+('jj', 'kk', '0000-00-00', 'nn', 'll', '', 'oo'),
+('p1', 'dc', '0000-00-00', '', 'designning', '', 'not up to mark'),
+('p5', 'jeff', '0000-00-00', '', 'half', '', 'great'),
+('paz', 'nnn', '0000-00-00', 'fffff.fff', 'gone', 'you', 'go to hell'),
+('pzz1', 'have fun', '2012-12-12', 'a', 'complete', 'me', 'good'),
+('x2', 'dc site', '0000-00-00', 'www.google.com', 'complete', '', 'dsadsdsadasd');
 
 -- --------------------------------------------------------
 
@@ -503,18 +516,28 @@ CREATE TABLE IF NOT EXISTS `roles_and_responsibility` (
 --
 
 CREATE TABLE IF NOT EXISTS `system_information` (
-  `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `system_name` varchar(20) NOT NULL,
   `ram` varchar(20) NOT NULL,
   `ram_type` varchar(20) NOT NULL,
   `hdd_capacity` varchar(20) NOT NULL,
-  `moniter_type` varchar(20) NOT NULL,
+  `monitor_type` varchar(20) NOT NULL,
   `lan` varchar(5) NOT NULL,
   `access` varchar(10) NOT NULL,
   `os_installed` varchar(20) NOT NULL,
   `sw_details` varchar(50) NOT NULL,
-  PRIMARY KEY (`s_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`system_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `system_information`
+--
+
+INSERT INTO `system_information` (`system_name`, `ram`, `ram_type`, `hdd_capacity`, `monitor_type`, `lan`, `access`, `os_installed`, `sw_details`) VALUES
+('', '2', 'ss', '', 'm', 'yes', 'yes', '', 'nil'),
+('dc-2', '4 GB', 'ss', '500', 'm2', 'yes', 'yes', 'w7', 'nil'),
+('gandhi', '', '', '', '', '', '', '', ''),
+('sacchiu', '', '', '', '', '', '', '', ''),
+('system', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -561,88 +584,6 @@ CREATE TABLE IF NOT EXISTS `technical_assistance` (
   `solution` varchar(30) NOT NULL,
   PRIMARY KEY (`problem_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `achievements`
---
-ALTER TABLE `achievements`
-  ADD CONSTRAINT `achievements_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `dc_member_regular`
---
-ALTER TABLE `dc_member_regular`
-  ADD CONSTRAINT `dc_member_regular_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `documentation`
---
-ALTER TABLE `documentation`
-  ADD CONSTRAINT `documentation_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
-
---
--- Constraints for table `events`
---
-ALTER TABLE `events`
-  ADD CONSTRAINT `events_ibfk_1` FOREIGN KEY (`organizer_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `issued_resource_to`
---
-ALTER TABLE `issued_resource_to`
-  ADD CONSTRAINT `issued_resource_to_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`resource_id`);
-
---
--- Constraints for table `organizer`
---
-ALTER TABLE `organizer`
-  ADD CONSTRAINT `organizer_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `problem_solved_by`
---
-ALTER TABLE `problem_solved_by`
-  ADD CONSTRAINT `problem_solved_by_ibfk_1` FOREIGN KEY (`problem_id`) REFERENCES `technical_assistance` (`problem_id`);
-
---
--- Constraints for table `project_review`
---
-ALTER TABLE `project_review`
-  ADD CONSTRAINT `project_review_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
-
---
--- Constraints for table `project_status`
---
-ALTER TABLE `project_status`
-  ADD CONSTRAINT `project_status_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `projects` (`project_id`);
-
---
--- Constraints for table `responsibility_duration`
---
-ALTER TABLE `responsibility_duration`
-  ADD CONSTRAINT `responsibility_duration_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `result`
---
-ALTER TABLE `result`
-  ADD CONSTRAINT `result_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `roles_and_responsibility`
---
-ALTER TABLE `roles_and_responsibility`
-  ADD CONSTRAINT `roles_and_responsibility_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
-
---
--- Constraints for table `team_members`
---
-ALTER TABLE `team_members`
-  ADD CONSTRAINT `team_members_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
