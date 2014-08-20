@@ -99,7 +99,7 @@ function onlyChars(event)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="date" id="date"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="dod" id="date"> <span id="nameError" class="green"></span>
   	</div>
     
   	
@@ -111,11 +111,11 @@ function onlyChars(event)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project ID</label>
-   		 <input type="text" class="form-control" name="project_id">
+   		 <input type="text" class="form-control" name="projectid">
   	</div>
   	
 	</div>
@@ -126,12 +126,12 @@ function onlyChars(event)
 	<div class="row">
  	 <div class="col-md-6">
  	 	<label>SPMP Link</label>
-   		 <input type="text" class="form-control" name="spmp_link" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" name="spmplink" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   	<div class="col-md-6">
  	 	<label>SPMP Status</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="spmp_status" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="spmpstatus" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   </div>
@@ -141,12 +141,12 @@ function onlyChars(event)
   <div class="row">
    <div class="col-md-6">
     <label>SRS Link</label>
-       <input type="text" class="form-control" name="srs_link" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" name="srslink" id="name"> <span id="nameError" class="green"></span>
     </div>
 
     <div class="col-md-6">
     <label>SRS Status</label>
-       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="srs_status" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="srsstatus" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
@@ -156,12 +156,12 @@ function onlyChars(event)
   <div class="row">
    <div class="col-md-6">
     <label>SDD Link</label>
-       <input type="text" class="form-control" name="sdd_link" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" name="sddlink" id="name"> <span id="nameError" class="green"></span>
     </div>
 
     <div class="col-md-6">
     <label>SDD Status</label>
-       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="sdd_status" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="sddstatus" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
@@ -171,12 +171,12 @@ function onlyChars(event)
     <div class="row">
    <div class="col-md-6">
     <label>STD Link</label>
-       <input type="text" class="form-control" name="std_status" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" name="stdstatus" id="name"> <span id="nameError" class="green"></span>
     </div>
 
     <div class="col-md-6">
     <label>STD Status</label>
-       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="std_link" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="stdlink" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
@@ -203,26 +203,43 @@ function onlyChars(event)
 <?php
 
 
-include ('database_connect.php');
+$server = "localhost";
+$username = "root";
+$password="root";
+$database="dc_database";
+
+$con=mysqli_connect($server,$username,$password,$database);
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
   
-  $date=$_POST['date'];
-  $project_name=$_POST['project_name'];
-  $project_id=$_POST['project_id'];
-  $spmp_link=$_POST['spmp_link'];
-  $spmp_status=$_POST['spmp_status'];
-  $srs_link=$_POST['srs_link'];
-  $srs_status=$_POST['srs_status'];
-  $sdd_link=$_POST['sdd_link'];
-  $sdd_status=$_POST['sdd_status'];
-  $std_link=$_POST['std_link'];
-  $std_status=$_POST['std_status'];
+  }
+ else
+ {
+	echo "successfully submitted";
+}
+  
+  
+  $dod=$_POST['dod'];
+  $projectname=$_POST['projectname'];
+  $projectid=$_POST['projectid'];
+  $spmplink=$_POST['spmplink'];
+  $spmpstatus=$_POST['spmpstatus'];
+  $srslink=$_POST['srslink'];
+  $srsstatus=$_POST['srsstatus'];
+  $sddlink=$_POST['sddlink'];
+  $sddstatus=$_POST['sddstatus'];
+  $stdlink=$_POST['stdlink'];
+  $stdstatus=$_POST['stdstatus'];
   
   
 
 
- $sql="INSERT INTO documentation VALUES('$date','$project_name','$project_id', '$spmp_link', '$spmp_status', '$srs_link', '$srs_status', '$sdd_link', '$sdd_status',  '$std_link','$std_status') ";
+ $sql="INSERT INTO documentation VALUES('$dod','$projectname','$projectid', '$spmplink', '$spmpstatus', '$srslink', '$srsstatus', '$sddlink', '$sddstatus',  '$stdlink','$stdstatus') ";
   
-  mysqli_query($dbconnect,$sql);
+  mysqli_query($con,$sql);
   
 
 

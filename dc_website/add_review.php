@@ -51,7 +51,6 @@ function onlyChars(event)
 
 	<?php 
         include ('header.php');
-        include('date_picker.php')
    ?> <br><br>
 	<div class="container">
     <div class="row">
@@ -95,7 +94,7 @@ function onlyChars(event)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" name="review_date" id="datepicker">
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="dor" id="date"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -106,15 +105,15 @@ function onlyChars(event)
 	<div class="row">
     <div class="col-md-4">
     <label>Project ID</label>
-       <input type="text" class="form-control" name="project_id" id="name"> <span id="nameError" class="green"></span>
+       <input type="text" class="form-control" name="projectid" id="name"> <span id="nameError" class="green"></span>
     </div>
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project Status</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_status">
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectstatus">
   	</div>
   	
 	</div>
@@ -125,7 +124,7 @@ function onlyChars(event)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Review By</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="review_by"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="reviewby"> <span id="nameError" class="green"></span>
   	</div>
 
   	
@@ -134,7 +133,7 @@ function onlyChars(event)
 	
     <br>
     <label>Review link</label>
- 	<input type="text" class="form-control" id="inputEmail3" name="review_link"> 
+ 	<input type="text" class="form-control" id="inputEmail3" name="reviewlink"> 
 
  	<br>
 
@@ -146,7 +145,7 @@ function onlyChars(event)
 
 	</div>
 
-	<input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
+	<input class="btn btn-success"type="submit" value="Submit" id="submit">
 	<input class="btn btn-danger" type="reset" value="Reset">
 	
 		</form>
@@ -163,43 +162,40 @@ function onlyChars(event)
 <?php
 
 
-include ('database_connect.php');
-if(isset($_POST['submit'])){ 
-  $review_date=$_POST['review_date'];
-  $project_name=$_POST['project_name'];
-  $project_id=$_POST['project_id'];
-  $project_status=$_POST['project_status'];
-  $review_by=$_POST['review_by'];
-  $review_link=$_POST['review_link'];
+$server = "localhost";
+$username = "root";
+$password="root";
+$database="dc_database";
+
+$con=mysqli_connect($server,$username,$password,$database);
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  
+  }
+ else
+ {
+	echo "successfully submitted";
+}
+  
+  
+  $dor=$_POST['dor'];
+  $projectname=$_POST['projectname'];
+  $projectid=$_POST['projectid'];
+  $projectstatus=$_POST['projectstatus'];
+  $reviewby=$_POST['reviewby'];
+  $reviewlink=$_POST['reviewlink'];
   $review=$_POST['review'];
   
 
 
- $sql="INSERT INTO `dc_database`.`project_review` (`s_no`, `project_id`, `project_name`, `project_status`, `review_date`, `review_by`, `link_of_review`, `review`)
-       VALUES('','$project_id','$project_name','$project_status','$review_date','review_by','$link_of_review','$review') ";
+ $sql="INSERT INTO project_review VALUES('$projectid','$projectname','$dor','$reviewlink','$projectstatus', '$reviewby', '$review') ";
   
- mysqli_query($dbconnect,$sql);
-
-//  $result = mysqli_query($dbconnect,"SELECT * FROM projects ");
-//  echo "<table class='table table-hover'>";
-
-//   echo "<td>".'PROJECT ID'."<td>". 'PROJECT NAME' . "<td>" . 'PROJECT TYPE'."<td>". 'PROJECT LEADER'."<td>". 'TEAM_MEMBERS'."<td>". 'PROJECT STATUS'."<td>". 'TEAM ID'."<td>". 'DC PAGE LINK'."<td>". 'GITHUB PAGE LINK';
- 
-
-// while($row = mysqli_fetch_array($result))
-//   {
-    
-//   echo "<tr>";
-//   echo "<td>".$row['project_id']."<td>". $row['project_name'] . "<td>" . $row['project_type']."<td>". $row['project_leader']."<td>". $row['team_members']."<td>". $row['project_status']."<td>". $row['team_id']."<td>". $row['dc_page_link']."<td>". $row['github_page_link'];
-//   echo "</tr>";
- 
-//   }
-//    echo "</table>";
-//    //echo "</div>";
-
-// mysqli_close($dbconnect);
+  mysqli_query($con,$sql);
   
-}
+
 
 ?>
 <?php 
