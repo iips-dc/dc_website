@@ -51,6 +51,7 @@ function onlyChars(event)
 
 	<?php 
         include ('header.php');
+        include ('date_picker.php')
    ?> <br><br>
 	<div class="container">
 		<div class="row">
@@ -91,7 +92,7 @@ function onlyChars(event)
 
 	 <div class="row">
  	 <div class="col-md-4">
-   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="dos" id="date"> <span id="nameError" class="green"></span>
+   		 <input type="date" class="form-control" onkeypress="return onlyNumbers(event)" placeholder="YYMMDD" maxlength="6" name="date_of_registration" id="datepicker"> <span id="nameError" class="green"></span>
   	</div>
   	
 	</div>
@@ -102,15 +103,15 @@ function onlyChars(event)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectname" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
   		<label>Project ID</label>
-   		 <input type="text" class="form-control" name="projectid">
+   		 <input type="text" class="form-control" name="project_id">
   	</div>
   	<div class="col-md-4">
   		<label>Project Type</label>
-    		<input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projecttype" id="lname"> <span id="lnameError" class="red"></span>
+    		<input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_type" id="lname"> <span id="lnameError" class="red"></span>
 		
 	  </div>
 	</div>
@@ -121,47 +122,47 @@ function onlyChars(event)
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Team Leader</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="teamleader" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="team_leader" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   	<div class="col-md-4">
  	 	<label>Team ID</label>
-   		 <input type="text" class="form-control" name="teamid" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" name="team_id" id="name"> <span id="nameError" class="green"></span>
   	</div>
 
   	<div class="col-md-4">
  	 	<label>Project Status</label>
-   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="projectstatus" id="name"> <span id="nameError" class="green"></span>
+   		 <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_status" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	
   	</div>
 	
     <br>
     <label>Team Members</label>
- 	<input type="text" class="form-control"  placeholder="jeff , jenny, jack" id="inputEmail3" name="members"> 
+   	<input type="text" class="form-control"  placeholder="jeff , jenny, jack" id="inputEmail3" name="members"> 
 
- 	<br>
+   	<br>
 
- 	<label>Github Link</label>
- 	<input type="text" class="form-control"  id="inputEmail3" name="gitlink"> 
+   	<label>Github Link</label>
+   	<input type="text" class="form-control"  id="inputEmail3" name="github_link"> 
 
- 	<br>
+   	<br>
 
- 	<label>Project link on web(if available)</label>
- 	<input type="text" class="form-control"  id="inputEmail3" name="link"> 
+   	<label>Project link on web(if available)</label>
+   	<input type="text" class="form-control"  id="inputEmail3" name="link"> 
 
- 	<br>
- 	<label>Project Description</label>
- 	<textarea class="form-control" rows="3" id="add" name="projectdesc" ></textarea>
+   	<br>
+   	<label>Project Description</label>
+   	<textarea class="form-control" rows="3" id="add" name="project_description" ></textarea>
 
- 	<br><br>
+   	<br><br>
 
-	</div>
+    </div>
 
-	<input class="btn btn-success"type="submit" value="Submit" id="submit">
-	<input class="btn btn-danger" type="reset" value="Reset">
+  	<input class="btn btn-success"type="submit" value="Submit" id="submit">
+  	<input class="btn btn-danger" type="reset" value="Reset">
 	
-		</form>
+	</form>
 		
 		<br>
 		
@@ -175,43 +176,26 @@ function onlyChars(event)
 <?php
 
 
-$server = "localhost";
-$username = "root";
-$password="root";
-$database="dc_database";
-
-$con=mysqli_connect($server,$username,$password,$database);
-
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+include ('database_connect.php');
   
-  }
- else
- {
-	echo "successfully submitted";
-}
-  
-  
-  $dos=$_POST['dos'];
-  $projectname=$_POST['projectname'];
-  $projectid=$_POST['projectid'];
-  $projecttype=$_POST['projecttype'];
-  $teamleader=$_POST['teamleader'];
-  $teamid=$_POST['teamid'];
-  $projectstatus=$_POST['projectstatus'];
+  $date_of_registration=$_POST['date_of_registration'];
+  $project_name=$_POST['project_name'];
+  $project_id=$_POST['project_id'];
+  $project_type=$_POST['project_type'];
+  $team_leader=$_POST['team_leader'];
+  $team_id=$_POST['team_id'];
+  $project_status=$_POST['project_status'];
   $members=$_POST['members'];
-  $gitlink=$_POST['gitlink'];
+  $github_link=$_POST['github_link'];
   $link=$_POST['link'];
-  $projectdesc=$_POST['projectdesc'];
+  $project_description=$_POST['project_description'];
   
   
 
 
- $sql="INSERT INTO projects VALUES('$dos','$projectid', '$projectname', '$projecttype', '$teamleader', '$members', '$projectstatus', '$teamid', '$link', '$gitlink','$projectdesc') ";
+ $sql="INSERT INTO projects VALUES('$project_id', '$project_name', '$project_type','$project_description', '$project_leader', '$team_id', '$project_status', '$dc_page_link', '$github_link') ";
   
-  mysqli_query($con,$sql);
+  mysqli_query($dbconnect,$sql);
   
 
 
