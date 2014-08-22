@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 25, 2014 at 06:24 PM
--- Server version: 5.5.37
--- PHP Version: 5.3.10-1ubuntu3.11
+-- Generation Time: Aug 22, 2014 at 04:23 PM
+-- Server version: 5.5.38
+-- PHP Version: 5.3.10-1ubuntu3.13
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -93,13 +93,66 @@ CREATE TABLE IF NOT EXISTS `attendence` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `daily_log`
+--
+
+CREATE TABLE IF NOT EXISTS `daily_log` (
+  `date` date NOT NULL,
+  `log` varchar(255) DEFAULT NULL,
+  `link` varchar(255) DEFAULT NULL,
+  `s_no` int(11) NOT NULL AUTO_INCREMENT,
+  `member_id` varchar(15) NOT NULL,
+  PRIMARY KEY (`s_no`),
+  KEY `member_id` (`member_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=52 ;
+
+--
+-- Dumping data for table `daily_log`
+--
+
+INSERT INTO `daily_log` (`date`, `log`, `link`, `s_no`, `member_id`) VALUES
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 1, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 2, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 3, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 4, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 5, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 6, 'it-2k11-25'),
+('2014-04-18', 'hello today I am on Leave', 'www.google.com', 7, 'it-2k11-25'),
+('0000-00-00', 'hello today I am on Leave', 'www.google.com', 8, 'it-2k11-25'),
+('0000-00-00', 'hello today I am on Leave', 'www.google.com', 9, 'it-2k11-25'),
+('2014-04-16', 'hello today I am on Leave', 'www.google.com', 10, 'it-2k11-25'),
+('2014-04-03', 'hello today I am on Leave', 'www.google.com', 13, 'it-2k11-25'),
+('2014-04-19', 'hello', 'www.google.com', 14, 'it-2k11-32'),
+('2014-04-22', 'k', '', 15, 'it-2k11-25'),
+('2014-04-16', 'hello today I am on Leave', 'ekfm;lmelme', 16, 'it-2k11-25'),
+('2014-04-09', 'ek;j;ef;', 'sjdhjlsdhj', 17, 'it-2k11-32'),
+('2014-05-01', 'hello today I am on Leave', 'k', 20, 'it-2k11-25'),
+('2014-04-17', 'pppppppp', 'kkkk', 21, 'it-2k11-25'),
+('2014-04-12', 'k', 'k', 23, 'it-2k11-32'),
+('2014-04-02', 'hello today I am on Leave', 'www.google.com', 29, 'it-2k11-25'),
+('2014-04-12', 'k', 'mf', 30, 'it-2k11-25'),
+('2014-04-16', 'hello today I am on Leave', '', 38, 'it-2k11-25'),
+('2014-05-24', 'hello today I am on Leave', 'www.google.com', 39, 'it-2k11-25'),
+('2014-04-01', 'hello today I am on Leave', 'www.google.com', 40, 'it-2k11-25'),
+('2014-04-05', 'hello today I am on Leave', 'www.google.com', 41, 'it-2k11-25'),
+('2014-06-06', 'hello today I am on Leave', 'www.google.com', 42, 'it-2k11-25'),
+('2014-06-06', 'hello today I am on Leave', 'www.google.com', 43, 'it-2k11-25'),
+('2014-04-01', 'k', 'k', 44, 'it-2k11-25'),
+('2014-04-05', 'k', 'k', 45, 'it-2k11-32'),
+('0000-00-00', 'k', '', 46, 'it-2k11-25'),
+('2014-04-05', 'kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk', '', 50, 'it-2k11-25'),
+('0000-00-00', 'aaaaaaaaaaaaaaaaaaaa', '', 51, 'it-2k11-25');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_member_master`
 --
 
 CREATE TABLE IF NOT EXISTS `dc_member_master` (
   `member_id` varchar(15) NOT NULL,
   `first_name` varchar(20) NOT NULL,
-  `mid_name` varchar(20) NOT NULL,
+  `mid_name` varchar(30) NOT NULL,
   `last_name` varchar(20) NOT NULL,
   `date_of_birth` date NOT NULL,
   `gender` varchar(2) NOT NULL,
@@ -113,6 +166,7 @@ CREATE TABLE IF NOT EXISTS `dc_member_master` (
   `github_id` varchar(20) NOT NULL,
   `linkedin_id` varchar(30) NOT NULL,
   `sem_of_joining` varchar(10) NOT NULL,
+  `email` varchar(50) NOT NULL,
   PRIMARY KEY (`member_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -120,13 +174,9 @@ CREATE TABLE IF NOT EXISTS `dc_member_master` (
 -- Dumping data for table `dc_member_master`
 --
 
-INSERT INTO `dc_member_master` (`member_id`, `first_name`, `mid_name`, `last_name`, `date_of_birth`, `gender`, `blood_group`, `local_address`, `parmanent_address`, `father_name`, `mother_name`, `guardian_name`, `course_name`, `github_id`, `linkedin_id`, `sem_of_joining`) VALUES
-('it2k1132', 'sachin', '', 'tanwar', '0000-00-00', 'Fe', '', 'lkjhkjlhkljhlkhhkj', ',mhklhklhklm', 'r tanwar', '', 'nil', '', 'sa@gmail.com', 'linkedin', ''),
-('it2k1133', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', '', 'lkjhkjlhkljhlkhhkj', ',mhklhklhklm', 'ls tanwar', 'r tanwar', 'nil', '', 'sa@gmail.com', 'linkedin', ''),
-('it2k1134', 'jeff', '', '', '0000-00-00', 'Ma', '', 'fghjfhgfghfghf', 'fdsfgfgfdmom', 'ls tanwar', 'mom', 'fgdgfdgf', '', '', 'linkedin', '6'),
-('it2k1135', 'jeff', '', '', '0000-00-00', 'Ma', '', 'fghjfhgfghfghf', 'fdsfgfgfdmom', 'ls tanwar', 'mom', 'fgdgfdgf', '', '', 'sa@gmail.com', '6'),
-('it2k1136', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', 'b', 'vnbvnvv', 'bjhjhjgjhgk', 'ls tanwar', 'r tanwar', 'fgdgfdgf', '', 'sa@gmail.com', 'sa@gmail.com', '6'),
-('it2k1137', 'sachin', '', 'tanwar', '0000-00-00', 'Ma', 'b', 'vnbvnvv', 'bjhjhjgjhgk', 'ls tanwar', 'r tanwar', 'fgdgfdgf', '', 'sa@gmail.com', 'sa@gmail.com', '6');
+INSERT INTO `dc_member_master` (`member_id`, `first_name`, `mid_name`, `last_name`, `date_of_birth`, `gender`, `blood_group`, `local_address`, `parmanent_address`, `father_name`, `mother_name`, `guardian_name`, `course_name`, `github_id`, `linkedin_id`, `sem_of_joining`, `email`) VALUES
+('it-2k11-25', 'Pulkit      ', '', 'vaishnav', '1993-12-05', 'ma', '  ', 'localaddress', '   village: runija, dist: ujjain   ', 'kishandas vaishnav      ', 'mahima vaishnav      ', '  ', '   m.tech.', '   pulkitvaishnav   ', '   pulkit   ', '        si', 'pulkitvaishnav35@gmail.com'),
+('it-2k11-32', 'kjjlj', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', 'sachintanwar69@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -154,8 +204,6 @@ CREATE TABLE IF NOT EXISTS `dc_member_regular` (
 --
 
 CREATE TABLE IF NOT EXISTS `documentation` (
-  `date_of_documentation` date NOT NULL,
-  `project_name` varchar(30) NOT NULL,
   `project_id` varchar(10) NOT NULL,
   `spmp_link` varchar(30) NOT NULL,
   `spmp_status` varchar(20) NOT NULL,
@@ -168,28 +216,6 @@ CREATE TABLE IF NOT EXISTS `documentation` (
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `documentation`
---
-
-INSERT INTO `documentation` (`date_of_documentation`, `project_name`, `project_id`, `spmp_link`, `spmp_status`, `srs_link`, `srs_status`, `sdd_link`, `sdd_status`, `std_link`, `std_status`) VALUES
-('0000-00-00', '', '', '', '', '', '', '', '', '', ''),
-('2010-01-02', 'aaaa', 'a4', '', '', '', '', '', '', '', ''),
-('0000-00-00', 'asasasasas', 'aaa11', '', '', '', '', '', '', '', ''),
-('2014-12-13', 'aahhihihihihhi', 'ahah1', '', '', '', '', '', '', '', ''),
-('1212-12-12', 'asdf', 'as', '', '', '', '', '', '', '', ''),
-('0000-00-00', 'a', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b', 'b'),
-('0000-00-00', 'dcsite', 'd1', 'nnsndkjfnfd', 'kjnkj', 'nkjnkj', 'nkjnkj', 'nknk', 'knkj', 'nkj', 'knnkj'),
-('2014-07-11', 'disco', 'd11', 'spmp', 'spmp', 'srs', 'srs', 'sdd', 'sdd', 'std', 'std'),
-('0000-00-00', 'dhen', 'dd1', '', '', '', '', '', '', '', ''),
-('2011-11-11', 'gogoagone', 'ggg', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a'),
-('0000-00-00', 'giveme', 'gm', 'a', 'a', 'a', 'a', 'a', 'aa', 'a', 'aa'),
-('2012-12-12', 'havefun', 'hh1', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'aa'),
-('2010-11-12', 'pppp', 'p', '', '', '', '', '', '', '', ''),
-('0000-00-00', 'qaz', 'q', '', '', '', '', '', '', '', ''),
-('2012-12-12', 'qwerty', 'qw', 'q', 'q', 'q', 'q', 'q', 'q', 'q', 'q'),
-('0000-00-00', 'xyz', 'x1', 'f', 'b', 'c', 'd', 'e', 'f', 'h', 'g');
-
 -- --------------------------------------------------------
 
 --
@@ -197,15 +223,15 @@ INSERT INTO `documentation` (`date_of_documentation`, `project_name`, `project_i
 --
 
 CREATE TABLE IF NOT EXISTS `entrance` (
-  `roll_no` varchar(12) NOT NULL,
+  `s_no` int(11) NOT NULL,
   `date_of_joining` date NOT NULL,
   `first_name` varchar(20) NOT NULL,
   `middle_name` varchar(20) NOT NULL,
   `last_name` varchar(20) NOT NULL,
-  `birthday` date NOT NULL,
+  `date_of_birth` date NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `bloodgroup` varchar(10) NOT NULL,
-  `area_of_interest` varchar(100) NOT NULL,
+  `blood_group` varchar(10) NOT NULL,
+  `area_of_intrest` varchar(100) NOT NULL,
   `basic_skills` varchar(100) NOT NULL,
   `current_address` varchar(100) NOT NULL,
   `permanent_address` varchar(100) NOT NULL,
@@ -232,18 +258,24 @@ CREATE TABLE IF NOT EXISTS `entrance` (
   `project_desc` varchar(50) NOT NULL,
   `reference_catg` varchar(30) NOT NULL,
   `reference` varchar(30) NOT NULL,
-  `why_choose` varchar(50) NOT NULL,
-  PRIMARY KEY (`roll_no`)
+  `why_choose` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `entrance`
 --
 
-INSERT INTO `entrance` (`roll_no`, `date_of_joining`, `first_name`, `middle_name`, `last_name`, `birthday`, `gender`, `bloodgroup`, `area_of_interest`, `basic_skills`, `current_address`, `permanent_address`, `country_code`, `std_code`, `mobile_no`, `student_email`, `github_id`, `fathers_name`, `fathers_contact`, `fathers_email`, `guardian_name`, `guardian_contact`, `school_name`, `percentage_10th`, `percentage_12th`, `course`, `semester`, `cgpa`, `online_courses`, `project_name`, `project_type`, `project_duration`, `project_desc`, `reference_catg`, `reference`, `why_choose`) VALUES
-('', '2011-11-11', '', 'kumar', 'tanwar', '0000-00-00', 'Male', 'b+', 'football', 'dancing', 'indore', 'dhar', '091', '07292', '8959323439', 'sa@gmail.com', 'tet@gmail.com', 'Lakhan', '9977756988', 'ft@gmail.com', 'guard', '7471198675', 'jnv', '86', '78', 'mtech', '7', '8.7', 'programming foundations with python, machine learning', 'dc site', 'inhouse', '0000-00-00 00:00:00', 'dc website', 'Friend', 'tinku', 'i am a nice guy'),
-('it-2k11-31', '2012-12-12', 'sacin', 'kk', 'menan', '1992-09-06', 'Male', 'b+', 'nil', 'nil', 'dhar', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'M.tech', '1', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', ''),
-('IT-2K11-32', '2011-11-11', '', '', '', '0000-00-00', 'Male', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'M.tech', '1', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', '');
+INSERT INTO `entrance` (`s_no`, `date_of_joining`, `first_name`, `middle_name`, `last_name`, `date_of_birth`, `gender`, `blood_group`, `area_of_intrest`, `basic_skills`, `current_address`, `permanent_address`, `country_code`, `std_code`, `mobile_no`, `student_email`, `github_id`, `fathers_name`, `fathers_contact`, `fathers_email`, `guardian_name`, `guardian_contact`, `school_name`, `percentage_10th`, `percentage_12th`, `course`, `semester`, `cgpa`, `online_courses`, `project_name`, `project_type`, `project_duration`, `project_desc`, `reference_catg`, `reference`, `why_choose`) VALUES
+(122234, '0000-00-00', 'j', 'hardy', 'January', '0000-00-00', '1950', 'Male', 'b', 'cricket, football', 'html,css', 'dhar', 'indore', '91', '0731', '895932', 'sachin@gmail.com', 'kfhdkhkh@kjhfkjh', 'jhfl', '68768', 'jg@jhgjg', 'gjgjhgjh', '', 'fgkfkjhfkj', '23', '34', 'mtech', '6', '56', 'ndkjlshhfkl', 'jdnskj', '0000-00-00 00:00:00', 'lkjlkjlkjljlkjlkj', 'Friend', 'kjkjhkjfhkj', 'hfjkdkfhkjhkj'),
+(122234, '0000-00-00', 'j', 'hardy', 'January', '0000-00-00', '1950', 'Male', 'b', 'cricket, football', 'html,css', 'dhar', 'indore', '91', '0731', '895932', 'sachin@gmail.com', 'kfhdkhkh@kjhfkjh', 'jhfl', '68768', 'jg@jhgjg', 'gjgjhgjh', '', 'fgkfkjhfkj', '23', '34', 'mtech', '6', '56', 'ndkjlshhfkl', 'jdnskj', '0000-00-00 00:00:00', 'lkjlkjlkjljlkjlkj', 'Friend', 'kjkjhkjfhkj', 'hfjkdkfhkjhkj'),
+(122234, '0000-00-00', 'j', 'hardy', 'January', '0000-00-00', '1950', 'Male', 'b', 'cricket, football', 'html,css', 'dhar', 'indore', '91', '0731', '895932', 'sachin@gmail.com', 'kfhdkhkh@kjhfkjh', 'jhfl', '68768', 'jg@jhgjg', 'gjgjhgjh', '', 'fgkfkjhfkj', '23', '34', 'mtech', '6', '56', 'ndkjlshhfkl', 'jdnskj', '0000-00-00 00:00:00', 'lkjlkjlkjljlkjlkj', 'Friend', 'kjkjhkjfhkj', 'hfjkdkfhkjhkj'),
+(122234, '0000-00-00', 'j', 'hardy', 'January', '0000-00-00', '1950', 'Male', 'b', 'cricket, football', 'html,css', 'dhar', 'indore', '91', '0731', '895932', 'sachin@gmail.com', 'kfhdkhkh@kjhfkjh', 'jhfl', '68768', 'jg@jhgjg', 'gjgjhgjh', '', 'fgkfkjhfkj', '23', '34', 'mtech', '6', '56', 'ndkjlshhfkl', 'jdnskj', '0000-00-00 00:00:00', 'lkjlkjlkjljlkjlkj', 'Friend', 'kjkjhkjfhkj', 'hfjkdkfhkjhkj'),
+(122234, '0000-00-00', 'j', 'hardy', 'January', '0000-00-00', '1950', 'Male', 'b', 'cricket, football', 'html,css', 'dhar', 'indore', '91', '0731', '895932', 'sachin@gmail.com', 'kfhdkhkh@kjhfkjh', 'jhfl', '68768', 'jg@jhgjg', 'gjgjhgjh', '', 'fgkfkjhfkj', '23', '34', 'mtech', '6', '56', 'ndkjlshhfkl', 'jdnskj', '0000-00-00 00:00:00', 'lkjlkjlkjljlkjlkj', 'Friend', 'kjkjhkjfhkj', 'hfjkdkfhkjhkj'),
+(0, '0000-00-00', '', '', 'January', '0000-00-00', '1950', 'Male', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', 'hero'),
+(0, '0000-00-00', 'clhk', 'dnsn', 'January', '0000-00-00', '1950', 'Male', '', 'kwnd;knd', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '0000-00-00 00:00:00', '', 'Friend', '', ''),
+(0, '0000-00-00', '$midname', '$lastname', '$month', '0000-00-00', '$year', '$gender', '$bloodgroup', '$interest', '$skills', '$currentaddress', '$permanent', '$countryco', '$stdcode', '$studmobile', '$studemail', '$github', '$fathername', '$fathermobile', '$fatheremail', '$guardianna', '$guardianmobile', '$schoolnam', '$tenthper', '$twealthper', '$course', '$semester', '$cgpa', '$onlinecour', '$projectname', '0000-00-00 00:00:00', '$projectdescr', '$knowdc', '$referencename', '$whychoose'),
+(4, '0000-00-00', 'ddd', 'ffff', 'January', '0000-00-00', '1950', 'Male', '', 'ssssss', '', 'jjjjj', '', '656356', '21.313', '213132132', 'pu@gmail.com', 'hh@email', 'jjlhl', '', 'pu@gmail.com', '546565', '21323232', 'ddd', '74', '47', 'm.tech', '6', '7.22', '', '', '0000-00-00 00:00:00', '', 'Friend', '', ''),
+(1, '0000-00-00', 'ddd', 'ffff', 'January', '0000-00-00', '1950', 'Male', '', 'ssssss', '', 'jjjjj', '', '656356', '21.313', '213132132', 'pu@gmail.com', 'hh@email', 'jjlhl', '', 'pu@gmail.com', '546565', '21323232', 'ddd', '74', '47', 'm.tech', '6', '7.22', '', '', '0000-00-00 00:00:00', '', 'Friend', '', '');
 
 -- --------------------------------------------------------
 
@@ -252,21 +284,38 @@ INSERT INTO `entrance` (`roll_no`, `date_of_joining`, `first_name`, `middle_name
 --
 
 CREATE TABLE IF NOT EXISTS `events` (
-  `event_id` varchar(10) NOT NULL,
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
   `type_of_event` varchar(20) NOT NULL,
-  `organizer_id` varchar(10) NOT NULL,
-  `topic` varchar(20) NOT NULL,
-  `venue` varchar(20) NOT NULL,
+  `organizer_id` int(11) NOT NULL,
+  `topic` varchar(100) NOT NULL,
+  `venue` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `duration` time NOT NULL,
-  `material_link` varchar(50) NOT NULL,
-  `summary_link` varchar(50) NOT NULL,
+  `duration` int(2) NOT NULL,
+  `material_link` varchar(200) NOT NULL,
+  `summary_link` varchar(200) NOT NULL,
   PRIMARY KEY (`event_id`),
   KEY `type_of_event` (`type_of_event`),
   KEY `type_of_event_2` (`type_of_event`),
-  KEY `organizer_id` (`organizer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  KEY `organizer_id` (`organizer_id`),
+  KEY `topic` (`topic`),
+  KEY `topic_2` (`topic`),
+  KEY `topic_3` (`topic`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`event_id`, `type_of_event`, `organizer_id`, `topic`, `venue`, `date`, `time`, `duration`, `material_link`, `summary_link`) VALUES
+(1, 'presentation ', 90, 'jquery', 'development centre ', '2014-07-02', '19:19:35', 0, '', ''),
+(2, 'Presentation', 5, 'rgwrr', 'rrwtw', '2014-08-07', '00:00:00', 0, '', ''),
+(3, ''''';l;''l', 0, ';l'';l'';l', 'l''l'';l', '0000-00-00', '00:00:00', 0, ';l'';l'';', 'l'';l'';'),
+(4, ''''';l;''l', 1, '', 'l''l'';l', '2014-08-06', '00:00:00', 50, ';l'';l'';', 'l'';l'';'),
+(5, 'Seminar', 5, 'lje;wjr', 'indore', '2014-08-07', '00:00:10', 50, '2014-08-29', 'jlrklrlkrj'),
+(6, '', 5, '', '', '0000-00-00', '00:00:00', 0, '', ''),
+(7, 'OutHousing', 6, 'java', 'indore', '2014-08-28', '00:00:10', 50, 'elkjljkl', 'jlrklrlkrj'),
+(8, 'OutHousing', 6, '', '', '0000-00-00', '00:00:00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -275,21 +324,14 @@ CREATE TABLE IF NOT EXISTS `events` (
 --
 
 CREATE TABLE IF NOT EXISTS `hosting_domain` (
-  `id` varchar(10) NOT NULL,
+  `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `hosting` varchar(30) NOT NULL,
   `domain` varchar(30) NOT NULL,
   `url` varchar(40) NOT NULL,
   `doe` varchar(30) NOT NULL,
   `dor` varchar(30) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `hosting_domain`
---
-
-INSERT INTO `hosting_domain` (`id`, `hosting`, `domain`, `url`, `doe`, `dor`) VALUES
-('1', 'jeff', 'jack', 'www.google.com', '111111', '111111');
+  PRIMARY KEY (`s_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -308,6 +350,102 @@ CREATE TABLE IF NOT EXISTS `issued_resource_to` (
   `detail` varchar(50) NOT NULL,
   PRIMARY KEY (`resource_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `knowledge_center`
+--
+
+CREATE TABLE IF NOT EXISTS `knowledge_center` (
+  `s_no` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `link` varchar(150) NOT NULL,
+  `description` text CHARACTER SET utf8 NOT NULL,
+  PRIMARY KEY (`s_no`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=76 ;
+
+--
+-- Dumping data for table `knowledge_center`
+--
+
+INSERT INTO `knowledge_center` (`s_no`, `title`, `date`, `link`, `description`) VALUES
+(1, 'a', '2014-07-01', 'c', 'efef'),
+(2, 'b', '2014-07-02', 'cee', 'eecfef'),
+(3, 'Ajax', '2014-07-10', 'b', 'efewfewf'),
+(4, 'Ajax2', '2014-07-10', 'efwefwe', 'dsvscs'),
+(5, 'Jquery', '2014-07-10', 'e.fnewk.nk;', 'jsdf;eljf'),
+(6, 'Jquery', '2014-07-10', 'e.fnewk.nk;', 'jsdf;eljf'),
+(7, 'Ajax3', '2014-07-10', 'dkfj', 'f;lweflwe;j'),
+(8, 'Ajax', '2014-07-10', 'dwqdw', 'wqwqfqwf'),
+(9, 'wwqdqw', '2014-07-10', 'efeqfeq', 'eqfeqfeq'),
+(10, 'wdkwql', '2014-07-10', 'eql;qewjf', ';efl;qej'),
+(11, 'Ajax5', '2014-07-10', ',dkqnwa,', 'lkjefk;jqe`'),
+(12, 'wqdqwq', '2014-07-10', 'qwefqwf', 'wqefqef'),
+(13, 'java ', '2014-07-10', 'kwdk;j', 'kekfek'),
+(14, 'ajax', '2014-07-10', 'wdwd', 'wdqwd'),
+(15, 'bootstrap', '2014-07-10', 'wefwekj', 'jer;keqj'),
+(16, '"goog"le', '2014-07-10', 'qadqwdqw', 'dqwdwqdwq'),
+(17, 'gooo', '2014-07-10', 'ejk;qej', 'jq;jq;'),
+(18, 'zzzzzzzz', '2014-07-10', 'ewfn', 'fwfekjfewjwe'),
+(19, 'awllw', '2014-07-10', 'kw;lwjj', ';jwqljqd'),
+(20, 'OOOOO', '2014-07-10', 'WKDWDK', 'K;WDL;DK'),
+(21, '"a"', '2014-07-10', 'dwdwd', 'wdwdw'),
+(22, 'Ajax', '2014-07-10', 'g', 'jef;lje'),
+(23, 'eeeee', '2014-07-10', 'aalaa', 'elef;kta'),
+(24, 'Ajax', '2014-07-10', 'pe;fje;lj', 'poj;lgjrgm'),
+(25, 'Ajax', '2014-07-10', 'dwqdw', 'wqdwq'),
+(26, 'java', '2014-07-10', ';jgsg;lj', 'jf;wejfwe;lm'),
+(27, 'java', '2014-07-10', ';jgsg;lj', 'jf;wejfwe;lm'),
+(28, 'Jquery', '2014-07-10', 'qejfqef', 'ndlkndnwknew'),
+(29, 'java', '2014-07-10', 'hfelhfe', 'heflhfelhf'),
+(30, 'Ajax', '2014-07-10', 'lfekafeqkf', 'hlhfhf'),
+(31, 'Ajax', '2014-07-10', 'lmfefm', ';jef;j'),
+(32, 'javascript', '2014-07-10', 'kejfekjf', 'lfel;h'),
+(33, 'Jquery', '2014-07-10', 'lkjkjf', 'jkfdkjf;kjm'),
+(34, 'huge', '2014-07-10', 'lkjdkj', ''),
+(35, 'Ajax', '2014-07-10', 'wqdwl;', 'kjw;djw'),
+(36, 'aajjjaaxx', '2014-07-10', 'wkdjw;kj', 'kjwd;qwj'),
+(37, '"a"', '2014-07-10', ';eklfelk', 'kfekfe;wk'),
+(38, 'Ajax', '2014-07-10', 'b', 'as'),
+(39, 'a ', '2014-07-10', 'b', 'c'),
+(40, 'asus', '2014-07-10', 'jdkjk', 'jdljdwj'),
+(41, '"a"', '2014-07-10', 'wdj;wjdj', 'kjwdjdklj'),
+(42, 'Angular Js', '2014-07-10', 'xyz', 'q'),
+(43, 'bootstrap', '2014-07-10', 'dwqwdww', 'wwdwd'),
+(44, 'bootstrap', '2014-07-10', 'dwqwdww', 'wwdwd'),
+(45, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(46, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(47, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(48, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(49, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(50, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(51, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(52, 'knockout', '2014-07-10', 'dskljdkj', 'kdkfj;'),
+(53, 'aaaaaaaaaaaaaa', '2014-07-15', 'bb', 'cccccc'),
+(54, '', '0000-00-00', '', ''),
+(55, 'dgdsdh''gwtw''''gerre', '0000-00-00', '', ''),
+(56, 'dgdsdh''gwtw''gh''''''''fgj''j''jj''jfj''jfj''jgj''fj''''''gerre', '0000-00-00', '', ''),
+(57, 'dgdsdh''gwt''''''''ghgf''''''''''''''''''''''''''''''''''''w''gh''''''''fgj''j''jj''jfj''jfj''jgj''fj''''''gerre', '0000-00-00', '', ''),
+(58, '""eegedede" ''efefefdef''', '2014-07-02', '''sxgrsgr'' "gdgdeg"', '''gsgxdgxr'' "esgsdgsx"'),
+(59, 'pulkit', '2014-07-15', 'vaishnav', 'software developer at development center iips davv indore'),
+(60, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
+(61, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
+(62, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
+(63, 'rahul', '2014-07-15', 'satal ', 'from bankhedi'),
+(64, 'wqkdjkwj', '2014-07-15', 'kjlkejfkl', 'kdjlkqj'),
+(65, 'wqkdjkwj', '2014-07-15', 'kjlkejfkl', 'kdjlkqj'),
+(66, 'pulkit', '2014-07-15', 'vaishnav', 'from ujjain'),
+(67, 'pulkit', '2014-07-15', 'vaishnav', 'from ujjain'),
+(68, 'Angular Js', '2014-07-15', 'wqqw;ke;``', ';kwjd;wdj'),
+(69, 'Angular Js', '2014-07-15', 'wqqw;ke;``', ';kwjd;wdj'),
+(70, 'pulkit', '2014-07-15', 'kishandas', 'vaishnav'),
+(71, 'pulkit', '2014-07-15', 'kishandas', 'vaishnav'),
+(72, 'Ajax', '2014-07-25', 'msdlsdl;sdl;', 'sjd;sldj efjekwfj efwjf;ejf'),
+(73, 'Veerjaara', '2014-07-25', 'by karan joahar', 'shahrujhas sdklj slkj akljs'),
+(74, 'awaara', '2014-07-25', 'of shammi kapoor', 'hai apna dil to awaara '),
+(75, 'Veerjaara', '2014-07-25', 'by karan joahar', 'shahrujhas sdklj slkj akljs');
 
 -- --------------------------------------------------------
 
@@ -333,11 +471,12 @@ CREATE TABLE IF NOT EXISTS `leave` (
 --
 
 CREATE TABLE IF NOT EXISTS `moocs` (
-  `course_id` varchar(15) NOT NULL,
+  `course_id` int(11) NOT NULL AUTO_INCREMENT,
   `provider_name` varchar(30) NOT NULL,
+  `date_of_starting` date NOT NULL,
   `link` varchar(40) NOT NULL,
   PRIMARY KEY (`course_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -372,17 +511,15 @@ CREATE TABLE IF NOT EXISTS `problem_solved_by` (
 --
 
 CREATE TABLE IF NOT EXISTS `projects` (
-  `date_of_start` date NOT NULL,
   `project_id` varchar(10) NOT NULL,
   `project_name` varchar(20) NOT NULL,
   `project_type` varchar(20) NOT NULL,
+  `project_description` text NOT NULL,
   `project_leader` varchar(30) NOT NULL,
-  `team_members` varchar(100) NOT NULL,
-  `project_status` varchar(30) NOT NULL,
   `team_id` varchar(10) NOT NULL,
+  `project_status` varchar(200) NOT NULL,
   `dc_page_link` varchar(30) NOT NULL,
   `github_page_link` varchar(30) NOT NULL,
-  `project_desc` varchar(100) NOT NULL,
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -390,16 +527,11 @@ CREATE TABLE IF NOT EXISTS `projects` (
 -- Dumping data for table `projects`
 --
 
-INSERT INTO `projects` (`date_of_start`, `project_id`, `project_name`, `project_type`, `project_leader`, `team_members`, `project_status`, `team_id`, `dc_page_link`, `github_page_link`, `project_desc`) VALUES
-('0000-00-00', '', 'dc site', '', '', '', '', '', '', '', ''),
-('0000-00-00', '1', 'abc', 'web', 'jeff', 'sachin, pulkit', 'completed', 'a', '', '', ''),
-('0000-00-00', '2', 'xyz', 'app', 'jenny', 'jeff, jenny', 'anaylysis', 'b', '', '', ''),
-('0000-00-00', '4', 'bbb', 'web', 'dev', 'dev, abhi', 'coding stage', 'd', '', '', ''),
-('2014-07-11', 'd12', 'disco', 'inhouse', 'jeff', 'bakka, meda, jeff', 'complete', 'jj1', 'dofoddj.com', 'ffsdhfshfsdfh.com', 'good'),
-('0000-00-00', 'ddddd', 'jjjjj', 'noooo', 'me', '', '', '', '', '', ''),
-('0000-00-00', 'dsd', 'fddf', 'ffwer', 'fdsff', 'wfwefdsffwewew', 'wwdad', 'fdsfds', 'wwew', 'efdsfdsfds', 'wewqewe'),
-('0000-00-00', 'p1', 'jeffsite', 'inhouse', '', '', 'designing', 't1', 'dcsite.com', 'www.github.com', ''),
-('0000-00-00', 'p2', 'love and war', 'inhouse', 'me', 'a,b,c', 'complete', 't2', 'love.com', 'love.github', '');
+INSERT INTO `projects` (`project_id`, `project_name`, `project_type`, `project_description`, `project_leader`, `team_id`, `project_status`, `dc_page_link`, `github_page_link`) VALUES
+('', '', '', '', '', '', '', '', ''),
+('p01', 'IIPS-Website', 'Inhouse', 'The current new website of IIPS . The aim is to keep the site usable, decentralized, and mobile responsive with different kinds of institutional services for the different kinds of users of the IIPS. ', 'Ankit Kulkarni', '', '', 'iips.redirect.me', ''),
+('p02', 'DC_Website', 'Inhouse', '', '', '', '', '', ''),
+('ssssss', 'aaaaaaaa', 'sssssss', 'ssssssssss', '', 'swssssssss', 'sssssssssss', '', 'sssssssssss');
 
 -- --------------------------------------------------------
 
@@ -408,35 +540,30 @@ INSERT INTO `projects` (`date_of_start`, `project_id`, `project_name`, `project_
 --
 
 CREATE TABLE IF NOT EXISTS `project_review` (
-  `project_id` varchar(20) NOT NULL,
-  `project_name` varchar(25) NOT NULL,
+  `s_no` int(3) NOT NULL AUTO_INCREMENT,
+  `project_id` varchar(15) NOT NULL,
+  `project_name` varchar(150) NOT NULL,
+  `project_status` varchar(150) NOT NULL,
   `review_date` date NOT NULL,
+  `review_by` varchar(150) NOT NULL,
   `link_of_review` varchar(50) NOT NULL,
-  `project_status` varchar(30) NOT NULL,
-  `review_by` varchar(30) NOT NULL,
-  `review` varchar(100) NOT NULL,
-  PRIMARY KEY (`project_id`),
-  KEY `project_id` (`project_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `review` varchar(200) NOT NULL,
+  PRIMARY KEY (`s_no`),
+  KEY `project_id` (`project_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `project_review`
 --
 
-INSERT INTO `project_review` (`project_id`, `project_name`, `review_date`, `link_of_review`, `project_status`, `review_by`, `review`) VALUES
-('', '', '0000-00-00', '', '', '', ''),
-('a2', 'dd', '0000-00-00', '', '', '', ''),
-('aa', 'jennifer', '0000-00-00', '', 'complete', '', 'good'),
-('az', 'kkkkk', '0000-00-00', '', 'llll', '', 'llll'),
-('d1', 'dream', '0000-00-00', '', 'complete', '', 'good'),
-('d111', 'disco', '2014-07-11', 'link', 'complete', 'me', 'goodjob'),
-('dx1', 'dcsite', '0000-00-00', 'www.google.com', 'designing', '', 'very good'),
-('jj', 'kk', '0000-00-00', 'nn', 'll', '', 'oo'),
-('p1', 'dc', '0000-00-00', '', 'designning', '', 'not up to mark'),
-('p5', 'jeff', '0000-00-00', '', 'half', '', 'great'),
-('paz', 'nnn', '0000-00-00', 'fffff.fff', 'gone', 'you', 'go to hell'),
-('pzz1', 'have fun', '2012-12-12', 'a', 'complete', 'me', 'good'),
-('x2', 'dc site', '0000-00-00', 'www.google.com', 'complete', '', 'dsadsdsadasd');
+INSERT INTO `project_review` (`s_no`, `project_id`, `project_name`, `project_status`, `review_date`, `review_by`, `link_of_review`, `review`) VALUES
+(1, 'pro-1', 'astra', 'pending', '2014-08-06', 'EFKLJELKWJWE', 'LFKSJKLFJ', 'LKDJFKLSJKL'),
+(2, '', '', '', '0000-00-00', 'review_by', '', ''),
+(3, '', '', '', '0000-00-00', 'review_by', '', 'jdsflkdsjfklds'),
+(4, '', '', '', '0000-00-00', 'review_by', '', ''),
+(5, '', '', '', '0000-00-00', 'review_by', '', ''),
+(6, 'aa', 'bbCC', 'cc', '2014-08-22', 'review_by', '', 'ff'),
+(7, 'r;grwklgj', 'heehfwejh', 'qjqejheqjkh', '2014-08-08', 'review_by', '', 'hwjhwejk');
 
 -- --------------------------------------------------------
 
@@ -516,28 +643,63 @@ CREATE TABLE IF NOT EXISTS `roles_and_responsibility` (
 --
 
 CREATE TABLE IF NOT EXISTS `system_information` (
+  `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `system_name` varchar(20) NOT NULL,
   `ram` varchar(20) NOT NULL,
   `ram_type` varchar(20) NOT NULL,
   `hdd_capacity` varchar(20) NOT NULL,
-  `monitor_type` varchar(20) NOT NULL,
+  `moniter_type` varchar(20) NOT NULL,
   `lan` varchar(5) NOT NULL,
   `access` varchar(10) NOT NULL,
   `os_installed` varchar(20) NOT NULL,
   `sw_details` varchar(50) NOT NULL,
-  PRIMARY KEY (`system_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`s_no`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
 
 --
--- Dumping data for table `system_information`
+-- Table structure for table `tags`
 --
 
-INSERT INTO `system_information` (`system_name`, `ram`, `ram_type`, `hdd_capacity`, `monitor_type`, `lan`, `access`, `os_installed`, `sw_details`) VALUES
-('', '2', 'ss', '', 'm', 'yes', 'yes', '', 'nil'),
-('dc-2', '4 GB', 'ss', '500', 'm2', 'yes', 'yes', 'w7', 'nil'),
-('gandhi', '', '', '', '', '', '', '', ''),
-('sacchiu', '', '', '', '', '', '', '', ''),
-('system', '', '', '', '', '', '', '', '');
+CREATE TABLE IF NOT EXISTS `tags` (
+  `tag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `s_id` int(11) NOT NULL,
+  `tags` varchar(30) NOT NULL,
+  PRIMARY KEY (`tag_id`),
+  KEY `s_id` (`s_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
+
+--
+-- Dumping data for table `tags`
+--
+
+INSERT INTO `tags` (`tag_id`, `s_id`, `tags`) VALUES
+(1, 4, 'a'),
+(2, 4, 'b'),
+(4, 10, 'as'),
+(5, 10, 'asus'),
+(6, 3, 'p'),
+(7, 3, 'q'),
+(12, 40, 'tag1'),
+(13, 40, 'tag2'),
+(14, 40, 'tag3'),
+(15, 68, ';qjfq;lj'),
+(16, 68, 'e;fe;l'),
+(17, 68, ''),
+(18, 70, 'runija'),
+(19, 70, 'ujjain'),
+(20, 70, ''),
+(21, 70, 'runija'),
+(22, 70, 'ujjain'),
+(24, 73, 'veer'),
+(25, 73, 'jaaara'),
+(26, 74, 'tum'),
+(27, 74, 'ho'),
+(28, 74, 'hum'),
+(29, 74, 'hai'),
+(30, 73, 'veer'),
+(31, 73, 'jaaara');
 
 -- --------------------------------------------------------
 
@@ -584,6 +746,22 @@ CREATE TABLE IF NOT EXISTS `technical_assistance` (
   `solution` varchar(30) NOT NULL,
   PRIMARY KEY (`problem_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `daily_log`
+--
+ALTER TABLE `daily_log`
+  ADD CONSTRAINT `daily_log_ibfk_1` FOREIGN KEY (`member_id`) REFERENCES `dc_member_master` (`member_id`);
+
+--
+-- Constraints for table `tags`
+--
+ALTER TABLE `tags`
+  ADD CONSTRAINT `tags_ibfk_1` FOREIGN KEY (`s_id`) REFERENCES `knowledge_center` (`s_no`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
