@@ -49,7 +49,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <?php include('post_ques.php');?>
+                    <?php include('../knowledge_center/post_ques.php');?>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

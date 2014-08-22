@@ -1,0 +1,3 @@
+Date - 21 August 
+Akshay - Completed three modules.UI for Applying Leave, Knowledge Center Article Posting, And the Login Module. The Pages are in working state. 
+And are in state for the back end development.  
