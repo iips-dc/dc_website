@@ -36,7 +36,7 @@
 
    
     <?php
-        include('header.php');
+        include('nav.html');
     ?>
 
     <!-- Page Content -->
@@ -185,35 +185,7 @@
     </div>
     <!-- /.container -->
     </div><br><br>
-     <div class="section-colored text-center">
-
-        <div class="container">
-
-                 <h3>Opensource Legends</h3><br><br>
-            <div class="row">
-                <ul class='kwicks kwicks-horizontal'>
-                     <li id='panel-1'>
-                        <img src="images/opensource_legends/richards_stallman.jpeg" class='img1'>
-                        <p><b>Richard Matthew Stallman </b>, also known as father of Open souce Operating system, is an American software freedom activist and computer programmer. He campaigns for software to be distributed in a manner, such that every user use it freely.Stallman launched the GNU Project in September 1983 to create a Unix-like computer operating system composed entirely of free software.</p>
-                     </li>
-                     <li id='panel-2'>
-                        <img src="images/opensource_legends/linus_torvalds.jpeg" class='img1'>
-                        <p><b>Linus Benedict Torvalds</b> is a Finnish American software engineer, who was the principal force behind the development of the Linux kernel. He later became the chief architect of the Linux kernel, and now acts as the project's coordinator. He also created the revision control system Git as well as the diving log software Subsurface. He was honored, along with Shinya Yamanaka, with the 2012 Millennium Technology Prize by the Technology Academy Finland "in recognition of his creation of a new open source operating system for computers leading to the widely used Linux kernel"</p>
-                     </li>
-                     <li id='panel-3'>
-                        <img src="images/opensource_legends/pranav_mistry.jpeg" class='img1'>
-                        <p><b>Pranav Mistry</b> is the Head of Think Tank Team and Director of Research of Samsung Research America. Before that he was a Research Assistant and PhD candidate at the MIT Media Lab. In past, he worked with Microsoft, Google, CMU, NASA, UNESCO, Japan Science & Technology to name a few. He received my Master in Media Arts and Sciences from MIT and Master of Design from IIT Bombay. He received my bachelors degree in Computer Science and Engineering. He also dropped out of Architecture School prior to that. Palanpur, a small town situated in northern Gujarat in India, is my hometown.
-                      </p>
-                     </li>
-                     <li id='panel-4'>
-                        <img src="images/opensource_legends/van_rossum.jpeg" class='img1'>
-                        <p><b>Guido van Rossum</b> known as the author of the Python programming language, he is a Dutch computer programmer. In the Python community, Van Rossum is known as a "Benevolent Dictator For Life" (BDFL), meaning that he continues to oversee the Python development process, making decisions where necessary.[6] He was employed by Google from 2005 until December 7th 2012, where he spent half his time developing the Python language. In January 2013, Van Rossum started working for Dropbox</p>
-                     </li>
-                </ul>
-
-               
-
-            </div>
+     
             <!-- /.row -->
 
         </div>
