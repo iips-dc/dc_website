@@ -27,12 +27,12 @@
 <?php include ('nav.html') ?>
  <!-- Carousel
     ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-		 <div class="carousel-inner  col-lg-6">
-          <video class"col-lg-6" poster="images/dc.png" autoplay src="video/DC-IIPS-Signature_Video.mp4" 
-          style="position: absolute; z-index: 0; top: 0px; left: 0px; min-width: 80%; min-height: 850px;"></video>
-        </div>    <!-- Indicators -->
-    </div><!-- /.carousel -->
+
+		 <div class="carousel-inner  " style=" background-color: black; width:100% ; height: 450px;">
+         <video  poster="images/dc.png" autoplay src="video/DC-IIPS-Signature_Video.mp4" 
+          style="position: absolute; z-index: 0; top: 0px; left: 0px; width:100% ; height: 450px; align-content:center;"></video>
+        </div>   <!-- Indicators -->
+    <!-- /.carousel -->
 
 
 
