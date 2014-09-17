@@ -61,8 +61,8 @@
                     </li></p>
             </div>
             <div class="col-md-5">
-                <h2>Mentor : <a href="https://sites.google.com/site/shaligramiipsdavvindore/">Mr. Shaligram Prajapat </a></h2>
-                <p>Shaligram Prajapat  has received  Bachelor of Science in  Electronics from Devi Ahilya  University Indore in 1998,  Master of Science in Computer Science  in  2000 and Master of Technology in Computer Science  in 2007 from School of Computer Science & IT (Formerly - The Institute of Computer Science and Electronics  (I. C.S.E.) ) Devi Ahilya University ,Indore M.P. ,INDIA. He has Qualified UGC-NET (Computer Science and Applications) in 2005 and GATE(Computer Science and Engineering) in 2007 . He has worked as Reader in Pioneer Institute of Professional Studies (PIPS) Indore  in MCA department and joined International Institute of Professional Studies (IIPS) ,Devi Ahilya University Indore, as Reader for MCA and M.Tech Courses since 2007. </p>
+                <h2>Mentor : <a href="https://sites.google.com/site/shaligramiipsdavvindore/">Shaligram Prajapat </a></h2>
+                <p style="text-align:justify;">Shaligram Prajapat  has received  Bachelor of Science in  Electronics from Devi Ahilya  University Indore in 1998,  Master of Science in Computer Science  in  2000 and Master of Technology in Computer Science  in 2007 from School of Computer Science & IT (Formerly - The Institute of Computer Science and Electronics  (I. C.S.E.) ) Devi Ahilya University ,Indore M.P. ,INDIA. He has Qualified UGC-NET (Computer Science and Applications) in 2005 and GATE(Computer Science and Engineering) in 2007 . He has worked as Reader in Pioneer Institute of Professional Studies (PIPS) Indore  in MCA department and joined International Institute of Professional Studies (IIPS) ,Devi Ahilya University Indore, as Reader for MCA and M.Tech Courses since 2007. </p>
             </div>
             <div class="col-md-2"></div>
 

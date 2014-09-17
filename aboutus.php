@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-6">
                 <br><h2>History</h2><br>
-                <p>Envisioned in December 2000 immediate mission (in 2000) -Rendering low cost IT solutions to various government and social organizations, e-Governance and Social Computing Initiative Lead by the innovative instincts of its pro-active Director, nurtured with the acumen and resourcefulness of its pragmatic project managers of that time. IIPS-DC is driven passionate student teams working 24 X 7 with enthusiastic, committed and experts from Industries and Academia of its industrious team and Alumni. </p>
+                <p style="text-align:justify;">Envisioned in December 2000 immediate mission (in 2000) -Rendering low cost IT solutions to various government and social organizations, e-Governance and Social Computing Initiative Lead by the innovative instincts of its pro-active Director, nurtured with the acumen and resourcefulness of its pragmatic project managers of that time. IIPS-DC is driven passionate student teams working 24 X 7 with enthusiastic, committed and experts from Industries and Academia of its industrious team and Alumni. </p>
             </div>
 
         </div><br><br><br><br>
@@ -53,7 +53,7 @@
          <div id="align_center">
                 <h3>About Development Center</h3>
                     <br><br>
-                <p><strong>"We learn most , When we want to invent - <a href="http://en.wikipedia.org/wiki/Jean_Piaget">Jean Piaget</a> "</strong></p>
+                <p style="text-align:justify;"><strong>"We learn most , When we want to invent - <a href="http://en.wikipedia.org/wiki/Jean_Piaget">Jean Piaget</a> "</strong></p>
   
                     IIPS D.C. is driven by the enthusiastic, committed .strongly motivated IIPS students and expertise of its industrious team and Mentor. <br><br>
    
@@ -79,7 +79,7 @@
   
                     <h2>e-SCI</h2>
    
-                    <p>Envisioned in 2001.
+                    <p style="text-align:justify;">Envisioned in 2001.
                     Started with strong team of six members.
                     The aim of e-SCI lab is to work for social institutions and ergo, computerizing the tasks which are accomplished with tremendous efforts manually.
                     The project was automation of Regional Transport Office .
@@ -99,7 +99,7 @@
             </div>
         </div>
     </div>
-
+<br><br><br><br>
     <!-- /.container -->
 
      <?php include ('footer.html') ?>

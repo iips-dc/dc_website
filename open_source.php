@@ -64,7 +64,7 @@
             <div class="col-xs-6 col-md-4">
                 <img class="img-responsive" src="images/open_src.jpg" style=" padding-top:50px;">
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-8">
+            <div class="col-xs-12 col-sm-6 col-md-8" style="text-align:justify;">
                 <h2 class="page-header">What is this..?</h2>
                 <p>Generally, open source refers to a computer program in which the source code is available to the general public for use and/or modification from its original design. Open-source code is typically created as a collaborative effort in which programmers improve upon the code and share the changes within the community. Open source sprouted in the technological community as a response to proprietary software owned by corporations.</p>
                 <p>Our aim is to Provide low cost IT solutions to various government and social organizations,  with the help of team of students of IIPS to help society, mankind and for betterment of education system by automation.</p>
@@ -115,7 +115,7 @@
                     <li><a href="#service-eight" data-toggle="tab">Moodle</a>
                     </li>
                 </ul>
-                <div id="myTabContent" class="tab-content">
+                <div id="myTabContent" class="tab-content" style="text-align:justify;">
                     <div class="tab-pane fade in active" id="service-one">
                         <!-- <i class="fa fa-gear pull-left fa-4x"></i> -->
                         <img class="col-md-4" src="images/opensource/linux.jpg" >
@@ -187,7 +187,7 @@
     </div><br><br>
      
             <!-- /.row -->
-
+<br><br><br><br><br><br>
         </div>
         <!-- /.container -->
 
