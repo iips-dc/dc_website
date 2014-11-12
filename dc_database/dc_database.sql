@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Aug 22, 2014 at 04:23 PM
+-- Generation Time: Oct 09, 2014 at 06:05 PM
 -- Server version: 5.5.38
--- PHP Version: 5.3.10-1ubuntu3.13
+-- PHP Version: 5.4.33-2+deb.sury.org~precise+1
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -146,6 +146,37 @@ INSERT INTO `daily_log` (`date`, `log`, `link`, `s_no`, `member_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `dc_members`
+--
+
+CREATE TABLE IF NOT EXISTS `dc_members` (
+  `s_no` int(11) NOT NULL AUTO_INCREMENT,
+  `members_email` varchar(250) NOT NULL,
+  `duty` varchar(150) NOT NULL,
+  PRIMARY KEY (`s_no`),
+  UNIQUE KEY `members_email` (`members_email`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+
+--
+-- Dumping data for table `dc_members`
+--
+
+INSERT INTO `dc_members` (`s_no`, `members_email`, `duty`) VALUES
+(1, 'shaligram.prajapat@gmail.com', 'Incharge'),
+(2, 'ankit.kul1890@gmail.com', 'co-ordinator'),
+(3, 'akhan.iipsmca@gmail.com', 'co-ordinator'),
+(14, 'akanksha.ashi94@gmail.com', 'co-ordinator'),
+(15, 'rahul.sagore@gmail.com', 'co-ordinator'),
+(16, 'nitesh.mishra143@gmail.com', 'co-ordinator'),
+(17, 'raikwar.sunny23@gmail.com', 'co-ordinator'),
+(18, 'komal.rathore40@gmail.com', 'co-ordinator'),
+(19, 'bediyadaviips@gmail.com', 'co-ordinator'),
+(24, 'pulkitvaishnav35@gmail.com', ''),
+(25, 'akshay29051994@gmail.com', '');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dc_member_master`
 --
 
@@ -195,6 +226,26 @@ CREATE TABLE IF NOT EXISTS `dc_member_regular` (
   `guardian_contact_no` varchar(15) DEFAULT NULL,
   `guardian_email` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`member_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dc_member_social`
+--
+
+CREATE TABLE IF NOT EXISTS `dc_member_social` (
+  `facebook` varchar(200) NOT NULL,
+  `googleplus` varchar(200) NOT NULL,
+  `linkedin` varchar(100) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `twitter` varchar(100) NOT NULL,
+  `blog` varchar(200) NOT NULL,
+  `github` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  PRIMARY KEY (`email`),
+  UNIQUE KEY `facebook` (`facebook`),
+  UNIQUE KEY `github` (`github`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

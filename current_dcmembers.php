@@ -498,6 +498,83 @@
 
         </div>
 
+        <form role="form" method="post" id="theForm" action="#"> 
+            <div class="form-group">
+            
+                
+            <div class="col-md-12" style="border:1px solid black;background-color:white;">
+                <label>
+                    <h2>Insert your Social Information</h2>
+                </label><br/>
+                <label>Name</label>
+                    
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control" placeholder="Enter your full-name" name="name">
+                    </div>
+                </div>
+
+            <br/>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Google+</label>
+                        <input type="text" class="form-control" placeholder="Enter your Google+ profile URL:" name="googleplus">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Blog</label>
+                        <input type="text" class="form-control" placeholder="Enter your blog's link:" name="blog" >                    </div>
+                </div>
+                               
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>LinkedIn profile</label>
+                        <input type="text" class="form-control" placeholder="Enter your LinkedIn profile URL:"  name="linkedin">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Github Username</label>
+                        <input type="text" class="form-control" placeholder="Enter your Github username:  "  name="github">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Twitter handle</label>
+                        <input type="text" class="form-control" placeholder="Enter your Twitter handle:" name="twitter">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Facebook profile</label>
+                        <input type="text" class="form-control" placeholder="Enter your Facebook profile URL:" name="facebook">
+                    </div>
+                </div> 
+        <br>
+   
+    <input class="btn btn-success"type="submit" value="Submit" id="submit" >
+    <input class="btn btn-danger" type="reset" value="Reset">
+    </div>
+    </form>
+   <?php
+
+
+        include ('database_connect.php');
+          
+        $github=$_POST['github'];
+        $blog=$_POST['blog'];
+        $facebook=$_POST['facebook'];
+        $twitter=$_POST['twitter'];
+        $linkedin=$_POST['linkedin'];
+        $googleplus=$_POST['googleplus'];
+        $name=$_POST['name'];
+        $members=$_POST['members'];
+        $sql="INSERT INTO `dc_database`.`dc_member_social` (`github`, `facebook`, `googleplus`, `linkedin`, `name`, `twitter`, `blog`) VALUES ('$github', '$facebook', '$googleplus', '$linkedin', '$name', '$twitter', '$blog');";
+          
+        $query=mysqli_query($dbconnect,$sql);
+        if ($query) {
+            echo "<script>data_submitted();</script>";
+        }
+        
+
+    ?>
        
 
 
@@ -517,6 +594,11 @@
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/modern-business.js"></script>
+    <script type="text/javascript">
+        function data_submitted() {
+           alert("Your data is submitted sucessfully.");
+        }
+    </script>
 
 </body>
 

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard</title>
+    <title>Leave</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -29,38 +29,6 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-
-   // jQuery methods go here...
-   alert("hello");
-
-   
-
-
-
-}); 
-    function udacity(){
-                $.getJSON("https://www.udacity.com/public-api/v0/courses", function(data) {
-                $.each(data.courses, function(count) {
-                    //console.log(data.courses[count].title);
-                    //console.log(data.courses[count].homepage);
-                    
-                });
-                    var i;
-                    for(i=0; i < data.courses.length; i++){
-                        console.log("i="+i);
-
-                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + data.courses[i].title+"<br>";
-                 }
-
-                //document.getElementById("demo").innerHTML = typeof(data.courses[count]);
-            });
-        };
-        
-    </script>
-
 
 </head>
 
@@ -79,14 +47,9 @@
             </div>
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="col-md-4">
-                <h2>Udacity Course Notifications</h2>
-                <button onclick="udacity()">See Udacity Courses</button>
-                <p id="demo"></p>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
-                    
+                    <?php include('../leave/apply.php');?>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

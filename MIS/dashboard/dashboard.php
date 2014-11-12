@@ -50,11 +50,13 @@
                 });
                     var i;
                     for(i=0; i < data.courses.length; i++){
-                        console.log("i="+i);
-
-                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + data.courses[i].title+"<br>";
+                        
+                        if (/https:\/\/www\.udacity\.com\/course\/[cu][sd].*?/.test(data.courses[i].homepage)) {
+                            //console.log(data.courses[i].title)
+                            console.log("i="+i);     
+                    document.getElementById("demo").innerHTML = document.getElementById("demo").innerHTML + "<b class='fa fa-check-circle'>"+data.courses[i].title+"</b>"+"<br>"+"<a href='data.courses[i].homepage'>"+data.courses[i].homepage+"</a>"+"<br>";
                  }
-
+}
                 //document.getElementById("demo").innerHTML = typeof(data.courses[count]);
             });
         };
@@ -79,11 +81,38 @@
             </div>
         <!-- Page Content -->
         <div id="page-wrapper">
-            <div class="col-md-4">
+           <!--  <div class="col-md-4">
                 <h2>Udacity Course Notifications</h2>
                 <button onclick="udacity()">See Udacity Courses</button>
                 <p id="demo"></p>
+            </div> -->
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" onclick="udacity()">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">See Udacity Courses</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <p id="demo"></p>
+                    </div>
+                </div>
             </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
             <div class="row">
                 <div class="col-lg-12">
                     

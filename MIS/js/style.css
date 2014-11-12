@@ -1,0 +1,9 @@
+.header{background-color:#4c66a4;padding:20 0 5 200px}
+.searchres{margin-left:200px;width:400px;border: #f0f0f0 1px solid;border-radius:5px;}.img{float:left;margin: 5 5 5 5px;}
+.search_box{width: 400px;height: 35px;border: 0;border-radius: 5px;padding: 10px;font-family: verdana;color:black; font-size: 15px;}
+.name{margin-top: 14px;}
+.user_div{clear:both;font-family: verdana;border-top: #f0f0f0 1px solid;color:black; font-size: 15px;height:40px;margin:1px;padding:10px;width:380px;border-radius:4px;vertical-align: top;  }
+.user_div:hover{background:#4c66a4;color:#fff;cursor:pointer}
+.no_data{height: 40px;background-color: #F0F0F0;padding: 10 0 0 10px;width: 390px;border-radius: 5px;font-family: verdana;color:black; font-size: 15px;}
+.name{float:left;margin:0 0 0 10px;}.cntry{margin:0 0 0 50px; font-size:13px}
+a:link {text-decoration:none;}a:visited {text-decoration:none;}a:hover {text-decoration:none;}a:active {text-decoration:none;}
