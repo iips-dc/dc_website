@@ -3,11 +3,11 @@
                     
                 </h1>
                 <ol class="breadcrumb">
-                    <li><a href="add_project.php">Home</a>
+                    <li><a href="#add_project">Home</a>
                     </li>
-                    <li><a href="add_review.php">Project Reviews</a>
+                    <li><a href="#add_review">Project Reviews</a>
                     </li>
-                    <li><a href="add_documentation.php">Documentation</a>
+                    <li><a href="#add_documentation">Documentation</a>
                     </li>
                     
                     
