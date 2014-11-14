@@ -31,16 +31,6 @@
     <![endif]-->
     <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
     <script type="text/javascript">
-    $(document).ready(function(){
-
-   // jQuery methods go here...
-   alert("hello");
-
-   
-
-
-
-}); 
     function udacity(){
                 $.getJSON("https://www.udacity.com/public-api/v0/courses", function(data) {
                 $.each(data.courses, function(count) {
@@ -71,7 +61,7 @@
     <div id="wrapper">
 
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        	<?php include('../header.html'); ?>
+        	<?php include('../header.php'); ?>
         </nav>
         <div class="navbar-default sidebar" role="navigation" style="padding-top: 0px;">
 
@@ -79,18 +69,86 @@
             		<?php include('../nav.html'); ?>
            	</div>
             </div>
+                <div class="row">
+             
+        <div class="col-md-8 col-md-offset-3">
+           <div class="panel panel-default boxShadow" style="overflow:hidden;">
+              <div class="panel-heading">
+                 <h3 class="panel-title">News </h3>
+                 <h3 class="panel-title pull-right" style="margin-top:-15px;">Activities </h3>
+
+              </div>
+              <div class="panel-body">
+                  <div class="tab-content">
+                     <div class="tab-pane active" id="news" >
+                        <ul class="media-list">
+                           <li class="media">
+                              <div class="media-body"><br>
+                              
+                                    <div class="row">
+                                        <!-- <div class="col-md-1">
+                                          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/60x60/auto" alt="Generic placeholder image">
+                                        </div> -->
+                                        <div class="col-md-7">
+                                            <!-- <h5><a href="news#">IIPS Naac Visit complete on 15-Jan-2014  </a>  <span class="pull-right">Posted - 31st Dec 2013 </span></h5>-->
+                                            
+                                            <h5><a href="news#new_website"><i class="icon-info-sign"></i>  New mobile responsive IIPS website soon to be released </a><img src="images/new.gif" ></h5>
+                                        28, 0j    <h5><a href="download"><i class="icon-info-sign"></i> Download your cousre presentations by subject teachers </a><img src="images/new.gif" ></h5>
+                                            <h5><a href="news#invitation"><i class="icon-info-sign"></i> Invitation to 13th Case Writing Workshop: International Publication by Prestige Institute of MGMT-GWl.  </a><img src="images/new.gif" ></h5>   
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i> UTD Teachers Seniority List (EFFECTIVE FROM 01.01.2014 TO 31.12.2014)</a><img src="images/new.gif" ></h5> 
+                                            
+                                        </div>
+
+                                        <div class="col-md-5">
+                                            <h5>Activities</h5>
+                                            <!-- <h5><a href="news#">IIPS Naac Visit complete on 15-Jan-2014  </a>  <span class="pull-right">Posted - 31st Dec 2013 </span></h5>-->
+                                            
+                                            <h5><a href="news#naac_photos"><i class="icon-info-sign"></i> Naac Visit photos dated 16/01/14 </a><img src="images/new.gif" ></h5>
+                                            <h5><a href="news#naac_photos1"><i class="icon-info-sign"></i> Naac Visit photos dated 15/01/14 </a><img src="images/new.gif" ></h5>
+                                            <h5><a href="news#naac_visit"><i class="icon-info-sign"></i> IIPS Naac Visit complete on 15-Jan-2014 </a><img src="images/new.gif" ></h5>
+                                            
+                                        </div>
+
+
+                                    </div><br><!-- end of row class -->
+                                    
+                                    <!-- 
+                                    <div class="row">
+                                     -->    <!-- <div class="col-md-1">
+                                          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/60x60/auto" alt="Generic placeholder image">
+                                        </div> -->
+                                        <!-- <div class="col-md-11">
+                                            <h5>Students Preparing for Synergy 2014 Event <span class="text-muted"><a href="news#synergy">Click Here</a> for details</span><span class="postDate pull-right">Posted - 28th Dec 2013</span></h5> 
+                                        </div>
+                                    </div> --><!-- end of row class -->
+                               </div>
+                            </li>
+                        </ul>
+                      </div>
+    
+                      <div class="tab-pane" id="events">
+                        <ul class="media-list">
+                           <li class="media">
+                              <a class="pull-left" href="#"> <img class="media-object" src="..." alt="..."> </a>
+                              <div class="media-body">
+                                 <br /><h4 class="media-heading">Expressions</h4>
+                                     Expression Coming Soon
+                              </div>
+                            </li>
+                          </ul>
+                       </div>
+                   </div><!--.tab-content -->
+                </div><!--Panel body -->
+            </div><!--End of Panel -->
+        </div><!--End of col-md-12 -->
+    </div>
         <!-- Page Content -->
         <div id="page-wrapper">
-           <!--  <div class="col-md-4">
-                <h2>Udacity Course Notifications</h2>
-                <button onclick="udacity()">See Udacity Courses</button>
-                <p id="demo"></p>
-            </div> -->
         <div class="panel-group" id="accordion">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title" onclick="udacity()">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">See Udacity Courses</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. See Udacity Courses</a>
                     </h4>
                 </div>
                 <div id="collapseOne" class="panel-collapse collapse in">
@@ -102,7 +160,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Twitter Bootstrap?</a>
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. See Coursera Courses</a>
                     </h4>
                 </div>
                 <div id="collapseTwo" class="panel-collapse collapse">

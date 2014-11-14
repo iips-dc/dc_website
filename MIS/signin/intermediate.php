@@ -1,9 +1,10 @@
  <?php
 //echo "string"; 
 
- 
+ session_start();
 include ('database_connect.php');
-$sql="SELECT * FROM `dc_members`";
+
+$sql="SELECT * FROM `dc_member_social`";
 $result = mysqli_query($dbconnect,$sql) or die('ERROR'.mysqli_error($dbconnect));
 echo $email=$_GET['email'];
 echo "<br><br>";
@@ -11,9 +12,9 @@ while($row = mysqli_fetch_array($result))
   {
     //echo $email;
    
-  if($row['members_email'] == $email){
+  if($row['email'] == $email){
     echo "string";
-    header("Location:../knowledge_center/search.php");
+    header("Location:../dashboard/dashboard.php");
      break;
   } 
   
