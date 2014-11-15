@@ -7,12 +7,12 @@ if(isset($_POST['string'])){
 	$res = mysql_query($query);
 	if(mysql_num_rows($res)>0){
 	while($row = mysql_fetch_object($res)){?>
-	<a target="_blank" href="http://www.facebook.com/<?php echo $row->description;?>" onclick="fillme('<?php echo $row->title." ".$row->link;?>');">
+	<div onclick="fillme('<?php echo $row->title?>');">
 		<div class="user_div">
-			<!--<img src="imgs/<?php echo $row->ID;?>.png" style="border-radius:5px;float:left;">-->
+			<!--<img src="imgs/<?php //echo $row->ID;?>.png" style="border-radius:5px;float:left;">-->
 			<div class="name"><?php echo $row->title?><br> <?php echo $row->description;?></div>
 		</div>
-	</a>
+	</div>
 	<?php }
 	}else{?>
 	<div class="no_data">No Result Found !</div>

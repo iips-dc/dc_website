@@ -55,7 +55,7 @@
         <div class="row">
   <form role="form" method="post" id="theForm" action="#"> 
         <div class="form-group">
-        <div class="col-md-12" style="border:1px solid black;">
+        <div class="col-md-12" style="border:1px solid blue;">
             <label>
                 <h2>Details of Organiser</h2>
             </label><br/>
