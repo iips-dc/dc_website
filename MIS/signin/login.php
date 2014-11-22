@@ -65,7 +65,7 @@
                                     <button class="g-signin"
                                         data-scope="https://www.googleapis.com/auth/plus.profile.emails.read"
                                         data-requestvisibleactions="http://schemas.google.com/AddActivity"
-                                        data-clientId="238957888379-hpq19i5469e71gqkln0jn9v6bnrrotut.apps.googleusercontent.com"
+                                        data-clientId="238957888379-b5sgfvusbabm16uqb114c01tslj3mpqa@developer.gserviceaccount.com"
                                         data-callback="onSignInCallback"
                                         data-theme="dark"
                                         data-cookiepolicy="single_host_origin"
@@ -195,7 +195,7 @@
         $(document).ready(function() {
           $('#disconnect').click(helper.disconnect);
           $('#loaderror').hide();
-          if ($('[data-clientid="238957888379-hpq19i5469e71gqkln0jn9v6bnrrotut.apps.googleusercontent.com"]').length > 0) {//compliance
+          if ($('[data-clientid="238957888379-b5sgfvusbabm16uqb114c01tslj3mpqa@developer.gserviceaccount.com.compliance"]').length > 0) {//compliance
             alert('This sample requires your OAuth credentials (client ID) ' +
                 'from the Google APIs console:\n' +
                 '    https://code.google.com/apis/console/#:access\n\n' +
