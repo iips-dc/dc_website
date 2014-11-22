@@ -677,7 +677,7 @@
       header('location:project.php');
     }
 
-    //mysqli_query($dbconnect,$sql);
+    
   } 
 
     mysqli_close($dbconnect);
