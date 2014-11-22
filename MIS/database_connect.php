@@ -5,6 +5,5 @@
 		$username = "root";
 		$password = "pulkit5-1";
 		$error = "Can't connect";
-
 		$dbconnect = mysqli_connect($dbserver, $username, $password, $dbname) or die('Connection error');
 ?>

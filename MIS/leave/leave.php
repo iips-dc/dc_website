@@ -40,7 +40,7 @@
 			<th>Reject</th>
 		</tr>	
 		<?php
-			$con = mysqli_connect('localhost','root','','dc_database');
+			$con = mysqli_connect('localhost','root','pulkit5-1','dc_database');
                              # Select query to fetch all pending requests
 			
 			$selectQuery=mysqli_query($con,"SELECT * FROM `leave` WHERE approve=0") or die(mysqli_error($con));
@@ -119,6 +119,7 @@
 			}
 		?>
 	</table>
+	<?php include('../../footer.html');?>
 </body>
 </html>
 

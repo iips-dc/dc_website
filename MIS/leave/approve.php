@@ -1,6 +1,6 @@
 <?php
 echo "Go";
-$con = mysqli_connect('localhost','root','','dc_database');
+include ('../database_connect.php');
 $approve =$_GET['app'];
 
 $updateQuery = mysqli_query($con,"UPDATE `leave` SET approve=1 WHERE id='$approve'") or die(mysqli_error($con));

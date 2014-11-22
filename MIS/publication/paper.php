@@ -41,6 +41,7 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         	<?php include('../header.php'); ?>
             <?php include('../date_picker.php'); ?>
+
         </nav>
         <div class="navbar-default sidebar" role="navigation" style="padding-top: 0px;">
 
@@ -52,6 +53,24 @@
 
     </div>
     <div class="col-md-8 col-md-offset-3">
+        <?php
+            include('../database_connect.php');
+            $sql="SELECT * from publication";
+            $result=mysqli_query($dbconnect,$sql);
+              echo "<h1>Paper Published</h1>";
+            while($row = mysqli_fetch_array($result))
+            {   
+
+                echo "<strong>".$row['paper_title']."</strong>"."<br>";
+                echo "Published at ".$row['organizer_name']." under ".$row['sponsers_name']." on ".$row['date_of_publication']."<br>";
+                echo "Authors: ".$row['author']."<br>";
+                echo $row['abstract'];
+                echo "<br><br>";
+
+            }
+
+
+        ?>
         <div class="row">
   <form role="form" method="post" id="theForm" action="#"> 
         <div class="form-group">
@@ -145,14 +164,17 @@
         <br><br>
     <input class="btn btn-success"type="submit" value="Submit" id="submit">
     <input class="btn btn-danger" type="reset" value="Reset">
+    <br><br>
     </div>
     <br><br><br>
     </form>
     <br>
 </div>
 </div>
+<br><br><br><br>
 </div>
 </div>
+
 
     <!-- /#wrapper -->
 
@@ -192,10 +214,10 @@ $insert= mysqli_query($dbconnect,$sql);
       echo "<script>alert('Record submitted successfully!')</script>";
         header('location:post.php');
     }
-    else{
-              echo "<script>alert('Your record is already exists!')</script>";
-        header('location:post.php');
-    }
+    // else{
+    //           echo "<script>alert('Your record is already exists!')</script>";
+    //     header('location:post.php');
+    // }
 
 
 
@@ -204,7 +226,9 @@ $insert= mysqli_query($dbconnect,$sql);
 
 ?>
 
+
 </body>
 
 </html>
+
 

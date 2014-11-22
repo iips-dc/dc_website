@@ -92,20 +92,27 @@
                                         <div class="col-md-7">
                                             <!-- <h5><a href="news#">IIPS Naac Visit complete on 15-Jan-2014  </a>  <span class="pull-right">Posted - 31st Dec 2013 </span></h5>-->
                                             
-                                            <h5><a href="news#new_website"><i class="icon-info-sign"></i>  New mobile responsive IIPS website soon to be released </a><img src="images/new.gif" ></h5>
-                                        28, 0j    <h5><a href="download"><i class="icon-info-sign"></i> Download your cousre presentations by subject teachers </a><img src="images/new.gif" ></h5>
-                                            <h5><a href="news#invitation"><i class="icon-info-sign"></i> Invitation to 13th Case Writing Workshop: International Publication by Prestige Institute of MGMT-GWl.  </a><img src="images/new.gif" ></h5>   
-                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i> UTD Teachers Seniority List (EFFECTIVE FROM 01.01.2014 TO 31.12.2014)</a><img src="images/new.gif" ></h5> 
-                                            
+                                            <h5><a href="news#new_website"><i class="icon-info-sign"></i>1. Created New IIPS site working on http://www.iips.edu.in</a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="download"><i class="icon-info-sign"></i>2. Managed Old IIPS site till 14-nov-2014. </a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="news#invitation"><i class="icon-info-sign"></i>3. Developed automated system for bonifide Certification in IIPS </a><img src="../images/new.gif" ></h5>   
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>4. Done Intial setup for Developement Center <img src="/images/new.gif" ></h5> 
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>5. DAVV Tube has been developed and deployed<img src="/images/new.gif" ></h5> 
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>6. Analyzed Feedback procedure and automated it.<img src="../images/new.gif" ></h5> 
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>7. DC website is in developement.<img src="../images/new.gif" ></h5> 
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>8. Created google sites for all faclities<img src="/images/new.gif" ></h5> 
+                                            <h5><a href="news#seniority_list"> <i class="icon-info-sign"></i>9. Published paper in IEEE and Springer.<img src="../images/new.gif" ></h5>
                                         </div>
 
                                         <div class="col-md-5">
                                             <h5>Activities</h5>
                                             <!-- <h5><a href="news#">IIPS Naac Visit complete on 15-Jan-2014  </a>  <span class="pull-right">Posted - 31st Dec 2013 </span></h5>-->
                                             
-                                            <h5><a href="news#naac_photos"><i class="icon-info-sign"></i> Naac Visit photos dated 16/01/14 </a><img src="images/new.gif" ></h5>
-                                            <h5><a href="news#naac_photos1"><i class="icon-info-sign"></i> Naac Visit photos dated 15/01/14 </a><img src="images/new.gif" ></h5>
-                                            <h5><a href="news#naac_visit"><i class="icon-info-sign"></i> IIPS Naac Visit complete on 15-Jan-2014 </a><img src="images/new.gif" ></h5>
+                                            <h5><a href="news#naac_photos"><i class="icon-info-sign"></i>1. Conducted workshop on Python for Diaspark Employees</a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="news#naac_photos1"><i class="icon-info-sign"></i>2. Conducted one week workshop in Kasturba gram rural institute on “computer fundamental”</a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="news#naac_visit"><i class="icon-info-sign"></i>3. Currently setting up new server for IT center.</a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="news#naac_visit"><i class="icon-info-sign"></i>4. Expert lecture has been conducted</a><img src="../images/new.gif" ></h5>
+                                            <h5><a href="news#naac_visit"><i class="icon-info-sign"></i>5. Presentation on latest technology : Twitter Bootstrap Library, Knockout.js, Ruby on Rails, Single Sign On with Google, Data analysis with SAS, Shell Programming, RegEx.</a><img src="../images/new.gif" ></h5>
+                                            <!-- <h5><a href="news#naac_visit"><i class="icon-info-sign"></i></a><img src="images/new.gif" ></h5 -->>
                                             
                                         </div>
 
@@ -157,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default">
+            <!-- <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title">
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. See Coursera Courses</a>
@@ -168,7 +175,7 @@
                         <p>Twitter Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
  
             <div class="row">
@@ -195,8 +202,9 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/sb-admin-2.js"></script>
+    
 
 </body>
-
+<?php include('../../footer.html');?>
 </html>
 
