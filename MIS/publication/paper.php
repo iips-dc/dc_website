@@ -41,7 +41,6 @@
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
         	<?php include('../header.php'); ?>
             <?php include('../date_picker.php'); ?>
-
         </nav>
         <div class="navbar-default sidebar" role="navigation" style="padding-top: 0px;">
 
@@ -164,17 +163,14 @@
         <br><br>
     <input class="btn btn-success"type="submit" value="Submit" id="submit">
     <input class="btn btn-danger" type="reset" value="Reset">
-    <br><br>
     </div>
     <br><br><br>
     </form>
     <br>
 </div>
 </div>
-<br><br><br><br>
 </div>
 </div>
-
 
     <!-- /#wrapper -->
 
@@ -191,7 +187,7 @@
     <script src="../js/sb-admin-2.js"></script>
 <?php
 include ('../database_connect.php');
-  
+  if(isset($_POST['submit'])){
   $type=$_POST['type'];
   $level=$_POST['level'];
   $organizer_name=$_POST['organizer_name'];
@@ -214,21 +210,18 @@ $insert= mysqli_query($dbconnect,$sql);
       echo "<script>alert('Record submitted successfully!')</script>";
         header('location:post.php');
     }
-    // else{
-    //           echo "<script>alert('Your record is already exists!')</script>";
-    //     header('location:post.php');
-    // }
+    else{
+              echo "Not Submitted";
+    }
 
 
 
 
 
-
+}
 ?>
-
 
 </body>
 
 </html>
-
 

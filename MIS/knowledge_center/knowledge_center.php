@@ -165,7 +165,14 @@
 			$link=$_POST['link'];
 			$description=$_POST['description'];
 			$sql= "INSERT INTO `dc_database`.`knowledge_center` (`date`,`description`,`link`,`s_no`,`title`) VALUES ('$date', '$description','$link',' ','$title');";
-			 mysqli_query($dbconnect, $sql);
+			 $insert=mysqli_query($dbconnect, $sql);
+			 	if ($insert) {
+     				echo "<script>alert('Record submitted successfully!')</script>";
+        			header('location:post.php');
+    			}
+    			else{
+              		echo "Already exists";
+    			}
 
 			
 			$sql2= "SELECT s_no FROM  `knowledge_center`  WHERE  `link` = '$link'";
