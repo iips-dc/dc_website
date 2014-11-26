@@ -3,9 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<link rel="stylesheet" href="FormValidation.css">
 
 <script>
   function onlyNumbers(event)       
@@ -210,7 +208,7 @@
   <!--  <a name="add_project"></a> --> 
 
 
-            <div class="tab-pane fade in active" id="add_project">      
+            <div class="tab-pane fade" id="add_project">      
 
 
                 <form role="form" method="POST" id="theForm" action="#add_project"> 
@@ -336,7 +334,7 @@
     <!-- <a name="add_documentation"></a> -->
 
 
-          <div class="tab-pane fade in active" id="add_documentation">   
+          <div class="tab-pane fade" id="add_documentation">   
 
 
               <form role="form" method="post" id="theForm" action="#add_documentation"> 
@@ -473,7 +471,7 @@
 
     <!-- <a name="add_review"></a> -->
 
-            <div class="tab-pane fade in active" id="add_review">
+            <div class="tab-pane fade" id="add_review">
                 
                 <form role="form" method="post" id="theForm" action="#add_review"> 
 
