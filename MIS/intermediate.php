@@ -13,7 +13,11 @@ while($row = mysqli_fetch_array($result))
    
   if($row['members_email'] == $email){
     echo "string";
+<<<<<<< HEAD
     header("Location:http://localhost/dc_site_master/dc_website/MIS/dashboard/post.php");
+=======
+    header("Location:http://localhost/gplus-quickstart-javascript/../dashboard/post.php");
+>>>>>>> a2c134ef00595665b3cedf939b93b176d52d8faf
      break;
   } 
   
