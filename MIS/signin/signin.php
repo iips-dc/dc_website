@@ -60,13 +60,13 @@ function yes(){
     </button>
   </div>
   <div id="authOps" style="display:none">
-    <h2>User is now signed in to the app using Google+</h2>
+    <!--<h2>User is now signed in to the app using Google+</h2>
     <p>If the user chooses to disconnect, the app must delete all stored
     information retrieved from Google for the given user.</p>
     <button id="disconnect" >Signout</button>
 
     <h2>User's profile information</h2>
-    <div id="profile"></div>
+    <div id="profile"></div>-->
 
   </div>
   

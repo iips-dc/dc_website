@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
+<<<<<<< HEAD
     <title>Signin</title>
 
     <!-- Bootstrap Core CSS -->
@@ -29,6 +30,9 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Bootstrap Admin Theme</title>
+=======
+    <title>Login - DC Members</title>
+>>>>>>> 16eeb07cd7280f3668914c765efbb8ee81ce4078
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
