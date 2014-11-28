@@ -40,6 +40,7 @@
 
 <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
                                 To print out the project details according to Deployment   -->
 
  <div id="wrapper">
@@ -57,6 +58,26 @@
                       <?php include('../nav.html'); ?>
          </div>
 
+=======
+
+                                To print out the project details according to Deployment   -->
+
+ <div id="wrapper">
+
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+          <?php 
+                include('../header.php'); 
+                include ('date_picker.php');
+           ?>
+    </nav>
+
+    <div class="navbar-default sidebar" role="navigation" style="padding-top: 0px;">
+
+         <div class="sidebar-nav navbar-collapse" style="margin-top: -30px;" >
+                      <?php include('../nav.html'); ?>
+         </div>
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
     </div>
 
     <div class="row">
@@ -115,8 +136,15 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
+<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
+=======
+
+                                echo "Description :".$row['project_desc'];
+                                echo "<br>";
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -144,8 +172,15 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
+<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
+=======
+
+                                echo "Description :".$row['project_desc'];
+                                echo "<br>";
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -172,8 +207,15 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
+<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
+=======
+
+                                echo "Description :".$row['project_desc'];
+                                echo "<br>";
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -331,6 +373,7 @@
                 <div class="form-group">
                                   
                   <div class="col-md-8" style="border:1px solid black;background-color:white;">
+<<<<<<< HEAD
 
                     <label>
                         <h2>Add Project Documentation</h2>
@@ -366,6 +409,43 @@
                       
                       <div class="row">
                         
+=======
+
+                    <label>
+                        <h2>Add Project Documentation</h2>
+                    </label><br/>
+
+                    <label>Date</label>
+                      <div class="row">
+                         <div class="col-md-4">
+                             <input type="date" class="form-control" class="datepicker" required="required" name="date" id="date"> 
+                         </div>   
+                      </div>
+
+                    <br/>
+
+                    <label>Project Information</label>
+                          
+                      <div class="row">
+                        <div class="col-md-4">
+                          <label>Project Name</label>             
+                           <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="project_name" id="name"> 
+                        </div>
+
+                        
+                        <div class="col-md-4"> 
+                            <label>Project ID</label>  
+                             <input type="text" class="form-control" name="project_id">
+                        </div>
+                          
+                      </div>
+                                       
+                       
+                    <br>
+                      
+                      <div class="row">
+                        
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                          <div class="col-md-6"> 
                           <label>SPMP Link</label>
                              <input type="text" class="form-control" name="spmp_link" id="name"> <span id="nameError" class="green"></span>
@@ -439,12 +519,21 @@
                     <input class="btn btn-danger" type="reset" value="Reset">
 
                   </div>
+<<<<<<< HEAD
 
                 </div>
 
 
               </form>
 
+=======
+
+                </div>
+
+
+              </form>
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
           </div>
                     
             
@@ -549,8 +638,85 @@
         </div> <!-- Container-->
 
       </div> <!-- Offset-->
+<<<<<<< HEAD
 
     </div>  <!-- row -->
+=======
+
+    </div>  <!-- row -->
+
+  </div> <!-- Wrapper-->    
+
+    
+  <!-- </div> -->
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                 DATABASE CONNECTIVITY of FORMS
+                     /////////////////////////////////////////////////////
+                                 
+                            TO insert data into database of projects
+ -->
+
+  <?php
+
+    
+
+    if ( isset( $_POST['submit1'] ) ) 
+       
+    {  
+        $date_of_registration=$_POST['date_of_registration'];
+        $project_name=$_POST['project_name'];
+        $project_id=$_POST['project_id'];
+        $project_type=$_POST['project_type'];
+        $team_leader=$_POST['team_leader'];
+        $team_id=$_POST['team_id'];
+        $project_status=$_POST['project_status'];
+        $members=$_POST['members'];
+        $deployed = $_POST['deployed'];
+        $github_link=$_POST['github_link'];
+        $link=$_POST['link'];
+        $project_description=$_POST['project_description'];
+        
+        
+       $sql="INSERT INTO  `dc_database`.`projects` (
+        `date_of_start` ,
+        `project_id` ,
+        `project_name` ,
+        `project_type` ,
+        `project_leader` ,
+        `team_members` ,
+        `project_status` ,
+        `team_id` ,
+        `deployment` ,
+        `dc_page_link` ,
+        `github_page_link` ,
+        `project_desc`
+        )
+        VALUES (
+        '$date_of_registration',  '$project_id',  '$project_name',  '$project_type',  '$team_leader',  '$members',  '$project_status',  '$team_id',  '$deployed',  '$link',  '$github_link',  '$project_description'
+        )";
+
+        
+        $insertQuery1 = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
+        if($insertQuery1){
+          echo "<script>alert('Record Submitted')</script>";
+          header('location:project.php');
+        }
+        else
+        {  
+          echo "<script>alert('Record not Submitted, Please check the entries')</script>";
+          header('location:project.php');
+        }
+        
+        mysqli_query($dbconnect,$sql);
+      
+    }
+  ?>
+
+
+
+<!-- // for insertion of data into database of Documentation-->
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
 
   </div> <!-- Wrapper-->    
 
@@ -654,8 +820,15 @@
     {  echo "<script>alert('Record not Submitted, Please Provide unique Project ID')</script>";
       header('location:project.php');
     }
+<<<<<<< HEAD
     
   } 
+=======
+
+    
+  } 
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
     mysqli_close($dbconnect);
   ?>
 
@@ -664,6 +837,10 @@
 <!-- for insertion of data in to database of project review -->
 
   <?php
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
   include ('../database_connect.php');
   if(isset($_POST['submit3']))
   { 
@@ -690,6 +867,10 @@
       }
     
   }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
   mysqli_close($dbconnect);
   ?>
 

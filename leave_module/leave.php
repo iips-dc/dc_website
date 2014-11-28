@@ -40,7 +40,7 @@
 			<th>Reject</th>
 		</tr>	
 		<?php
-			$con = mysqli_connect('localhost','root','pulkit5-1','dc_database');
+			$con = mysqli_connect('localhost','root','','dc_database');
                              # Select query to fetch all pending requests
 			
 			$selectQuery=mysqli_query($con,"SELECT * FROM `leave` WHERE approve=0") or die(mysqli_error($con));
@@ -57,7 +57,6 @@
 			<td><?php echo $row[5]; ?></td>
 			<td><?php echo $row[6]; ?></td>
 			<td><?php 
-			$approve=$row[7];
 				if($approve==1)
 			  	  echo "approved";
 				if($approve==-1)
@@ -91,7 +90,7 @@
 		<?php
 						# Select query to fetch all Approved requests
 						
-			#$con = mysqli_connect('localhost','root','pulkit5-1','dc_database');
+			#$con = mysqli_connect('localhost','root','','dc_database');
 			$selectQuery=mysqli_query($con,"SELECT * FROM `leave` WHERE approve=1") or die(mysqli_error($con));
 				$i=1;
 			while($row=mysqli_fetch_array($selectQuery)){
@@ -106,7 +105,6 @@
 			<td><?php echo $row[5]; ?></td>
 			<td><?php echo $row[6]; ?></td>
 			<td><?php 
-			$approve=$row[7];
 			if($approve==1)
 			    echo "approved";
 			if($approve==-1)
