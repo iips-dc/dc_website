@@ -52,6 +52,24 @@
 
     </div>
     <div class="col-md-8 col-md-offset-3">
+        <?php
+            include('../database_connect.php');
+            $sql="SELECT * from publication";
+            $result=mysqli_query($dbconnect,$sql);
+              echo "<h1>Paper Published</h1>";
+            while($row = mysqli_fetch_array($result))
+            {   
+
+                echo "<strong>".$row['paper_title']."</strong>"."<br>";
+                echo "Published at ".$row['organizer_name']." under ".$row['sponsers_name']." on ".$row['date_of_publication']."<br>";
+                echo "Authors: ".$row['author']."<br>";
+                echo $row['abstract'];
+                echo "<br><br>";
+
+            }
+
+
+        ?>
         <div class="row">
   <form role="form" method="post" id="theForm" action="#"> 
         <div class="form-group">
@@ -169,7 +187,7 @@
     <script src="../js/sb-admin-2.js"></script>
 <?php
 include ('../database_connect.php');
-  
+  if(isset($_POST['submit'])){
   $type=$_POST['type'];
   $level=$_POST['level'];
   $organizer_name=$_POST['organizer_name'];
@@ -193,15 +211,14 @@ $insert= mysqli_query($dbconnect,$sql);
         header('location:post.php');
     }
     else{
-              echo "<script>alert('Your record is already exists!')</script>";
-        header('location:post.php');
+              echo "Not Submitted";
     }
 
 
 
 
 
-
+}
 ?>
 
 </body>
