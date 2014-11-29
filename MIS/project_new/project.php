@@ -38,10 +38,7 @@
 </head>
 <body style="background-color:white;">
 
-<!-- 
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-                                To print out the project details according to Deployment   -->
+
 
  <div id="wrapper">
 
@@ -58,9 +55,7 @@
                       <?php include('../nav.html'); ?>
          </div>
 
-=======
 
-                                To print out the project details according to Deployment   -->
 
  <div id="wrapper">
 
@@ -77,7 +72,6 @@
                       <?php include('../nav.html'); ?>
          </div>
 
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
     </div>
 
     <div class="row">
@@ -101,11 +95,6 @@
 
 
 
-<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                               Home page
-   -->   
-
-            <!-- <a name="home"></a> -->
 
             <div class="tab-pane fade in active" id="home">
 
@@ -136,15 +125,10 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
-<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
-=======
-
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
-
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -172,15 +156,10 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
-<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
-=======
-
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
-
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -207,15 +186,12 @@
                             
                                 echo "Status: ". $row['project_status'];
                                 echo "<br>";
-<<<<<<< HEAD
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
-=======
-
                                 echo "Description :".$row['project_desc'];
                                 echo "<br>";
 
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
+
                                 echo "Team: ".$row['team_members'];
                                
                               }
@@ -232,11 +208,6 @@
 
 
 
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <!--                               Form for Adding project Details                          -->
-
-
-  <!--  <a name="add_project"></a> --> 
 
 
             <div class="tab-pane fade" id="add_project">      
@@ -373,8 +344,6 @@
                 <div class="form-group">
                                   
                   <div class="col-md-8" style="border:1px solid black;background-color:white;">
-<<<<<<< HEAD
-
                     <label>
                         <h2>Add Project Documentation</h2>
                     </label><br/>
@@ -409,8 +378,6 @@
                       
                       <div class="row">
                         
-=======
-
                     <label>
                         <h2>Add Project Documentation</h2>
                     </label><br/>
@@ -445,7 +412,6 @@
                       
                       <div class="row">
                         
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
                          <div class="col-md-6"> 
                           <label>SPMP Link</label>
                              <input type="text" class="form-control" name="spmp_link" id="name"> <span id="nameError" class="green"></span>
@@ -519,21 +485,17 @@
                     <input class="btn btn-danger" type="reset" value="Reset">
 
                   </div>
-<<<<<<< HEAD
 
                 </div>
 
 
               </form>
 
-=======
-
                 </div>
 
 
               </form>
 
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
           </div>
                     
             
@@ -638,10 +600,8 @@
         </div> <!-- Container-->
 
       </div> <!-- Offset-->
-<<<<<<< HEAD
 
     </div>  <!-- row -->
-=======
 
     </div>  <!-- row -->
 
@@ -716,7 +676,7 @@
 
 
 <!-- // for insertion of data into database of Documentation-->
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
+
 
   </div> <!-- Wrapper-->    
 
@@ -820,15 +780,15 @@
     {  echo "<script>alert('Record not Submitted, Please Provide unique Project ID')</script>";
       header('location:project.php');
     }
-<<<<<<< HEAD
-    
-  } 
-=======
 
     
   } 
 
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
+
+    
+  } 
+
+
     mysqli_close($dbconnect);
   ?>
 
@@ -837,10 +797,7 @@
 <!-- for insertion of data in to database of project review -->
 
   <?php
-<<<<<<< HEAD
-=======
 
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
   include ('../database_connect.php');
   if(isset($_POST['submit3']))
   { 
@@ -867,10 +824,6 @@
       }
     
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> 79a63dd6e065f43fee0327c2d003dd1f20ef6e71
   mysqli_close($dbconnect);
   ?>
 
