@@ -30,6 +30,15 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="../js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="../js/jquery-1.11.0.min.js" type="text/javascript"></script>    
+
+    <script type="text/javascript">
+        $(function() {
+        $( "#accordion" ).accordion({
+          disabled: true
+        });
+      });
+    </script>
 
 
 </head>
@@ -70,107 +79,124 @@
 
 
         ?>
-        <div class="row">
-  <form role="form" method="post" id="theForm" action="#"> 
+
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title" onclick="udacity()">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Add Paper</a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                         <div class="row" class="accordion">
+    <form role="form" method="post" id="theForm" action="#"> 
         <div class="form-group">
-        <div class="col-md-12" style="border:1px solid blue;">
-            <label>
-                <h2>Details of Organiser</h2>
-            </label><br/>
-            <label></label>
+            <div class="col-md-12" style="border:1px solid;">
+                <label>
+                    <h2>Details of Organiser</h2>
+                </label><br/>
+                <label></label>
+                    
+
+                <div class="row">
+                    <div class="col-md-4"> 
+                        <label>Type of paper</label>
+                        <select class="form-control" name="type">
+                            <option>Journal</option>
+                            <option>Conference</option>
+                        </select>
+                    </div>
+                   <div class="col-md-4">
+                        <label>Level of Paper</label>            
+                        <select class="form-control" name="level">
+                          <option>Regional</option>
+                          <option>National</option>
+                          <option>International</option>
+                        </select>
+                    </div>
+                    <div class='col-md-4'>
+                        <label>Organizer Name</label> 
+                        <input type="text" name="organizer_name" required="required" required="alphabetic_space">
+                    </div>                
+                </div>
+
+                <br/>
+                    
+                <div class="row">
+                    <div class='col-md-4'>
+                        <label>Sponsers Name</label>
+                        <input type="text" name="sponsers_name" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                    <div class='col-md-4'>
+                        <label>Location</label>
+                        <input type="text" name="location" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                    <div class='col-md-4'>
+                        <label>Year</label>
+                        <input type="number" name="year" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                </div>
+                               
+                 
+                <br>
                 
+                <div class="row">
+                    <div class='col-md-4'>
+                        <label>Paper Id</label>
+                        <input type="text" name="paper_id" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                    <div class='col-md-4'>
+                        <label>Paper Title</label>
+                        <input type="text" name="paper_title" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                    <div class='col-md-4'>
+                        <label>Date of Publication</label>
+                        <input type="date" name="date_of_publication" required="required" class="form-control" id="datepicker">
+                    </div>  
+                </div>
 
-            <div class="row">
-                <div class="col-md-4"> 
-                    <label>Type of paper</label>
-                    <select class="form-control" name="type">
-                        <option>Journal</option>
-                        <option>Conference</option>
-                    </select>
-                </div>
-               <div class="col-md-4">
-                    <label>Level of Paper</label>            
-                    <select class="form-control" name="level">
-                      <option>Regional</option>
-                      <option>National</option>
-                      <option>International</option>
-                    </select>
-                </div>
-                <div class='col-md-4'>
-                    <label>Organizer Name</label> 
-                    <input type="text" name="organizer_name" required="required" required="alphabetic_space">
-                </div>                
-            </div>
+                <br>
 
-          <br/>
-                
-            <div class="row">
-                <div class='col-md-4'>
-                    <label>Sponsers Name</label>
-                    <input type="text" name="sponsers_name" required="required" required="alphabetic_space" class="form-control">
-                </div>
-                <div class='col-md-4'>
-                    <label>Location</label>
-                    <input type="text" name="location" required="required" required="alphabetic_space" class="form-control">
-                </div>
-                <div class='col-md-4'>
-                    <label>Year of publication</label>
-                    <input type="number" name="year" required="required" required="alphabetic_space" class="form-control">
-                </div>
-            </div>
-                           
-             
-            <br>
-            
-            <div class="row">
-                <div class='col-md-4'>
-                    <label>Paper Id</label>
-                    <input type="text" name="paper_id" required="required" required="alphabetic_space" class="form-control">
-                </div>
-                <div class='col-md-4'>
-                    <label>Paper Title</label>
-                    <input type="text" name="paper_title" required="required" required="alphabetic_space" class="form-control">
-                </div>
-                <div class='col-md-4'>
-                    <label>Date of Publication</label>
-                    <input type="date" name="date_of_publication" required="required" class="form-control" id="datepicker">
-                </div>  
-            </div>
+                <div class="row">
+                    <div class='col-md-6'>
+                        <label>Link</label>
+                        <input type="url" name="link" required="required" required="alphabetic_space" class="form-control">
+                    </div>
+                    <div class='col-md-6'>
+                        <label>Authors</label>
+                        <input type="text" name="authors" required="required" required="alphabetic_space" class="form-control">
+                    </div>
 
-        <br>
+                </div>
 
-        <div class="row">
-            <div class='col-md-6'>
-                <label>Link</label>
-                <input type="url" name="link" required="required" required="alphabetic_space" class="form-control">
-            </div>
-            <div class='col-md-6'>
-                <label>Author</label>
-                <input type="text" name="authors" required="required" required="alphabetic_space" class="form-control">
-            </div>
+                <br>
 
+                <div class="row">
+                    <div class='col-md-12'>
+                            <label>Abstract</label>
+                            <textarea type="text" name="abstract" required="required" required="alphabetic_space" class="form-control"></textarea>
+                        </div>
+
+                  </div>
+                <br><br>
+                <input class="btn btn-success"type="submit" value="Submit" id="submit">
+                <input class="btn btn-danger" type="reset" value="Reset">
+                <br><br>
+            </div>
         </div>
-
-        <br>
-
-        <div class="row">
-            <div class='col-md-12'>
-                    <label>Abstract</label>
-                    <input type="text" name="abstract" required="required" required="alphabetic_space" class="form-control">
-                </div>
-
-          </div>
-        <br><br>
-    <input class="btn btn-success"type="submit" value="Submit" id="submit">
-    <input class="btn btn-danger" type="reset" value="Reset">
-    </div>
-    <br><br><br>
+        <br><br><br>
     </form>
     <br>
 </div>
-</div>
-</div>
-</div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+   
+
 
     <!-- /#wrapper -->
 
