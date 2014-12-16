@@ -2,7 +2,20 @@
 <html lang="en">
 
 <head>
-
+	<style type="text/css">
+      #form 
+        {
+           visibility: hidden;
+        }
+    </style>
+    <script>
+    function myFunction() 
+        {
+	    document.getElementById('form').style.cssText = 'visibility: visible;';
+        document.getElementById('btn').style.cssText = 'display: hidden;';
+        document.getElementById('btn').style.cssText = 'display: none;';
+        }
+</script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -105,10 +118,12 @@
 	</div>
 </div>
 
+<center><button id="btn" type= "submit" class="btn btn-primary" onclick="myFunction()" >Insert into Knowledge Center</button></center></center>
+
 <div class="col-md-8 col-md-offset-3">
         <div class="row">
   <form role="form" method="post" id="theForm" action="#"> 
-        <div class="form-group">
+        <div class="form-group" id="form" >
         <div class="col-md-12" style="border:1px solid blue;">
             <label>
                 <h2>Enter into Knowledge Center</h2>

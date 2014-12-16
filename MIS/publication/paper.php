@@ -2,6 +2,22 @@
 <html lang="en">
 
 <head>
+<style type="text/css">
+      #form 
+        {
+           visibility: hidden;
+        }
+    </style>
+<script src="jquery-1.10.2.min.js" ></script>
+<script src="jquery-1.8.3.min.js"></script>
+<script>
+    function myFunction() 
+        {
+        document.getElementById('form').style.cssText = 'visibility: visible;';
+        document.getElementById('btn').style.cssText = 'display: hidden;';
+        document.getElementById('btn').style.cssText = 'display: none;';
+        }
+</script>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,11 +103,13 @@
                         <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"> Add Paper</a>
                     </h4>
                 </div>
+
+                <center><button id="btn" typ id="form"e= "submit" class="btn btn-primary" onclick="myFunction()" >Enter Details</button></center></center>
                 <div id="collapseOne" class="panel-collapse collapse in">
                     <div class="panel-body">
                          <div class="row" class="accordion">
     <form role="form" method="post" id="theForm" action="#"> 
-        <div class="form-group">
+        <div class="form-group"  id="form">
             <div class="col-md-12" style="border:1px solid;">
                 <label>
                     <h2>Details of Organiser</h2>
