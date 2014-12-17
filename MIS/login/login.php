@@ -4,14 +4,14 @@
 	
 	
 	
-	<script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
 	<script type="text/javascript" src="google_sso.js"></script>
 		  
 	<div id="gConnect">
 	    <button class="g-signin"
 	        data-scope="https://www.googleapis.com/auth/plus.profile.emails.read"
 	        data-requestvisibleactions="http://schemas.google.com/AddActivity"
-	        data-clientId="809847866008-jlakg2v517dleolfk084h90jj94c0i5s.apps.googleusercontent.com"
+	        data-clientId="238957888379-kifeq199a8mauc2cod4j2m8tapmsirg0.apps.googleusercontent.com"
 	        data-callback="onSignInCallback"
 	        data-theme="dark"
 	        data-cookiepolicy="single_host_origin"
@@ -31,6 +31,8 @@
 			  helper.onSignInCallback(authResult);
 			}
 
+			console.log("from login ");
+			console.log(profile.emails[0]['value']);
 		</script>
 
 		

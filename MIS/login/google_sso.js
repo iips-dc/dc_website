@@ -117,7 +117,7 @@ var helper = (function() {
         // console.log(profile.emails[0]['value']);
         var user_email = profile.emails[0]['value'];
         var username = profile.displayName ;
-        window.location.href = "intermediate_login.php?email=" + user_email;
+        window.location.href = "intermediate_login.php?email=" + user_email + "&name=" + username;
         $('#profile').empty();
         if (profile.error) {
           $('#profile').append(profile.error);

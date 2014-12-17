@@ -10,21 +10,21 @@ function yes(){
   alert("working");
 }
 
-  function render() {
+  // function render() {
 
-    // Additional params
-    var additionalParams = {
-      'theme' : 'dark',
-      'clientid' : '422833971217-j6272f5al1r4p9it2b65l713b4qbrmpj.apps.googleusercontent.com',
-      'cookiepolicy' : 'single_host_origin',
-      'callback' : 'onSignInCallback' , 
-      'requestvisibleactions': 'https://schema.org/AddAction', 
-      'scope':'https://www.googleapis.com/auth/plus.profile.emails.read'
+  //   // Additional params
+  //   var additionalParams = {
+  //     'theme' : 'dark',
+  //     'clientid' : '422833971217-j6272f5al1r4p9it2b65l713b4qbrmpj.apps.googleusercontent.com',
+  //     'cookiepolicy' : 'single_host_origin',
+  //     'callback' : 'onSignInCallback' , 
+  //     'requestvisibleactions': 'https://schema.org/AddAction', 
+  //     'scope':'https://www.googleapis.com/auth/plus.profile.emails.read'
 
-    };
+  //   };
 
-    gapi.signin.render('myButton', additionalParams);
-  }
+  //   gapi.signin.render('myButton', additionalParams);
+  // }
 
 var helper = (function() {
   var BASE_API_PATH = 'plus/v1/';
@@ -117,7 +117,7 @@ var helper = (function() {
         // console.log(profile.emails[0]['value']);
         var user_email = profile.emails[0]['value'];
         var username = profile.displayName ;
-        window.location.href = "intermediate_login.php?email=" + user_email;
+        window.location.href = "intermediate.php?email=" + user_email;
         $('#profile').empty();
         if (profile.error) {
           $('#profile').append(profile.error);
