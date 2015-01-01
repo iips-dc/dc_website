@@ -1,0 +1,59 @@
+    <?php 
+    session_start();
+    include ("../../base.php");
+
+    ?>
+    <?php startblock('page_title');?>
+            Enter mobile number 
+    <?php endblock();?>
+
+    <?php startblock('content');?>
+
+  	<?php 
+  	#echo "string <br>";
+  		var_dump($_GET);
+  		$email = $_GET['email'];
+  		$username =  $_GET['name'];
+
+  		echo "Welcome $username";
+  		// echo "<br>";
+  		#echo $email[0];
+  		$_SESSION['user_email'] = $email;
+  		$_SESSION['username'] = $username;
+  		// echo "user email is " .$_SESSION['user_email'];
+
+  		#check whether it exists or not 
+  		$user = R::dispense('user');
+      echo "user email is " . $_SESSION['user_email'];
+  		$user = R::find('user', 'email="'. $_SESSION['user_email'].'"');
+      var_dump($user);
+
+
+  		foreach ($user as $key => $value) {
+  			# code...
+  			$user_details = $value;
+
+  		}
+      var_dump($user_details);
+
+  		echo "<br>kkkkkkkkkkkkk";
+  		if ($user_details['email'] != "" && $user_details['phone_number'] != "") {
+  			# code...
+  			// header("Location: ../../index.php");
+        include 'mobile_number_form.php';
+  			exit();
+  			
+
+  		} else {  		
+  			include 'mobile_number_form.php';
+  		}
+  		
+
+  	 ?>
+
+<?php endblock();?>
+
+
+  	 
+
+
