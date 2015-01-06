@@ -135,15 +135,16 @@
                                 
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Event: ". $row['type_of_event'];
+                                echo "<strong>Date</strong> : ".$row['date'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
                                 echo "<br>";
 
+                                
                                 
                               }
                                
@@ -167,14 +168,19 @@
                             while($row = mysqli_fetch_array($result))
                               {
                                 
+                                
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Date</strong> : ".$row['date'];
                                 echo "<br>";
 
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
+                                echo "<br>";
+
+                                
                                 
                               }
                                
@@ -201,10 +207,13 @@
                                 
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Date</strong> : ".$row['date'];
+                                echo "<br>";
+
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
                                 echo "<br>";
 
                                 
@@ -234,12 +243,16 @@
                                 
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Date</strong> : ".$row['date'];
                                 echo "<br>";
 
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
+                                echo "<br>";
+
+                                
                                 
                               }
                                
@@ -268,12 +281,16 @@
                                 
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Date</strong> : ".$row['date'];
                                 echo "<br>";
 
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
+                                echo "<br>";
+
+                                
                                 
                               }
                                
@@ -301,10 +318,13 @@
                                 
                                 echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
 
-                                echo "Date :".$row['date'];
+                                echo "<strong>Abstract</strong> : ".$row['abstract'];
                                 echo "<br>";
 
-                                echo "Reference :".$row['material_link'];
+                                echo "<strong>Date</strong> : ".$row['date'];
+                                echo "<br>";
+
+                                echo "<strong>Reference</strong> : ".$row['material_link'];
                                 echo "<br>";
 
                                 
@@ -395,6 +415,12 @@
                               
                               
                           </div>
+
+
+                          <br>
+                          
+                          <label>Abstract</label>
+                          <textarea class="form-control" rows="3" required="required" id="add" name="abstract" ></textarea>
                           
                         <br>
 
@@ -474,6 +500,7 @@
         $event_id=$_POST['event_id'];
         $organiser_id=$_POST['organiser_id'];
         $topic=$_POST['topic'];
+        $abstract=$_POST['abstract'];
         $duration=$_POST['duration'];
         $venue=$_POST['venue'];
         $time=$_POST['time'];
@@ -481,7 +508,7 @@
         $summary_link=$_POST['summary_link'];
         
         
-       $sql="INSERT INTO `dc_database`.`events` (`event_id`, `type_of_event`, `organizer_id`, `topic`, `venue`, `date`, `time`, `duration`, `material_link`, `summary_link`) VALUES ('$event_id', '$event_name', '$organiser_id', '$topic', '$venue', '$date_of_event', '$time', '$duration', '$material_link', '$summary_link');";
+       $sql="INSERT INTO `dc_database`.`events` (`event_id`, `type_of_event`, `organizer_id`, `topic`, `abstract`, `venue`, `date`, `time`, `duration`, `material_link`, `summary_link`) VALUES ('$event_id', '$event_name', '$organiser_id', '$topic','$abstract', '$venue', '$date_of_event', '$time', '$duration', '$material_link', '$summary_link');";
 
         
         $insertQuery1 = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
