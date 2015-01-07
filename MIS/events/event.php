@@ -78,10 +78,11 @@
 
             <div class="col-lg-8">
 
-                <h1 class="page-header">Events </h1>
+                <h1 class="page-header">Events </h1> <a href="#home" data-toggle="tab"><b>Home</b></a> &nbsp 
+                <a href="#add_event" data-toggle="tab"><b>Add Event</b></a>
                     
                 
-                <ul id="myTab" class="nav nav-tabs">
+               <!--  <ul id="myTab" class="nav nav-tabs">
                     
                     <li class="active"><a href="#home" data-toggle="tab">Home</a>
                     </li>
@@ -94,11 +95,11 @@
                     <li><a href="#gd" data-toggle="tab">GD</a>
                     </li>
                     <li><a href="#outdoor" data-toggle="tab">Outdoor</a>
-                    </li>
+                    </li> 
                     <li><a href="#add_event" data-toggle="tab">Add Event</a>
                     </li>
                                         
-                </ul>
+                </ul> -->
             </div>
 
             <?php 
@@ -107,7 +108,7 @@
             ?>
           </div>
 
-          <br><br>
+          <br>
 
    
           <!-- <div class="col-lg-12"> -->
@@ -125,36 +126,199 @@
 
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
+                  
+
+                      <div class="row">
+                          
+                          <div class="col-md-3 text-center">
+
+                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>Presentations</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                    <?php
+
+                                        $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Presentation' order by 'date' DESC LIMIT 1 ");
+
+
+                                        $row = mysqli_fetch_array($result);
+                                          
+                                            
+                                            
+                                            echo "<h4> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h4>";
+
+                                            echo $row['abstract'];
+                                            echo "<br>";
+
+                                            echo "<strong>Date</strong> : ".$row['date'];
+                                            echo "<br>";
+
+                                            
+                                            
+                                     ?>
+                                 
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#presentation" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                           <div class="col-md-1"></div>
+
+                           <div class="col-md-3 text-center">
+
+                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>Workshop</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                    <?php
+                                        $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Workshop' order by 'date' DESC LIMIT 1 ");
+
+
+                                        $row = mysqli_fetch_array($result);
+                                          
+                                            
+                                            
+                                            echo "<h4> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h4>";
+
+                                            echo $row['abstract'];
+                                            echo "<br>";
+
+                                            echo "<strong>Date</strong> : ".$row['date'];
+                                            echo "<br>";
+                                            
+                                            
+                                     ?>
+                                  
+
+                                   
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#workshop" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                          <div class="col-md-1"></div>
+
+                      </div>  
+
+
+
+                      <div class="row">
+                          
+                          <div class="col-md-3 text-center">
+
+                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>Seminar</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+
+                                    <?php
+                                        $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Seminar' order by 'date' DESC LIMIT 1 ");
+
+
+                                        $row = mysqli_fetch_array($result);
+                                          
+                                            
+                                            
+                                            echo "<h4> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h4>";
+
+                                            echo $row['abstract'];
+                                            echo "<br>";
+
+                                            echo "<strong>Date</strong> : ".$row['date'];
+                                            echo "<br>";
+
+                                            
+                                            
+                                     ?>
+                                  
+
+                                   
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#seminar" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                           <div class="col-md-1"></div>
+
+                           <div class="col-md-3 text-center">
+
+                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>Group Discusion</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                      <?php
+
+                                        $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'GD' order by 'date' DESC LIMIT 1 ");
+
+
+                                        $row = mysqli_fetch_array($result);
+                                          
+                                            
+                                            
+                                            echo "<h4> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h4>";
+
+                                            echo $row['abstract'];
+                                            echo "<br>";
+
+                                            echo "<strong>Date</strong> : ".$row['date'];
+                                            echo "<br>";
+
+                                            
+                                            
+                                     ?>
+                                  
+
+                                   
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#gd" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                          <div class="col-md-1"></div>
+
+                      </div>  
+
+
+                    
                       
-                      <div class="col-md-12">
-                          <?php
-                            $result = mysqli_query($dbconnect,"SELECT * FROM events ");
- 
-                            while($row = mysqli_fetch_array($result))
-                              {
-                                
-                                echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
-
-                                echo "<strong>Abstract</strong> : ".$row['abstract'];
-                                echo "<br>";
-
-                                echo "<strong>Date</strong> : ".$row['date'];
-                                echo "<br>";
-
-                                echo "<strong>Reference</strong> : ".$row['material_link'];
-                                echo "<br>";
-
-                                
-                                
-                              }
-                               
-                          ?>
-                      </div>
 
               </div>
 
             </div>
 
+            <a name = "presentation"></a>
 
             <div class="tab-pane fade" id="presentation">
 
@@ -163,7 +327,7 @@
                       
                       <div class="col-md-12">
                           <?php
-                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Presentation'");
+                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Presentation' ");
  
                             while($row = mysqli_fetch_array($result))
                               {
@@ -267,39 +431,9 @@
 
 
 
-            <div class="tab-pane fade" id="gd">
+         
 
-              <div id="myTabContent" class="tab-content" style="text-align:justify;">
-
-                      
-                      <div class="col-md-12">
-                          <?php
-                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'GD'");
- 
-                            while($row = mysqli_fetch_array($result))
-                              {
-                                
-                                echo "<h3> <a href=".$row['summary_link'].">". $row['topic']."</a>". " </h3>";
-
-                                echo "<strong>Abstract</strong> : ".$row['abstract'];
-                                echo "<br>";
-
-                                echo "<strong>Date</strong> : ".$row['date'];
-                                echo "<br>";
-
-                                echo "<strong>Reference</strong> : ".$row['material_link'];
-                                echo "<br>";
-
-                                
-                                
-                              }
-                               
-                          ?>
-                      </div>
-
-              </div>
-
-            </div>
+          
 
 
 
