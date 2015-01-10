@@ -69,8 +69,8 @@
 
         <?php
                         # Select query to fetch all Approved requests        
-            $dbconnect = mysqli_connect('localhost','root','pulkit5-1','dc_database');
-            $selectQuery=mysqli_query($dbconnect,"SELECT * FROM `leave` WHERE approve=1 LIMIT 10") or die(mysqli_error($dbconnect));
+            $dbconnect = mysqli_connect('localhost','root','root','dc_database');
+            $selectQuery=mysqli_query($dbconnect,"SELECT * FROM `leave` WHERE 1 LIMIT 10") or die(mysqli_error($dbconnect));
                 $i=1;
             while($row=mysqli_fetch_array($selectQuery)){          
         ?>  
@@ -167,7 +167,7 @@
 </div>
 </div>
 <?php
- $dbconnect = mysqli_connect('localhost','root','pulkit5-1','dc_database');
+ $dbconnect = mysqli_connect('localhost','root','root','dc_database');
 if(isset($_POST['submit']))     //   Insert data if submit button is clicked 
 {
     $type=mysqli_real_escape_string($dbconnect,$_POST['type']);
