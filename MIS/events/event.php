@@ -32,6 +32,16 @@
 
 </script>
 
+<style type=”text/css”>
+.panel {
+  background: blue;
+  color: black;
+
+}
+
+
+</style>
+
 <title>Events</title>
 
 
@@ -132,7 +142,7 @@
                           
                           <div class="col-md-3 text-center">
 
-                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
                                   <div class="panel-heading">
                                     <h3 class="panel-title"><b>Presentations</b></h3>
@@ -174,7 +184,7 @@
 
                            <div class="col-md-3 text-center">
 
-                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
                                   <div class="panel-heading">
                                     <h3 class="panel-title"><b>Workshop</b></h3>
@@ -222,7 +232,7 @@
                           
                           <div class="col-md-3 text-center">
 
-                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
                                   <div class="panel-heading">
                                     <h3 class="panel-title"><b>Seminar</b></h3>
@@ -266,7 +276,7 @@
 
                            <div class="col-md-3 text-center">
 
-                              <div class="panel panel-default boxShadow" style=" font-size:16px">
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
                                   <div class="panel-heading">
                                     <h3 class="panel-title"><b>Group Discusion</b></h3>
@@ -325,7 +335,7 @@
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
                       
-                      <div class="col-md-12">
+                      <div class="col-md-8">
                           <?php
                             $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Presentation' ");
  
@@ -362,9 +372,9 @@
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
                       
-                      <div class="col-md-12">
+                      <div class="col-md-8">
                           <?php
-                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Workshop'");
+                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Workshop'")or die(mysqli_error($dbconnect));
  
                             while($row = mysqli_fetch_array($result))
                               {
@@ -398,7 +408,7 @@
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
                       
-                      <div class="col-md-12">
+                      <div class="col-md-8">
                           <?php
                             $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Seminar'");
  
@@ -438,14 +448,14 @@
 
 
 
-            <div class="tab-pane fade" id="outdoor">
+            <div class="tab-pane fade" id="gd">
 
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
                       
-                      <div class="col-md-12">
+                      <div class="col-md-8">
                           <?php
-                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Outdoor'");
+                            $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'GD'");
  
                             while($row = mysqli_fetch_array($result))
                               {
