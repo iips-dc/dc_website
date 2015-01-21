@@ -1,0 +1,29 @@
+
+<% content_for :title do %>
+  About us
+<% end %> 
+<div class = "container">
+  <h1>PHP Generator</h1>
+      <br>
+  <div class="row">
+      <div class="col-md-6" >
+        <label>
+          <b>Paste your Bootstrap code from <a href="http://www.bootsnipp.com/forms">Bootsnipp form builder</a> </b>
+        </label>
+        <%= form_tag do %>
+            <%= text_area_tag 'name',nil, rows: 17, cols: 60%><br>
+            <%= submit_tag 'Generate PHP', class: "btn btn-primary" %>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <label>Output:</label>
+        <% @output_array.each do |i|%>
+          <pre><%= i %></pre>
+        <% end %>
+      </div>
+
+    </div>
+    
+</div>
+
+</div>
