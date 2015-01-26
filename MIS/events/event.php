@@ -33,17 +33,13 @@
 </script>
 
 <style type=”text/css”>
-.panel {
-  background: blue;
-  color: black;
-
-}
-
-
+  .panel {
+    background: blue;
+    color: black;
+  }
 </style>
 
 <title>Events</title>
-
 
 
 <?php
@@ -52,19 +48,22 @@
 ?>
 
 </head>
-<body style="background-color:white;">
+
 
 <!-- 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 To print out the event details  -->
 
+
+<body style="background-color:white;">
+
  <div id="wrapper">
 
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
           <?php 
                 include('../header.php'); 
-                include ('date_picker.php');
+                include ('../date_picker.php');
            ?>
     </nav>
 
@@ -77,45 +76,25 @@
          </div>
 
     </div>
-
-    <div class="row">
+  </div><!-- Wrapper--> 
 
       <div class="col-md-8 col-md-offset-3">
 
-        <div class="container">
-
           <div class="row">
 
-            <div class="col-lg-8">
+            <div class="col-lg-12">
 
-                <h1 class="page-header">Events </h1> <a href="#home" data-toggle="tab"><b>Home</b></a> &nbsp 
+                <h1 class="page-header">Events </h1> 
+                <a href="#home" data-toggle="tab"><b>Home</b></a> &nbsp 
                 <a href="#add_event" data-toggle="tab"><b>Add Event</b></a>
                     
-                
-               <!--  <ul id="myTab" class="nav nav-tabs">
-                    
-                    <li class="active"><a href="#home" data-toggle="tab">Home</a>
-                    </li>
-                    <li><a href="#presentation" data-toggle="tab">Presentation</a>
-                    </li>
-                    <li><a href="#workshop" data-toggle="tab">Workshop</a>
-                    </li>
-                    <li><a href="#seminar" data-toggle="tab">Seminar</a>
-                    </li>
-                    <li><a href="#gd" data-toggle="tab">GD</a>
-                    </li>
-                    <li><a href="#outdoor" data-toggle="tab">Outdoor</a>
-                    </li> 
-                    <li><a href="#add_event" data-toggle="tab">Add Event</a>
-                    </li>
-                                        
-                </ul> -->
             </div>
 
             <?php 
                 // include('project_taskbar.php');
                 include ('../database_connect.php');     
             ?>
+
           </div>
 
           <br>
@@ -140,7 +119,7 @@
 
                       <div class="row">
                           
-                          <div class="col-md-3 text-center">
+                          <div class="col-md-6 text-center">
 
                               <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
@@ -180,9 +159,9 @@
                             
                           </div>
 
-                           <div class="col-md-1"></div>
+                           <!-- <div class="col-md-1"></div>
 
-                           <div class="col-md-3 text-center">
+ -->                           <div class="col-md-6 text-center">
 
                               <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
@@ -222,7 +201,7 @@
                             
                           </div>
 
-                          <div class="col-md-1"></div>
+                          <!-- <div class="col-md-1"></div> -->
 
                       </div>  
 
@@ -230,7 +209,7 @@
 
                       <div class="row">
                           
-                          <div class="col-md-3 text-center">
+                          <div class="col-md-6 text-center">
 
                               <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
@@ -272,9 +251,9 @@
                             
                           </div>
 
-                           <div class="col-md-1"></div>
-
-                           <div class="col-md-3 text-center">
+                           <!-- <div class="col-md-1"></div>
+ -->
+                           <div class="col-md-6 text-center">
 
                               <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
@@ -316,8 +295,8 @@
                             
                           </div>
 
-                          <div class="col-md-1"></div>
-
+                          <!-- <div class="col-md-1"></div>
+ -->
                       </div>  
 
 
@@ -327,6 +306,7 @@
               </div>
 
             </div>
+            
 
             <a name = "presentation"></a>
 
@@ -359,9 +339,13 @@
                               }
                                
                           ?>
+                          <br><br>
+
                       </div>
 
               </div>
+
+
 
             </div>
 
@@ -394,6 +378,7 @@
                               }
                                
                           ?>
+                          <br><br>
                       </div>
 
               </div>
@@ -431,21 +416,12 @@
                               }
                                
                           ?>
+                          <br><br>
                       </div>
 
               </div>
 
             </div>
-
-
-
-
-
-         
-
-          
-
-
 
 
             <div class="tab-pane fade" id="gd">
@@ -475,6 +451,7 @@
                               }
                                
                           ?>
+                          <br><br>
                       </div>
 
               </div>
@@ -497,7 +474,7 @@
 
                   <div class="form-group">
                                                 
-                    <div class="col-md-8" style="border:1px solid black;background-color:white;">
+                    <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:white;">
 
                         <label>
                             <h2>Add Event</h2>
@@ -607,27 +584,16 @@
 
                 </form>  
 
-
             </div>    <!-- add_event -->
-
 
           </div>  <!-- main div -->
 
-
-        </div> <!-- Container-->
+        <br><br>
 
       </div> <!-- Offset-->
 
-    </div>  <!-- row -->
-
-  </div> <!-- Wrapper-->    
-
-    
-  <!-- </div> -->
-
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  DATABASE CONNECTIVITY of FORM
-                     /////////////////////////////////////////////////////
                                  
                             TO insert data into database of events
  -->
@@ -672,10 +638,6 @@
   ?>
 
 
-
-
-
-  <br><br>
 
   <?php 
       include('../footer.php');

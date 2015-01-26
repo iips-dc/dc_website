@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -66,11 +67,9 @@
 
     </div>
 
-    <div class="row">
+ </div> <!-- wrapper -->
 
       <div class="col-md-8 col-md-offset-3">
-
-        <div class="container">
 
           <div class="row">
                   <?php 
@@ -95,21 +94,143 @@
 
             <div class="tab-pane fade in active" id="home">
 
-              <div class="col-lg-8">
-                <ul id="myTab" class="nav nav-tabs">
-                      <li class="active"><a href="#iips" data-toggle="tab">IIPS</a>
-                      </li>
-                      <li><a href="#davv" data-toggle="tab">DAVV</a>
-                      </li>
-                      <li><a href="#other" data-toggle="tab">Other</a>
-                      </li>
-                      
-                </ul> 
-              </div>
-
               <div id="myTabContent" class="tab-content" style="text-align:justify;">
 
-                    <div class="tab-pane fade in active" id="iips">
+                      <div class="row">
+                          
+                          <div class="col-md-4 text-center">
+
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>IIPS</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                    <?php
+                                      $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='IIPS improvement'");
+           
+                                      while($row = mysqli_fetch_array($result))
+                                        {
+                                          
+                                          echo "<h3> <a href=".$row['github_page_link'].">". $row['project_name']."</a>". " </h3>";
+                                      
+                                          echo "Status: ". $row['project_status'];
+                                          echo "<br>";
+
+                                          echo "Description :".$row['project_desc'];
+                                          echo "<br>";
+
+                                          echo "Team: ".$row['team_members'];
+                                         
+                                        }
+                                         
+                                      ?>
+                                 
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#iips" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                           <!-- <div class="col-md-1"></div> -->
+
+                           <div class="col-md-4 text-center">
+
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>DAVV</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                    <?php
+                                      $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='University improvement'");
+           
+                                      while($row = mysqli_fetch_array($result))
+                                        {
+                                          
+                                          echo "<h3> <a href=".$row['github_page_link'].">". $row['project_name'] ."</a>". " </h3>";
+                                      
+                                          echo "Status: ". $row['project_status'];
+                                          echo "<br>";
+
+                                          echo "Description :".$row['project_desc'];
+                                          echo "<br>";
+
+                                          echo "Team: ".$row['team_members'];
+                                         
+                                        }
+                                         
+                                      ?>
+                                  
+
+                                   
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#davv" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                          <!-- <div class="col-md-1"></div> -->
+
+                          <div class="col-md-4 text-center">
+
+                              <div class="panel panel-primary boxShadow" style=" font-size:16px">
+
+                                  <div class="panel-heading">
+                                    <h3 class="panel-title"><b>Miscelleneous</b></h3>
+                                  </div>
+
+                                  <div class="panel-body" align="left">
+
+                                    <?php
+                                      $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='Other'");
+           
+                                      while($row = mysqli_fetch_array($result))
+                                        {
+                                          
+                                          echo "<h3> <a href=".$row['github_page_link'].">". $row['project_name'] ."</a>". " </h3>";
+                                      
+                                          echo "Status: ". $row['project_status'];
+                                          echo "<br>";
+
+                                          echo "Description :".$row['project_desc'];
+                                          echo "<br>";
+
+                                          echo "Team: ".$row['team_members'];
+                                         
+                                        }
+                                         
+                                      ?>
+                                  
+
+                                   
+                                  </div>
+                                  <div class="panel-footer">
+                                    <a href="#others" data-toggle="tab"><b>View All &raquo;</b></a>
+                                  </div>
+                              </div><!--Panel for Annoucements End -->
+
+                            
+                          </div>
+
+                      </div>  
+
+                 </div>
+
+              </div>
+
+
+                    <div class="tab-pane fade" id="iips">
                       
                         <div class="col-md-12">
                           <?php
@@ -169,7 +290,7 @@
 
 
 
-                    <div class="tab-pane fade" id="other">
+                    <div class="tab-pane fade" id="others">
 
                         <div class="col-md-12">
 
@@ -197,8 +318,7 @@
 
                     </div>
 
-                </div>
-              </div>
+                
                       
 
 
@@ -217,7 +337,7 @@
 
                   <div class="form-group">
                                                 
-                    <div class="col-md-8" style="border:1px solid black;background-color:white;">
+                    <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:white;">
 
                         <label>
                             <h2>Add Project</h2>
@@ -343,7 +463,7 @@
 
                 <div class="form-group">
                                   
-                  <div class="col-md-8" style="border:1px solid black;background-color:white;">
+                  <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:white;">
 
                     <label>
                         <h2>Add Project Documentation</h2>
@@ -479,7 +599,7 @@
 
                   <div class="form-group">
                              
-                    <div class="col-md-8" style="border:1px solid black;background-color:white;">
+                    <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:white;">
                       
                       <label>
                         <h2>Add Review</h2>
@@ -549,32 +669,18 @@
                     
                 <br>
 
-              
-
-            
-          
-
             </div> <!-- review -->
 
           </div>  <!-- main div -->
 
-
-        </div> <!-- Container-->
-
       </div> <!-- Offset-->
 
-    </div>  <!-- row -->
-
-  </div> <!-- Wrapper-->    
-
-    
-  <!-- </div> -->
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
                                  DATABASE CONNECTIVITY of FORMS
                      /////////////////////////////////////////////////////
                                  
-                            TO insert data into database of projects
+                            TO insert data into database of events
  -->
 
   <?php
@@ -628,7 +734,7 @@
           header('location:project.php');
         }
         
-        mysqli_query($dbconnect,$sql);
+       
       
     }
   ?>

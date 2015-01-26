@@ -116,14 +116,11 @@
          </div>
 
     </div>
-
-    <div class="row">
+ </div> <!-- wrapper -->
 
       <div class="col-md-8 col-md-offset-3">
 
-        <div class="container">
-
-          <div class="col-lg-8">
+          <div class="col-lg-12">
 
                 <h1 class="page-header">Infrastructure </h1>
                     
@@ -153,7 +150,7 @@
                                         
                     <div class="form-group">
                 
-                      <div class="col-md-8"> 
+                      <div class="col-md-12"> 
 
                         <table width="600px" align="center" border="0px" class= " table table-bordered"> <br>
 
@@ -193,11 +190,11 @@
 
                   <button id="btn" type= "submit"class="btn btn-primary" onclick="myFunction()" >Allot new Resource</button>
                   
-                        <div class="container">
+                        <!-- <div class="container"> -->
                            
                             <form role="form" action="infrastructure.php" method="POST">
                                 <div class="form-group" id="form" style="visiblity:hidden">
-                                  <div class="col-md-8" style="border:1px solid black;background-color:#EEEEEE;">
+                                  <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
                                     <label>
                                       <h2>Insert information of Resource allotment</h2>
                                     </label><br/>
@@ -271,7 +268,7 @@
                                   </div>
                               </div>
                             </form>
-                          </div>
+                          <!-- </div> -->
 
 
                           <?php 
@@ -315,7 +312,7 @@
                                         
                     <div class="form-group" >
                 
-                      <div class="col-md-8"> 
+                      <div class="col-md-12"> 
 
                         <table width="600px" align="center" border="0px" class= " table table-bordered"> <br>
 
@@ -360,13 +357,13 @@
                   
                   <br>
 
-                      <div class="container">
+                      <!-- <div class="container"> -->
                          
                         <form role="form" action="infrastructure.php" method="POST">
                           
                           <div class="form-group" id="form2" style="visiblity:hidden">
 
-                              <div class="col-md-8" style="border:1px solid black;background-color:#EEEEEE;">
+                              <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
                                 <label>
                                   <h2>Insert information of Books allotment</h2>
                                 </label><br/>
@@ -440,7 +437,7 @@
                               </div>
                             </div>
                           </form>
-                        </div>
+                        <!-- </div> -->
 
                         <?php 
                           if (isset($_POST['Submit2'])) {
@@ -485,7 +482,7 @@
                                         
                     <div class="form-group">
                 
-                      <div class="col-md-8"> 
+                      <div class="col-md-12"> 
 
                         <table width="600px" align="center" border="0px" class= " table table-bordered"> <br>
 
@@ -535,11 +532,11 @@
 
                   <button id="btn3" type= "submit"class="btn btn-primary" onclick="myFunction3()" >Add new System Information</button>
                   
-                        <div class="container">
+                        <!-- <div class="container"> -->
                            
                             <form role="form" action="infrastructure.php" method="POST">
                                 <div class="form-group" id="form3" style="visiblity:hidden">
-                                  <div class="col-md-8" style="border:1px solid black;background-color:#EEEEEE;">
+                                  <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
                                     <label>
                                       <h2>Insert information of System</h2>
                                     </label><br/>
@@ -621,7 +618,7 @@
                                   </div>
                               </div>
                             </form>
-                          </div>
+                          <!-- </div> -->
 
 
                           <?php 
@@ -662,7 +659,7 @@
 
                       <div class="form-group" >
                     
-                          <div class="col-md-8"> 
+                          <div class="col-md-12"> 
 
                             <table width="600px" align="center" border="0px" class= " table table-bordered"><br>
 
@@ -712,7 +709,7 @@
 
                 <div class="form-group" id="form4" style="visiblity:hidden">
 
-                    <div class="col-md-8" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
+                    <div class="col-md-12" style="border:1px solid black;border-radius:10px;background-color:#EEEEEE;">
 
                       <label>
                         <h2>Insert information of Books</h2>
@@ -800,18 +797,7 @@
 
           </div><!-- main div --> 
 
-
-        </div> <!-- Container-->
-
       </div> <!-- Offset-->
-
-    </div>  <!-- row -->
-
-  </div> <!-- Wrapper-->    
-
-    
-  <!-- </div> -->
-
 
   <br><br>
 
