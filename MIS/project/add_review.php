@@ -36,36 +36,39 @@ function onlyChars(event)
 </script>
 <title>Review</title>
 </head>
-<body>
 <body style="background-color:white;">
 
 	<?php 
         include ('header.php');
         include('date_picker.php')
-   ?> <br><br>
-	<div class="container">
-    <div class="row">
+   ?> 
+
+<br><br>
+
+<div class="container">
+  <div class="row">
 
       <?php 
           include('project_taskbar.php')
       ?>
 
-        </div>
-		<div class="row">
+  </div>
+<div class="row">
 
-	<form role="form" method="post" id="theForm" action="#"> 
-	 		<div class="form-group">
+<form role="form" method="post" id="theForm" action="#"> 
+  <div class="form-group">
 			
 			
 <div class="col-md-12" style="border:1px solid black;background-color:white;">
-	<label>
+	
+  <label>
 		<h2>Add Review</h2>
 	</label><br/>
-	<label>Date of Review</label>
+	
+  <label>Date of Review</label>
 		
-
-	 <div class="row">
- 	 <div class="col-md-4">
+	<div class="row">
+ 	  <div class="col-md-4">
    		 <input type="date" class="form-control"  required="required" name="review_date" class="datepicker">
   	</div>
   	
@@ -76,11 +79,11 @@ function onlyChars(event)
     	
 	<div class="row">
     <div class="col-md-4">
-    <label>Project ID</label>
+      <label>Project ID</label>
        <input type="text" class="form-control" name="project_id" id="name"> <span id="nameError" class="green"></span>
     </div>
- 	 <div class="col-md-4">
- 	 	<label>Project Name</label>
+ 	  <div class="col-md-4">
+ 	 	  <label>Project Name</label>
    		 <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
   	</div>
   	<div class="col-md-4">
@@ -91,51 +94,50 @@ function onlyChars(event)
 	</div>
                    
 	 
-	<br>
+<br>
 	
 	<div class="row">
- 	 <div class="col-md-4">
- 	 	<label>Review By</label>
+ 	  <div class="col-md-4">
+ 	 	  <label>Review By</label>
    		 <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="review_by"> <span id="nameError" class="green"></span>
-  	</div>
-
-  	
-  	
-  	</div>
+    </div>
+  </div>
 	
-    <br>
-    <label>Review link</label>
- 	<input type="text" class="form-control" id="inputEmail3" name="review_link"> 
+<br>
 
- 	<br>
+  <label>Review link</label>
+ 	 <input type="text" class="form-control" id="inputEmail3" name="review_link"> 
 
+<br>
  	
  	<label>Review</label>
- 	<textarea class="form-control" required="required" onkeypress="return onlyChars(event)" rows="3" id="add" name="review" ></textarea>
+ 	  <textarea class="form-control" required="required" onkeypress="return onlyChars(event)" rows="3" id="add" name="review" ></textarea>
 
- 	<br><br>
+<br><br>
 
-	</div>
+</div>
 
-	<input class="btn btn-success" type="submit" value="Submit" id="submit" name="submit" >
+	<input class="btn btn-success" type="submit" name="submit" value="Submit" id="submit"  >
 	<input class="btn btn-danger" type="reset" value="Reset">
 	
-		</form>
-		
-		<br>
-		
 
-		</div>
-				
+  </div>
+</form>
 		
-	</div>
+<br>
+
+</div>
 
 
 <?php
 
 
-include ('database_connect.php');
-if(isset($_POST['submit'])){ 
+
+include ('../database_connect.php');
+
+if(isset($_POST['submit']))
+{ 
+
   $review_date=$_POST['review_date'];
   $project_name=$_POST['project_name'];
   $project_id=$_POST['project_id'];
@@ -145,32 +147,33 @@ if(isset($_POST['submit'])){
   $review=$_POST['review'];
   
 
+  $sql= "INSERT INTO `dc_database`.`project_review` (`project_id`, `project_name`, `review_date`, `link_of_review`, `project_status`, `review_by`, `review`) 
+  VALUES ('$project_id', '$project_name', '$review_date', '$review_link', '$project_status', '$review_by', '$review')";
 
- $sql="INSERT INTO `dc_database`.`project_review` (`s_no`, `project_id`, `project_name`, `project_status`, `review_date`, `review_by`, `link_of_review`, `review`)
-       VALUES('','$project_id','$project_name','$project_status','$review_date','review_by','$link_of_review','$review') ";
+ 
+// mysqli_query($dbconnect,$sql);
+
+  $insertQuery = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
+    if($insertQuery){
+      echo "<script>alert('Record Submitted')</script>";
+      header('location:add_review.php');
+    }
+    else
+    {  echo "<script>alert('Record not Submitted')</script>";
+      header('location:add_review.php');
+    }
   
- mysqli_query($dbconnect,$sql);
 
 
-  
 }
 ?>
 
 <br><br>
 
 <?php
-$sql='SELECT * FROM project_review';
+//$sql='SELECT * FROM project_review';
  
-
-
-$con=mysqli_connect("localhost","root","root","dc_database"); 
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-$result = mysqli_query($con,"SELECT * FROM project_review ");
+$result = mysqli_query($dbconnect,"SELECT * FROM project_review");
 
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
@@ -189,7 +192,7 @@ while($row = mysqli_fetch_array($result))
    echo "</table>";
    //echo "</div>";
 
-mysqli_close($con);
+mysqli_close($dbconnect);
 ?>
 
 </div>
