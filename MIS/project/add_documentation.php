@@ -43,85 +43,89 @@ function onlyChars(event)
 <body>
 <body style="background-color:white;">
 
-	<?php 
+   <?php 
         include ('header.php');
-   ?> <br><br>
-	<div class="container">
-    <div class="row">
+   ?> 
+
+<br><br>
+	
+<div class="container">
+  <div class="row">
 
       <?php 
           include('project_taskbar.php')
       ?>
 
-        </div>
-		<div class="row">
+  </div>  
 
-	<form role="form" method="post" id="theForm" action="#"> 
-	 		<div class="form-group">
-			
+<div class="row">
+
+  <form role="form" method="post" id="theForm" action="#"> 
+	 <div class="form-group">
+			   
+
 			
 <div class="col-md-12" style="border:1px solid black;background-color:white;">
 	<label>
 		<h2>Add Project Documentation</h2>
 	</label><br/>
-	<label>Date</label>
-		
 
-	 <div class="row">
+	<label>Date</label>
+<div class="row">
  	 <div class="col-md-4">
    		 <input type="date" class="form-control" class="datepicker" required="required" name="date" id="date"> <span id="nameError" class="green"></span>
-  	</div>
-    
-  	
-	</div>
+   </div> 	
+</div>
 
 <br/>
-    <label>Project Information</label>
+
+  <label>Project Information</label>
     	
 	<div class="row">
  	 <div class="col-md-4">
  	 	<label>Project Name</label>
    		 <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
-  	</div>
-  	<div class="col-md-4">
+   </div>
+   <div class="col-md-4">   
+
   		<label>Project ID</label>
    		 <input type="text" class="form-control" name="project_id">
-  	</div>
+   </div>
   	
 	</div>
                    
 	 
-	<br>
+<br>
 	
 	<div class="row">
  	 <div class="col-md-6">
  	 	<label>SPMP Link</label>
    		 <input type="text" class="form-control" name="spmp_link" id="name"> <span id="nameError" class="green"></span>
-  	</div>
+   </div>
 
-  	<div class="col-md-6">
+   <div class="col-md-6">
  	 	<label>SPMP Status</label>
    		 <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="spmp_status" id="name"> <span id="nameError" class="green"></span>
-  	</div>
+   </div>
 
   </div>
 
-  <br>
+<br>
 
   <div class="row">
    <div class="col-md-6">
     <label>SRS Link</label>
        <input type="text" class="form-control" name="srs_link" id="name"> <span id="nameError" class="green"></span>
-    </div>
+   </div>
 
-    <div class="col-md-6">
+  <div class="col-md-6">
     <label>SRS Status</label>
        <input type="text" class="form-control" required="required" onkeypress="return onlyChars(event)" name="srs_status" id="name"> <span id="nameError" class="green"></span>
     </div>
 
   </div>
 
-  <br>
+<br>
 
   <div class="row">
    <div class="col-md-6">
@@ -136,44 +140,48 @@ function onlyChars(event)
 
   </div>
 	
-    <br>
+<br>
 
-    <div class="row">
+  <div class="row">
    <div class="col-md-6">
     <label>STD Link</label>
        <input type="text" class="form-control" name="std_status" id="name"> <span id="nameError" class="green"></span>
-    </div>
+   </div>
 
-    <div class="col-md-6">
+   <div class="col-md-6">
     <label>STD Status</label>
        <input type="text" class="form-control" required="required"  onkeypress="return onlyChars(event)" name="std_link" id="name"> <span id="nameError" class="green"></span>
-    </div>
+   </div>
 
   </div>
   
 
- 	<br><br>
+ <br><br>
 
 	</div>
 
-	<input class="btn btn-success"type="submit" value="Submit" id="submit">
+	<input class="btn btn-success" type="submit" name="submit" value="Submit" id="submit">
 	<input class="btn btn-danger" type="reset" value="Reset">
 	
-		</form>
+	</form>
 		
-		<br>
+<br>
 		
 
-		</div>
+</div>
 				
 		
-	</div>
+</div>
 
 
 <?php
 
 
-include ('database_connect.php');
+include ('../database_connect.php');
+
+
+if(isset($_POST['submit']))
+{ 
   
   $date=$_POST['date'];
   $project_name=$_POST['project_name'];
@@ -190,10 +198,24 @@ include ('database_connect.php');
   
 
 
- $sql="INSERT INTO documentation VALUES('$date','$project_name','$project_id', '$spmp_link', '$spmp_status', '$srs_link', '$srs_status', '$sdd_link', '$sdd_status',  '$std_link','$std_status') ";
+ $sql="INSERT INTO `dc_database`.`documentation` (`date_of_documentation`, `project_name`, `project_id`, 
+  `spmp_link`, `spmp_status`, `srs_link`, `srs_status`, `sdd_link`, `sdd_status`, `std_link`, `std_status`)
+   VALUES ('$date', '$project_name', '$project_id', '$spmp_link', '$spmp_status', 
+  '$srs_link', '$srs_status', '$sdd_link', '$sdd_status', '$std_link', '$std_status')";
   
-  mysqli_query($dbconnect,$sql);
-  
+
+  $insertQuery = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
+  if($insertQuery){
+    echo "<script>alert('Record Submitted')</script>";
+    header('location:add_documentation.php');
+  }
+  else
+  {  echo "<script>alert('Record not Submitted, Please Provide unique Project ID')</script>";
+    header('location:add_documentation.php');
+  }
+
+  //mysqli_query($dbconnect,$sql);
+} 
 
 
 ?>
@@ -201,17 +223,9 @@ include ('database_connect.php');
 <br><br>
 
 <?php
-$sql='SELECT * FROM documentation';
+//$sql='SELECT * FROM documentation';
  
-
-$con=mysqli_connect("localhost","root","root","dc_database");
-// Check connection
-if (mysqli_connect_errno())
-  {
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-  }
-
-$result = mysqli_query($con,"SELECT * FROM documentation ");
+$result = mysqli_query($dbconnect,"SELECT * FROM documentation ");
 
 //echo "<div class='table-responsive'>"
 echo "<table class='table table-hover'>";
@@ -230,7 +244,7 @@ while($row = mysqli_fetch_array($result))
    echo "</table>";
    //echo "</div>";
 
-mysqli_close($con);
+mysqli_close($dbconnect);
 ?>
 
 </div>
@@ -241,90 +255,3 @@ mysqli_close($con);
 </body>
 </html>
 
-<<<<<<< HEAD
-=======
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1 class="page-header">Add Project Documentation</h1>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Please fill in the details.
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>Project Name </label>
-                                            <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="project_name" id="name"> <span id="nameError" class="green"></span>
-                                            <p class="help-block"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Project ID</label>
-                                            <input type="text" class="form-control" name="project_id">
-                                            <p class="help-block"></p>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>SPMP Link</label>
-                                                 <input type="text" class="form-control" name="spmp_link" id="name"> <span id="nameError" class="green"></span>
-                                                <p class="help-block"></p>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>SPMP Status</label>
-                                                <input type="text" class="form-control" onkeypress="return onlyChars(event)" name="spmp_status" id="name"> <span id="nameError" class="green"></span>
-                                                <p class="help-block"></p>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>SRS Link</label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                         <div class="form-group">
-                                            <label>SRS Status </label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>SDD Link</label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>SDD Status</label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>STD Link</label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>STD Status </label>
-                                            <input class="form-control">
-                                            <p class="help-block"></p>
-                                        </div>
-                                       
-                                       
-                                        <button type="button" class="btn btn-primary">Submit</button>
-                                       
-                                        
-                                <!-- /.col-lg-6 (nested) -->
-                            </div>
-                            <!-- /.row (nested) -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-        </div>
->>>>>>> a2c134ef00595665b3cedf939b93b176d52d8faf

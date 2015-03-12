@@ -5,36 +5,6 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <link rel="stylesheet" href="FormValidation.css">
-<!--<script type="text/javascript" src="MyFormValidation.js" ></script>-->
-
-<!--include jQuery -->
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"
-type="text/javascript"></script>
-
-<!--include jQuery Validation Plugin
-<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"
-type="text/javascript"></script>
-
-<script type="text/javascript">
-
-  $(function()
-  {
-    $('#theForm').validate(
-    {
-        rules:
-        {
-          project_name:
-          {
-            required:true
-          },
-          project_id:
-          {
-            required:true
-          }
-        }
-    });
-  });
-</script>-->
 
 <script>
   function onlyNumbers(event)				
@@ -96,7 +66,8 @@ type="text/javascript"></script>
  <label>Date of Starting</label>
 	 <div class="row">
  	  <div class="col-md-4">
-   		 <input type="text" class="form-control" required="required" name="date_of_registration" class="datepicker"> 
+   		 <input type="date" class="form-control" required="required" name="date_of_registration" class="datepicker"> 
+       
   	</div>
   	
 	 </div>
@@ -180,7 +151,7 @@ type="text/javascript"></script>
 
 </div>
 
-  	<input class="btn btn-success" type="submit" value="Submit" id="submit">
+  	<input class="btn btn-success" type="submit" name="submit" value="Submit" id="submit">
   	<input class="btn btn-danger" type="reset" value="Reset">
 	
 </form>
@@ -198,56 +169,59 @@ type="text/javascript"></script>
 
 
 
-include ('database_connect.php');
+include ('../database_connect.php');
 
-if(isset($_POST['submit']))     //   Insert data if submit button is clicked 
-{
- 
-  $date_of_registration=$_POST['date_of_registration'];
-  $project_name=$_POST['project_name'];
-  $project_id=$_POST['project_id'];
-  $project_type=$_POST['project_type'];
-  $team_leader=$_POST['team_leader'];
-  $team_id=$_POST['team_id'];
-  $project_status=$_POST['project_status'];
-  $members=$_POST['members'];
-  $deployed = $_POST['deployed'];
-  $github_link=$_POST['github_link'];
-  $link=$_POST['link'];
-  $project_description=$_POST['project_description'];
-  
-  
- 
+//TO insert data into database
 
- $sql="INSERT INTO  `dc_database`.`projects` (
-  `date_of_start` ,
-  `project_id` ,
-  `project_name` ,
-  `project_type` ,
-  `project_leader` ,
-  `team_members` ,
-  `project_status` ,
-  `team_id` ,
-  `deployment` ,
-  `dc_page_link` ,
-  `github_page_link` ,
-  `project_desc`
-  )
-  VALUES (
-  '$date_of_registration',  '$project_id',  '$project_name',  '$project_type',  '$team_leader',  '$members',  '$project_status',  '$team_id',  '$deployed',  '$link',  '$github_link',  '$project_description'
-  )";
+if ( isset( $_POST['submit'] ) ) 
+   
+  {  
+    $date_of_registration=$_POST['date_of_registration'];
+    $project_name=$_POST['project_name'];
+    $project_id=$_POST['project_id'];
+    $project_type=$_POST['project_type'];
+    $team_leader=$_POST['team_leader'];
+    $team_id=$_POST['team_id'];
+    $project_status=$_POST['project_status'];
+    $members=$_POST['members'];
+    $deployed = $_POST['deployed'];
+    $github_link=$_POST['github_link'];
+    $link=$_POST['link'];
+    $project_description=$_POST['project_description'];
+    
+    
+   
 
-  
-  $insertQuery = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
-  if($insertQuery){
-    echo "<script>alert('Record Submitted')</script>";
-    header('location:add_project.php');
-  }
-  else
-    echo "Not Submitted"; 
+   $sql="INSERT INTO  `dc_database`.`projects` (
+    `date_of_start` ,
+    `project_id` ,
+    `project_name` ,
+    `project_type` ,
+    `project_leader` ,
+    `team_members` ,
+    `project_status` ,
+    `team_id` ,
+    `deployment` ,
+    `dc_page_link` ,
+    `github_page_link` ,
+    `project_desc`
+    )
+    VALUES (
+    '$date_of_registration',  '$project_id',  '$project_name',  '$project_type',  '$team_leader',  '$members',  '$project_status',  '$team_id',  '$deployed',  '$link',  '$github_link',  '$project_description'
+    )";
 
-  
-  //mysqli_query($dbconnect,$sql);
+    
+    $insertQuery = mysqli_query($dbconnect,$sql) or die(mysqli_error($dbconnect));
+    if($insertQuery){
+      echo "<script>alert('Record Submitted')</script>";
+      header('location:add_project.php');
+    }
+    else
+    {  echo "<script>alert('Record not Submitted, Please Provide unique Project ID')</script>";
+      header('location:add_project.php');
+    }
+    
+   // mysqli_query($dbconnect,$sql);
   
 }
 ?>
@@ -278,7 +252,7 @@ $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='IIPS
     }
      echo "</table>";
                                                                                                                         
-  mysqli_close($con);
+  //mysqli_close($dbconnect);
 
 //for DAVV Projects
 echo "University Improvement Projects"; 
@@ -300,7 +274,7 @@ $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='Univ
     }
      echo "</table>";
                                                                                                                         
-  mysqli_close($con);
+ // mysqli_close($dbconnect);
 
 //For other Projects
 echo "Other Projects"; 
@@ -322,7 +296,7 @@ $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='Othe
     }
      echo "</table>";
                                                                                                                         
-  mysqli_close($con);
+  mysqli_close($dbconnect);
 
 
 ?>
