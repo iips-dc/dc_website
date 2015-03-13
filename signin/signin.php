@@ -117,7 +117,6 @@
                           $client_id = '238957888379-kifeq199a8mauc2cod4j2m8tapmsirg0.apps.googleusercontent.com';
                           $client_secret = 'j488CqlKD2UECsnmAVO0V55-';
                           $redirect_uri = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF'];
-
                           $client = new Google_Client();
                           $client->setClientId($client_id);
                           $client->setClientSecret($client_secret);
@@ -168,12 +167,11 @@
                           }
 
                           //echo pageHeader("User Query - Retrieving An Id Token");
-                          if (
-                              $client_id == '238957888379-kifeq199a8mauc2cod4j2m8tapmsirg0.apps.googleusercontent.com'
-                              || $client_secret == 'j488CqlKD2UECsnmAVO0V55-'
+                           if (
+                              $client_id == '238957888379-kifeq199a8mauc2cod4j2m8tapmsirg0.apps.googleusercontent.com'   || $client_secret == 'j488CqlKD2UECsnmAVO0V55-'
                               || $redirect_uri == 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['PHP_SELF']) {
-                            //echo missingClientSecretsWarning();
-                          }
+                              //echo missingClientSecretsWarning();
+                             }
                           ?>
                       <div class="box">
                             <div class="request">
