@@ -14,7 +14,7 @@ while($row = mysqli_fetch_array($result))
    
   if($row['email'] == $email){
     echo "string";
-    header("Location:../dashboard/dashboard.php");
+    header("Location:MIS/dashboard/dashboard.php");
      break;
   } 
   
