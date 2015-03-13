@@ -127,7 +127,7 @@
                                     <h3 class="panel-title"><b>Presentations</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 150px; max-height: 150px; overflow-y: scroll;">
 
                                     <?php
 
@@ -169,7 +169,7 @@
                                     <h3 class="panel-title"><b>Workshop</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 150px; max-height: 150px; overflow-y: scroll;">
 
                                     <?php
                                         $result = mysqli_query($dbconnect,"SELECT * FROM events where type_of_event= 'Workshop' order by 'date' DESC LIMIT 1 ");
@@ -217,7 +217,7 @@
                                     <h3 class="panel-title"><b>Seminar</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 150px; max-height: 150px; overflow-y: scroll;">
 
 
                                     <?php
@@ -261,7 +261,7 @@
                                     <h3 class="panel-title"><b>Group Discusion</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 150px; max-height: 150px; overflow-y: scroll;">
 
                                       <?php
 

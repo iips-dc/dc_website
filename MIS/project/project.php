@@ -106,7 +106,7 @@
                                     <h3 class="panel-title"><b>IIPS</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 400px; max-height: 400px; overflow-y: scroll;">
 
                                     <?php
                                       $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='IIPS improvement'");
@@ -147,7 +147,7 @@
                                     <h3 class="panel-title"><b>DAVV</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 400px; max-height: 400px; overflow-y: scroll;">
 
                                     <?php
                                       $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='University improvement'");
@@ -190,7 +190,7 @@
                                     <h3 class="panel-title"><b>Miscelleneous</b></h3>
                                   </div>
 
-                                  <div class="panel-body" align="left">
+                                  <div class="panel-body" align="left" style="min-height: 400px; max-height: 400px; overflow-y: scroll;">
 
                                     <?php
                                       $result = mysqli_query($dbconnect,"SELECT * FROM projects where deployment='Other'");
