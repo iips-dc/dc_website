@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2014 at 08:24 PM
--- Server version: 5.5.40
--- PHP Version: 5.4.35-1+deb.sury.org~precise+1
+-- Generation Time: Mar 14, 2015 at 12:13 AM
+-- Server version: 5.5.41
+-- PHP Version: 5.3.10-1ubuntu3.16
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -89,6 +89,22 @@ CREATE TABLE IF NOT EXISTS `attendence` (
   PRIMARY KEY (`s_no`),
   KEY `organizer_id` (`organizer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE IF NOT EXISTS `books` (
+  `book_id` varchar(15) NOT NULL,
+  `book_title` varchar(100) NOT NULL,
+  `author` varchar(100) NOT NULL,
+  `edition` varchar(20) NOT NULL,
+  `publication` varchar(100) NOT NULL,
+  `isbn_no` int(100) NOT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -350,6 +366,7 @@ CREATE TABLE IF NOT EXISTS `events` (
   `type_of_event` varchar(20) NOT NULL,
   `organizer_id` int(11) NOT NULL,
   `topic` varchar(100) NOT NULL,
+  `abstract` varchar(200) NOT NULL,
   `venue` varchar(100) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
@@ -369,15 +386,15 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`event_id`, `type_of_event`, `organizer_id`, `topic`, `venue`, `date`, `time`, `duration`, `material_link`, `summary_link`) VALUES
-(1, 'presentation ', 90, 'jquery', 'development centre ', '2014-07-02', '19:19:35', 0, '', ''),
-(2, 'Presentation', 5, 'rgwrr', 'rrwtw', '2014-08-07', '00:00:00', 0, '', ''),
-(3, ''''';l;''l', 0, ';l'';l'';l', 'l''l'';l', '0000-00-00', '00:00:00', 0, ';l'';l'';', 'l'';l'';'),
-(4, ''''';l;''l', 1, '', 'l''l'';l', '2014-08-06', '00:00:00', 50, ';l'';l'';', 'l'';l'';'),
-(5, 'Seminar', 5, 'lje;wjr', 'indore', '2014-08-07', '00:00:10', 50, '2014-08-29', 'jlrklrlkrj'),
-(6, '', 5, '', '', '0000-00-00', '00:00:00', 0, '', ''),
-(7, 'OutHousing', 6, 'java', 'indore', '2014-08-28', '00:00:10', 50, 'elkjljkl', 'jlrklrlkrj'),
-(8, 'OutHousing', 6, '', '', '0000-00-00', '00:00:00', 0, '', '');
+INSERT INTO `events` (`event_id`, `type_of_event`, `organizer_id`, `topic`, `abstract`, `venue`, `date`, `time`, `duration`, `material_link`, `summary_link`) VALUES
+(1, 'presentation ', 90, 'jquery', '', 'development centre ', '2014-07-02', '19:19:35', 0, '', ''),
+(2, 'Presentation', 5, 'rgwrr', '', 'rrwtw', '2014-08-07', '00:00:00', 0, '', ''),
+(3, ''''';l;''l', 0, ';l'';l'';l', '', 'l''l'';l', '0000-00-00', '00:00:00', 0, ';l'';l'';', 'l'';l'';'),
+(4, ''''';l;''l', 1, '', '', 'l''l'';l', '2014-08-06', '00:00:00', 50, ';l'';l'';', 'l'';l'';'),
+(5, 'Seminar', 5, 'lje;wjr', '', 'indore', '2014-08-07', '00:00:10', 50, '2014-08-29', 'jlrklrlkrj'),
+(6, '', 5, '', '', '', '0000-00-00', '00:00:00', 0, '', ''),
+(7, 'OutHousing', 6, 'java', '', 'indore', '2014-08-28', '00:00:10', 50, 'elkjljkl', 'jlrklrlkrj'),
+(8, 'OutHousing', 6, '', '', '', '0000-00-00', '00:00:00', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -398,11 +415,31 @@ CREATE TABLE IF NOT EXISTS `hosting_domain` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `issued_books_to`
+--
+
+CREATE TABLE IF NOT EXISTS `issued_books_to` (
+  `book_id` varchar(20) NOT NULL,
+  `book_title` varchar(100) NOT NULL,
+  `issued_by` varchar(100) NOT NULL,
+  `issued_to` varchar(100) NOT NULL,
+  `date` date NOT NULL,
+  `time` time NOT NULL,
+  `submission_date` date NOT NULL,
+  `submission_time` time NOT NULL,
+  `details` varchar(200) NOT NULL,
+  PRIMARY KEY (`book_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `issued_resource_to`
 --
 
 CREATE TABLE IF NOT EXISTS `issued_resource_to` (
   `resource_id` varchar(15) NOT NULL,
+  `resource_name` varchar(30) NOT NULL,
   `issue_by` varchar(30) NOT NULL,
   `issue_to` varchar(30) NOT NULL,
   `date` date NOT NULL,
@@ -492,17 +529,27 @@ CREATE TABLE IF NOT EXISTS `problem_solved_by` (
 --
 
 CREATE TABLE IF NOT EXISTS `projects` (
+  `date_of_start` date NOT NULL,
   `project_id` varchar(10) NOT NULL,
   `project_name` varchar(20) NOT NULL,
   `project_type` varchar(20) NOT NULL,
-  `project_description` text NOT NULL,
+  `project_desc` varchar(400) NOT NULL,
   `project_leader` varchar(30) NOT NULL,
+  `deployment` varchar(50) NOT NULL,
   `team_id` varchar(10) NOT NULL,
+  `team_members` varchar(100) NOT NULL,
   `project_status` varchar(200) NOT NULL,
   `dc_page_link` varchar(30) NOT NULL,
   `github_page_link` varchar(30) NOT NULL,
   PRIMARY KEY (`project_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `projects`
+--
+
+INSERT INTO `projects` (`date_of_start`, `project_id`, `project_name`, `project_type`, `project_desc`, `project_leader`, `deployment`, `team_id`, `team_members`, `project_status`, `dc_page_link`, `github_page_link`) VALUES
+('2011-11-11', 'j123', 'ram', 'home', 'fdasf', 'sachin', 'Other', '34e', 'a, b, c', 'completed', 'https://github.com/iips-dc/dc_', 'git');
 
 -- --------------------------------------------------------
 
@@ -631,7 +678,6 @@ CREATE TABLE IF NOT EXISTS `roles_and_responsibility` (
 --
 
 CREATE TABLE IF NOT EXISTS `system_information` (
-  `s_no` int(3) NOT NULL AUTO_INCREMENT,
   `system_name` varchar(20) NOT NULL,
   `ram` varchar(20) NOT NULL,
   `ram_type` varchar(20) NOT NULL,
@@ -641,8 +687,8 @@ CREATE TABLE IF NOT EXISTS `system_information` (
   `access` varchar(10) NOT NULL,
   `os_installed` varchar(20) NOT NULL,
   `sw_details` varchar(50) NOT NULL,
-  PRIMARY KEY (`s_no`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+  PRIMARY KEY (`system_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
