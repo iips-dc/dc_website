@@ -438,7 +438,7 @@
                         </div>
 
                     </div> 
-
+                    
                   </div>
 
                 </form>  
@@ -673,6 +673,8 @@
 
           </div>  <!-- main div -->
 
+          <br><br>
+
       </div> <!-- Offset-->
 
 
@@ -832,11 +834,10 @@
   mysqli_close($dbconnect);
   ?>
 
-  <br><br>
 
   <?php 
-      include('../footer.php');
       include('../javascript.php');
+      include('../footer.php');
   ?>
 </body>
 </html>

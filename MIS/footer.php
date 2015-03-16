@@ -1,22 +1,23 @@
-<div class="container">
+<div class ="container">
 
         <hr>
 
     <footer>
             <div class="row" style="text-align:center;">
                 <div class="col-lg-3 col-md-3" >
-                    <p><a href="contactus.php">Contact Us</a></p>
+                    <p><a href="../../contactus.php">Contact Us</a></p>
                    
-            </div>
+                </div>
                 <div class="col-lg-3 col-md-3">
-                    <p><a href="developer.php">Site Developers</a></p>
-            </div>
+                    <p><a href="../../developer.php">Site Developers</a></p>
+                </div>
                 <div class="col-lg-3 col-md-3">
-                    <p>Help</p>
-            </div>
+                    <p><a href="#" >Help</a></p>
+                </div>
                 <div class="col-lg-3 col-md-3">
-                    <p>Copyright &copy; Company 2013</p>
+                    <p><a href="#" >Copyright &copy; Company 2013</a></p>
             </div>
-        </footer>
-    </div>
-    <!-- /.c
+           </div>
+    </footer>
+        <br>
+</div>

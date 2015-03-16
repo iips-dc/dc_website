@@ -215,7 +215,7 @@
  
    
 
-
+</div>
     <!-- /#wrapper -->
 
     <!-- jQuery Version 1.11.0 -->
@@ -264,6 +264,9 @@ $insert= mysqli_query($dbconnect,$sql);
 
 }
 ?>
+
+
+<?php include('../footer.php');?>
 
 </body>
 

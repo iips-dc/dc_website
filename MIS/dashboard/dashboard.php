@@ -203,8 +203,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="../js/sb-admin-2.js"></script>
     
+<?php include('../footer.php');?>
 
 </body>
-<?php include('../../footer.html');?>
+
 </html>
 

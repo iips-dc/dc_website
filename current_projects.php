@@ -41,14 +41,14 @@
 
             <div class="col-lg-8 portfolio-item">
                 
-                <h3><a href="portfolio-item.html">IIPS website </a>
+                <h3><a href="https://github.com/iips-dc/iips_website">IIPS website </a>
                 </h3>
                 <p>The current new website of IIPS . The aim is to keep the site usable, decentralized, and mobile responsive with different kinds of institutional services for the different kinds of users of the IIPS. </p>
             </div>
 
             <div class="col-lg-8 portfolio-item">
               
-                <h3><a href="portfolio-item.html">PBAS</a>
+                <h3><a href="https://github.com/iips-dc/pbas_beta">PBAS</a>
                 </h3>
                 <p>PBAS refers to "Performance Based Self Appraisal System " . The aim is to automize the manual form filling procedure in a way so that the users can fill the form any time in a year without worry . The system automatically adds the API score based on the users entry. </p>
             </div>
@@ -59,14 +59,14 @@
 
             <div class="col-lg-8 portfolio-item">
                 
-                <h3><a href="portfolio-item.html">DAVV Tube</a>
+                <h3><a href="https://github.com/iips-dc/davvtube">DAVV Tube</a>
                 </h3>
                 <p>A Video Hub service exclusive for DAVV students, faculty members, Researchers, Learners and knowledge seekers.A mobile resoponsive HTML5 based app, which is a video hub for the users of DAVV university. The app has a lots of up coming videos .</p>
             </div>
 
             <div class="col-lg-8 portfolio-item">
                
-                <h3><a href="portfolio-item.html">Online Bonafide </a>
+                <h3><a href="#">Online Bonafide </a>
                 </h3>
                 <p>This project aims to develop an online integrated application which can manage an automatic system for issuing bonafide certificates to the users of IIPS so as to make the service effortless and standard.</p>
             </div>

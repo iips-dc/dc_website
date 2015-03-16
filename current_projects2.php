@@ -43,14 +43,14 @@
 
             <div class="col-lg-8 portfolio-item">
                 
-                <h3><a href="portfolio-item.html">Grievances Redressal</a>
+                <h3><a href="#">Grievances Redressal</a>
                 </h3>
                 <p>This project aims at the students/staff/faculties Complaint registration system . The current system is using the google docs forms . In future , the module will be linked with the webmail holders of IIPS.</p>
             </div>
 
             <div class="col-lg-8 portfolio-item">
                 
-                <h3><a href="portfolio-item.html">Data Entry System</a>
+                <h3><a href="#">Data Entry System</a>
                 </h3>
                 <p>The Mass Data Entry system of the users of IIPS, specially the students of the IIPS , for every year's new batch . The aim is to make this task more easy and user friendly .</p>
             </div>
@@ -78,7 +78,7 @@
     </div>
     <!-- /.container -->
 
-    <div class="container">
+    
 
         <hr>
 

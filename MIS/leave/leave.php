@@ -200,6 +200,9 @@ if(isset($_POST['submit']))     //   Insert data if submit button is clicked
 
     <!-- Custom Theme JavaScript -->
     <script src="../js/sb-admin-2.js"></script>
+
+    <?php include('../footer.php');?>
+    
 </body>
 
 </html>

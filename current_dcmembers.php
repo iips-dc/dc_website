@@ -33,11 +33,7 @@
                 <h1 class="page-header">DC MEMBERS
                     
                 </h1>
-                <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
-                    </li>
-                    
-                </ol>
+                
             </div>
  
         </div>
@@ -196,14 +192,6 @@
                 
             </div>
 
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="dev.JPG">
-                </a>
-                <h3><a href="#project-link">Devendra Malviya</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
 
              <div class="col-md-3 portfolio-item">
                 
@@ -287,14 +275,6 @@
                     </li></p>
             </div>
 
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="nitin.jpg">
-                </a>
-                <h3><a href="#project-link">Nitin Sharma</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
 
             <div class="col-md-3 portfolio-item">
                 
@@ -336,33 +316,6 @@
 
         </div>
 
-        <div class="row">
-
-           
-
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Prashant Yadav</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-            
-
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="rahulsinha.jpg">
-                </a>
-                <h3><a href="#project-link">Rahul Sinha</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-
-
-        </div>
 
         <div class="row">
 
@@ -370,10 +323,9 @@
 
             <div class="col-md-3 portfolio-item">
                 
-                    <img class="img-responsive" src="images/dcmembers/rajat.jpg" >
+                    <img class="img-responsive" src="images/dcmembers/ak.jpeg" >
                 
-                <h3>Rajat Garg
-                </h3>
+                <h3>Akshay Verma</h3>
                 <p>Catch me on :<br>
                  <ul class="list-unstyled list-inline list-social-icons">
                     <li class="tooltip-social facebook-link"><a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
@@ -445,58 +397,7 @@
             
         </div>
 
-        <div class="row">
-
-           
-
-            <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="images/dcmembers/ak.jpeg">
-                </a>
-                <h3><a href="#project">Akshay Verma</a>
-                </h3>
-                <p>Catch me on :<br>
-                 <ul class="list-unstyled list-inline list-social-icons">
-                    <li class="tooltip-social facebook-link"><a href="#facebook-profile" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a>
-                    </li>
-                    <li class="tooltip-social linkedin-link"><a href="#linkedin-profile" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a>
-                    </li>
-                    <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a>
-                    </li>
-                    <li class="tooltip-social google-plus-link"><a href="#google-plus-profile" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a>
-                    </li></p>
-            </div>
-
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Ritika Barethia</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-            <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Rupam Wadia</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-             <!-- <div class="col-md-3 portfolio-item">
-                <a href="#project-link">
-                    <img class="img-responsive" src="http://placehold.it/700x400">
-                </a>
-                <h3><a href="#project-link">Sunny Raikwar</a>
-                </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-            </div> -->
-
-
-
-        </div>
+        
 
         <form role="form" method="post" id="theForm" action="#"> 
             <div class="form-group">

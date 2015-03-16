@@ -238,7 +238,7 @@
 		?>
 
 		</div>
-		 <?php include('../../footer.html');?>
+		 <?php include('../footer.php');?>
 
 </body>
  <!-- jQuery Version 1.11.0 -->

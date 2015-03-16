@@ -258,7 +258,7 @@
                               <div class="panel panel-primary boxShadow" style=" font-size:16px">
 
                                   <div class="panel-heading">
-                                    <h3 class="panel-title"><b>Group Discussion</b></h3>
+                                    <h3 class="panel-title"><b>Group Discusion</b></h3>
                                   </div>
 
                                   <div class="panel-body" align="left" style="min-height: 150px; max-height: 150px; overflow-y: scroll;">
